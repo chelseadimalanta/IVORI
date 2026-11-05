@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solenne Activewear</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: Apple-calm whitespace + Aritzia editorial type + Lululemon shop mechanics. Bone background, ink text, one deep spruce accent. */
+:root{
+  --bone:#F6F4F0;
+  --paper:#FFFFFF;
+  --sand:#ECE7DF;
+  --line:#DCD6CC;
+  --ink:#141414;
+  --ash:#5C574F;
+  --spruce:#2E4A42;
+  --spruce-soft:#DCE4E0;
+  --display:'Instrument Serif','Times New Roman',Georgia,serif;
+  --body:'Figtree',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --wrap:1240px;
+  --radius:4px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bone);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+h1,h2,h3{font-weight:400;margin:0;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+:focus-visible{outline:2px solid var(--spruce);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:var(--paper);padding:10px 14px;z-index:99}
+.skip:focus{left:8px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+/* Announcement + nav */
+.announce{background:var(--ink);color:#F2EFEA;font-size:13px;text-align:center;padding:9px 16px;letter-spacing:.02em}
+.nav{position:sticky;top:0;z-index:40;background:rgba(246,244,240,.92);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;gap:28px;height:64px}
+.logo{font-family:var(--body);font-weight:500;letter-spacing:.34em;font-size:18px;text-decoration:none;padding-left:.34em}
+.nav-links{display:flex;gap:22px;font-size:14px}
+.nav-links a{text-decoration:none;padding:8px 0;color:var(--ink)}
+.nav-links a:hover{text-decoration:underline;text-underline-offset:6px}
+.nav-tools{margin-left:auto;display:flex;gap:4px;align-items:center}
+.icon-btn{background:none;border:0;width:44px;height:44px;display:grid;place-items:center;cursor:pointer;border-radius:50%;position:relative}
+.icon-btn:hover{background:var(--sand)}
+.icon-btn svg{width:21px;height:21px}
+.count{position:absolute;top:6px;right:4px;background:var(--spruce);color:#fff;font-size:11px;min-width:18px;height:18px;border-radius:9px;display:grid;place-items:center;padding:0 4px;font-weight:600}
+.menu-btn{display:none}
+.searchbar{border-top:1px solid var(--line);display:none}
+.searchbar.open{display:block}
+.searchbar form{display:flex;gap:12px;padding:14px 0}
+.searchbar input{flex:1;border:0;border-bottom:1px solid var(--ink);background:transparent;padding:10px 2px;font-size:18px}
+.searchbar input:focus{outline:none;border-bottom-width:2px}
+@media (max-width:880px){
+  .nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:var(--bone);flex-direction:column;gap:0;padding:8px 24px 18px;border-bottom:1px solid var(--line)}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:14px 0;font-size:17px;border-bottom:1px solid var(--line)}
+  .menu-btn{display:grid}
+}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 26px;border-radius:999px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);text-decoration:none;font-weight:500;font-size:15px;cursor:pointer;transition:background .2s,color .2s}
+.btn:hover{background:#2b2b2b}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+.btn.light{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.btn.block{width:100%}
+.link{color:var(--spruce);text-decoration:none;font-weight:500}
+.link:hover{text-decoration:underline;text-underline-offset:4px}
+.link::after{content:" ›"}
+
+/* Type helpers */
+.kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ash);font-weight:500}
+.h-xl{font-family:var(--display);font-size:clamp(48px,7.2vw,96px);line-height:.98;letter-spacing:-.01em}
+.h-l{font-family:var(--display);font-size:clamp(36px,4.6vw,58px);line-height:1.04}
+.h-m{font-family:var(--display);font-size:clamp(28px,3vw,38px);line-height:1.1}
+.lede{font-size:18px;color:var(--ash);max-width:46ch}
+.section{padding:88px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:32px;flex-wrap:wrap}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center;padding:56px 0 72px}
+.hero-copy{display:grid;gap:22px}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+.hero-art{background:var(--spruce);border-radius:var(--radius);aspect-ratio:5/5.4;position:relative;overflow:hidden}
+.hero-art .g{position:absolute}
+.hero-art .g1{width:52%;left:6%;top:9%}
+.hero-art .g2{width:44%;right:5%;top:30%}
+.hero-art .g3{width:34%;left:30%;bottom:-2%}
+.hero-tag{position:absolute;left:20px;bottom:20px;background:rgba(255,255,255,.94);border-radius:var(--radius);padding:12px 14px;font-size:13px;max-width:230px;box-shadow:0 8px 24px rgba(0,0,0,.12)}
+.hero-tag b{display:block;font-weight:600}
+@media (max-width:860px){.hero{grid-template-columns:1fr;padding-top:32px}}
+
+/* Promise strip */
+.promise{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.promise div{padding:22px 20px;display:grid;gap:4px;border-left:1px solid var(--line)}
+.promise div:first-child{border-left:0}
+.promise b{font-weight:600;font-size:15px}
+.promise span{color:var(--ash);font-size:14px}
+@media (max-width:860px){.promise{grid-template-columns:1fr 1fr}.promise div:nth-child(3){border-left:0}.promise div:nth-child(n+3){border-top:1px solid var(--line)}}
+
+/* Activity tiles */
+.acts{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.act{background:var(--sand);border-radius:var(--radius);aspect-ratio:3/4;position:relative;overflow:hidden;text-decoration:none;display:flex;flex-direction:column;justify-content:flex-end;padding:20px;cursor:pointer;border:0;text-align:left}
+.act .g{position:absolute;inset:8% 14% 22%;}
+.act .g svg{width:100%;height:100%}
+.act h3{font-family:var(--display);font-size:28px;position:relative}
+.act p{font-size:14px;color:var(--ash);position:relative}
+.act:hover .g{transform:translateY(-4px)}
+.act .g{transition:transform .35s ease}
+@media (max-width:860px){.acts{grid-template-columns:1fr 1fr}}
+
+/* Product cards */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 18px}
+.grid.three{grid-template-columns:repeat(3,1fr)}
+@media (max-width:1000px){.grid,.grid.three{grid-template-columns:repeat(2,1fr)}}
+.card{display:grid;gap:10px;text-decoration:none;cursor:pointer}
+.card-img{background:var(--sand);border-radius:var(--radius);aspect-ratio:4/5;display:grid;place-items:center;padding:12%;position:relative}
+.card-img svg{width:100%;height:100%;transition:transform .35s ease}
+.card:hover .card-img svg{transform:scale(1.03)}
+.badge{position:absolute;top:12px;left:12px;background:var(--paper);font-size:12px;font-weight:600;padding:4px 9px;border-radius:999px}
+.card-name{font-weight:500}
+.card-meta{display:flex;justify-content:space-between;gap:10px;color:var(--ash);font-size:14px}
+.card-price{color:var(--ink);font-variant-numeric:tabular-nums}
+.swatches{display:flex;gap:6px}
+.dot{width:14px;height:14px;border-radius:50%;border:1px solid rgba(0,0,0,.18)}
+
+/* Apple-style promo tiles */
+.promos{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.promo{border-radius:var(--radius);padding:44px 32px 0;text-align:center;display:grid;gap:10px;overflow:hidden;align-content:start;min-height:560px}
+.promo.light{background:var(--paper)}
+.promo.dark{background:var(--ink);color:#F2EFEA}
+.promo.dark .sub{color:#C9C4BB}
+.promo.dark .link{color:#B9D3C9}
+.promo .sub{color:var(--ash);font-size:17px}
+.promo .links{display:flex;gap:22px;justify-content:center;margin:6px 0 18px}
+.promo .art{width:62%;margin:auto auto 0;justify-self:center}
+@media (max-width:860px){.promos{grid-template-columns:1fr}.promo{min-height:480px}}
+
+/* Coverage feature */
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.feature-copy{display:grid;gap:18px}
+.feature-copy ul{margin:0;padding:0;list-style:none;display:grid;gap:12px}
+.feature-copy li{display:flex;gap:12px;align-items:flex-start}
+.feature-copy li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--spruce);margin-top:9px;flex:none}
+@media (max-width:860px){.feature{grid-template-columns:1fr}}
+.covcard{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:grid;gap:4px}
+.covcard-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;gap:12px}
+.covcard-head b{font-weight:600}
+.covrow{display:grid;grid-template-columns:110px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-top:1px solid var(--line);font-size:15px}
+.covrow span:first-child{color:var(--ash)}
+.meter{display:flex;gap:3px}
+.meter i{width:16px;height:6px;border-radius:3px;background:var(--line)}
+.meter i.on{background:var(--spruce)}
+
+/* Story */
+.story{background:var(--spruce);color:#F1EEE8;border-radius:var(--radius);padding:72px 56px;display:grid;grid-template-columns:1.2fr 1fr;gap:48px}
+.story p{color:#D5DDD9;font-size:18px;max-width:52ch}
+.story .h-l{color:#fff}
+@media (max-width:860px){.story{grid-template-columns:1fr;padding:48px 24px}}
+
+/* Community */
+.ugc{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.ugc div{aspect-ratio:1;border-radius:var(--radius);display:grid;place-items:center;padding:16%}
+@media (max-width:860px){.ugc{grid-template-columns:repeat(3,1fr)}.ugc div:nth-child(n+4){display:none}}
+
+/* Newsletter */
+.news{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;border-top:1px solid var(--line);padding-top:56px}
+.news form{display:flex;gap:10px;flex-wrap:wrap}
+.field{display:grid;gap:6px;flex:1;min-width:220px}
+.field label{font-size:13px;font-weight:500}
+.field input,.field select{height:48px;border:1px solid #BDB6AA;border-radius:var(--radius);background:var(--paper);padding:0 14px}
+.field input:focus,.field select:focus{outline:2px solid var(--spruce);outline-offset:0;border-color:var(--spruce)}
+.note{font-size:14px;color:var(--spruce);font-weight:500;min-height:22px}
+@media (max-width:860px){.news{grid-template-columns:1fr}}
+
+/* Footer */
+footer{margin-top:96px;background:var(--sand);padding:56px 0 32px;font-size:14px}
+.foot{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:32px}
+.foot h4{margin:0 0 12px;font-size:13px;font-weight:600}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.foot a{text-decoration:none;color:var(--ash)}
+.foot a:hover{color:var(--ink);text-decoration:underline}
+.foot-base{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--ash);border-top:1px solid var(--line);margin-top:40px;padding-top:20px}
+@media (max-width:760px){.foot{grid-template-columns:1fr 1fr}}
+
+/* Shop */
+.shop-head{padding:48px 0 28px;display:grid;gap:10px}
+.crumbs{font-size:13px;color:var(--ash)}
+.crumbs a{text-decoration:none}
+.crumbs a:hover{text-decoration:underline}
+.shop{display:grid;grid-template-columns:240px 1fr;gap:40px;align-items:start}
+.filters{position:sticky;top:84px;display:grid;gap:4px}
+.fgroup{border-top:1px solid var(--line);padding:16px 0}
+.fgroup h3{font-family:var(--body);font-size:14px;font-weight:600;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:40px;min-width:44px;padding:0 14px;border:1px solid #BDB6AA;border-radius:999px;background:var(--paper);cursor:pointer;font-size:14px;display:inline-flex;align-items:center;gap:8px}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:20px;flex-wrap:wrap}
+.toolbar select{height:44px;border:1px solid #BDB6AA;border-radius:999px;padding:0 16px;background:var(--paper)}
+.empty{padding:60px 0;color:var(--ash)}
+.filters-toggle{display:none}
+@media (max-width:860px){
+  .shop{grid-template-columns:1fr}
+  .filters{position:static;display:none}
+  .filters.open{display:grid}
+  .filters-toggle{display:inline-flex}
+}
+
+/* Product page */
+.pdp{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;padding:24px 0 40px;align-items:start}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.gallery .shot{background:var(--sand);border-radius:var(--radius);aspect-ratio:4/5;display:grid;place-items:center;padding:12%}
+.gallery .shot.main{grid-column:1/-1;aspect-ratio:1/1;padding:9%}
+.gallery .shot.fabric{display:block;padding:0;overflow:hidden;position:relative}
+.gallery .shot.fabric span{position:absolute;left:14px;bottom:14px;background:var(--paper);font-size:12px;padding:4px 10px;border-radius:999px}
+.buy{position:sticky;top:88px;display:grid;gap:22px}
+.buy-top{display:grid;gap:6px}
+.price{font-size:20px;font-variant-numeric:tabular-nums}
+.opt-label{display:flex;justify-content:space-between;font-size:14px;margin-bottom:10px}
+.opt-label b{font-weight:600}
+.colour-btns{display:flex;gap:10px;flex-wrap:wrap}
+.cbtn{width:44px;height:44px;border-radius:50%;border:2px solid transparent;padding:3px;background:none;cursor:pointer}
+.cbtn span{display:block;width:100%;height:100%;border-radius:50%;border:1px solid rgba(0,0,0,.18)}
+.cbtn[aria-pressed="true"]{border-color:var(--ink)}
+.size-btns{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.sbtn{height:48px;border:1px solid #BDB6AA;background:var(--paper);border-radius:var(--radius);cursor:pointer;font-size:15px}
+.sbtn[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.sbtn:disabled{color:#A39C91;background:transparent;text-decoration:line-through;cursor:not-allowed}
+.textbtn{background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:3px;cursor:pointer;font-size:14px;min-height:24px}
+.ship-note{font-size:14px;color:var(--ash);display:grid;gap:4px}
+details{border-top:1px solid var(--line)}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:18px 0;font-weight:500;display:flex;justify-content:space-between;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:22px;font-weight:300}
+details[open] summary::after{content:"–"}
+details .body{padding:0 0 20px;color:var(--ash);font-size:15px;display:grid;gap:8px}
+.err{color:#9B2C1F;font-size:14px;font-weight:500;min-height:20px}
+@media (max-width:900px){.pdp{grid-template-columns:1fr}.buy{position:static}}
+
+/* Drawer + dialog */
+.scrim{position:fixed;inset:0;background:rgba(20,20,20,.38);opacity:0;pointer-events:none;transition:opacity .25s;z-index:60}
+.scrim.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(440px,100%);background:var(--bone);z-index:70;transform:translateX(100%);transition:transform .3s ease;display:flex;flex-direction:column}
+.drawer.on{transform:none}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;padding:16px 20px 16px 24px;border-bottom:1px solid var(--line)}
+.drawer-head h2{font-family:var(--display);font-size:30px}
+.drawer-body{flex:1;overflow:auto;padding:20px 24px;display:grid;gap:18px;align-content:start}
+.drawer-foot{border-top:1px solid var(--line);padding:20px 24px;display:grid;gap:14px}
+.freeship{display:grid;gap:8px;font-size:14px}
+.bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--spruce)}
+.line-item{display:grid;grid-template-columns:84px 1fr auto;gap:14px;align-items:start}
+.line-item .thumb{background:var(--sand);border-radius:var(--radius);aspect-ratio:4/5;padding:10%}
+.line-item .meta{font-size:14px;color:var(--ash)}
+.qty{display:inline-flex;align-items:center;border:1px solid #BDB6AA;border-radius:999px;margin-top:8px}
+.qty button{width:36px;height:36px;border:0;background:none;cursor:pointer;font-size:18px}
+.qty span{min-width:22px;text-align:center;font-variant-numeric:tabular-nums}
+.row{display:flex;justify-content:space-between;gap:12px;font-variant-numeric:tabular-nums}
+.row.total{font-weight:600;font-size:18px}
+dialog{border:0;border-radius:8px;padding:0;max-width:640px;width:calc(100% - 32px);background:var(--bone);color:var(--ink)}
+dialog::backdrop{background:rgba(20,20,20,.45)}
+.dlg{padding:28px;display:grid;gap:18px}
+.tbl-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-weight:600;background:var(--sand)}
+
+/* Checkout */
+.checkout{display:grid;grid-template-columns:1.3fr 1fr;gap:56px;padding:32px 0 40px;align-items:start}
+.co-form{display:grid;gap:30px}
+.co-form fieldset{border:0;padding:0;margin:0;display:grid;gap:14px}
+.co-form legend{font-family:var(--display);font-size:28px;margin-bottom:6px;padding:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.radio{display:flex;gap:12px;align-items:center;border:1px solid #BDB6AA;border-radius:var(--radius);padding:14px 16px;background:var(--paper);cursor:pointer}
+.radio input{width:18px;height:18px;accent-color:var(--spruce)}
+.radio .row{flex:1}
+.proto{background:var(--spruce-soft);border-radius:var(--radius);padding:12px 14px;font-size:14px}
+.summary{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:grid;gap:14px;position:sticky;top:88px}
+@media (max-width:900px){.checkout{grid-template-columns:1fr}.summary{position:static}.two{grid-template-columns:1fr}}
+.done{padding:96px 0;display:grid;gap:18px;justify-items:start;max-width:640px}
+.guide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.guide-grid div{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:grid;gap:8px}
+.guide-grid b{font-weight:600}
+.guide-grid p{color:var(--ash);font-size:15px}
+@media (max-width:860px){.guide-grid{grid-template-columns:1fr}}
+.view{min-height:60vh}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="announce">Free shipping across Canada on orders over $120 &nbsp;·&nbsp; Prices in CAD &nbsp;·&nbsp; Free 30-day returns</div>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+    </button>
+    <a href="#home" class="logo" aria-label="Solenne home">SOLENNE</a>
+    <nav class="nav-links" id="navLinks" aria-label="Main">
+      <a href="#shop" data-nav="all">Shop all</a>
+      <a href="#shop" data-nav="New">New</a>
+      <a href="#shop" data-act="Yoga & Pilates">Yoga &amp; Pilates</a>
+      <a href="#shop" data-act="Gym">Gym</a>
+      <a href="#shop" data-act="Walk & Run">Walk &amp; Run</a>
+      <a href="#coverage-guide">Coverage &amp; Size Guide</a>
+    </nav>
+    <div class="nav-tools">
+      <button class="icon-btn" id="searchBtn" aria-label="Search" aria-expanded="false" aria-controls="searchbar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      </button>
+      <button class="icon-btn" aria-label="Account (coming soon)" title="Account (coming soon)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+      </button>
+      <button class="icon-btn" id="bagBtn" aria-label="Bag, 0 items">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 8h14l-1 13H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span class="count" id="bagCount" hidden>0</span>
+      </button>
+    </div>
+  </div>
+  <div class="searchbar" id="searchbar">
+    <form class="wrap" id="searchForm" role="search">
+      <label for="q" class="kicker" style="align-self:center">Search</label>
+      <input id="q" type="search" placeholder="Leggings, skirts, long sleeves…" autocomplete="off">
+      <button class="btn" type="submit">Search</button>
+    </form>
+  </div>
+</header>
+
+<main id="main" class="view" tabindex="-1"></main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div style="display:grid;gap:12px;align-content:start">
+        <span class="logo" style="font-size:16px">SOLENNE</span>
+        <p style="color:var(--ash);max-width:34ch">Modest activewear for women who move. Modest in cut, bold in motion.</p>
+      </div>
+      <div><h4>Shop</h4><ul>
+        <li><a href="#shop" data-nav="all">All products</a></li>
+        <li><a href="#shop" data-cat="Tops">Tops</a></li>
+        <li><a href="#shop" data-cat="Bottoms">Leggings &amp; pants</a></li>
+        <li><a href="#shop" data-cat="Skirts">Skirts</a></li>
+        <li><a href="#shop" data-cat="Layers">Layers</a></li>
+      </ul></div>
+      <div><h4>Help</h4><ul>
+        <li><a href="#coverage-guide">Coverage &amp; size guide</a></li>
+        <li><a href="#coverage-guide">Shipping in Canada</a></li>
+        <li><a href="#coverage-guide">Returns &amp; exchanges</a></li>
+        <li><a href="#coverage-guide">Accessibility</a></li>
+      </ul></div>
+      <div><h4>Follow</h4><ul>
+        <li><a href="#home">Instagram</a></li>
+        <li><a href="#home">TikTok</a></li>
+        <li><a href="#home">Pinterest</a></li>
+        <li><a href="#home">Facebook</a></li>
+      </ul></div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Solenne · Canada (CAD)</span>
+      <span>Website prototype · ITM550 Advanced E-Business</span>
+    </div>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Your bag" aria-hidden="true">
+  <div class="drawer-head">
+    <h2>Your bag</h2>
+    <button class="icon-btn" id="closeBag" aria-label="Close bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <div class="drawer-body" id="bagBody"></div>
+  <div class="drawer-foot" id="bagFoot"></div>
+</aside>
+
+<dialog id="sizeDlg" aria-labelledby="sizeDlgTitle">
+  <div class="dlg">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+      <h2 class="h-m" id="sizeDlgTitle">Size guide</h2>
+      <button class="icon-btn" id="closeSize" aria-label="Close size guide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+    <p style="color:var(--ash)">Body measurements in centimetres. Between sizes? Size up for a relaxed drape, down for a closer fit.</p>
+    <div class="tbl-wrap" id="sizeTable"></div>
+  </div>
+</dialog>
+
+<script>
+const COLOURS={Onyx:'#1D1D1D',Spruce:'#2E4A42',Fawn:'#B59C83',Mist:'#AAB6BD',Clay:'#9A5A47',Ivory:'#EAE4D8'};
+const SIZES=['XXS','XS','S','M','L','XL','2X','3X'];
+const SIZE_CHART=[['XXS',78,60,86],['XS',82,64,90],['S',87,69,95],['M',92,74,100],['L',98,80,106],['XL',104,87,112],['2X',111,95,119],['3X',118,103,126]];
+const PRODUCTS=[
+ {id:'flow-long-sleeve',name:'Flow Long Sleeve',type:'longsleeve',price:78,cat:'Tops',acts:['Yoga & Pilates','Gym'],colours:['Onyx','Spruce','Fawn','Mist'],tag:'Bestseller',soldOut:[],
+  blurb:'Our everyday long sleeve. Soft, sweat-wicking and cut to stay in place through every stretch.',
+  cov:[['Sleeve','Full length, thumbholes',4],['Neckline','High crew',4],['Hem','Covers the hip',3],['Fit','Skims the body',3]],
+  fabric:'Brushed nylon and elastane, 4-way stretch, sweat-wicking.',opacity:'Opaque in every colour. Bend-tested under studio light.'},
+ {id:'stride-tunic',name:'Stride Tunic',type:'tunic',price:84,cat:'Tops',acts:['Walk & Run','Gym'],colours:['Spruce','Onyx','Clay'],tag:'New',soldOut:['XXS'],
+  blurb:'A longer line for leggings days. Side vents give your stride room without lifting the hem.',
+  cov:[['Sleeve','Full length',4],['Neckline','High crew',4],['Hem','Mid-thigh, side vents',4],['Fit','Relaxed through the hip',2]],
+  fabric:'Lightweight recycled polyester, quick-dry, anti-cling finish.',opacity:'Opaque. Double layer across the back.'},
+ {id:'layer-mock-neck',name:'Layer Mock Neck',type:'mockneck',price:72,cat:'Tops',acts:['Yoga & Pilates','Everyday'],colours:['Ivory','Onyx','Mist'],tag:'',soldOut:[],
+  blurb:'A fitted base layer with a soft mock neck. Wear it alone or under anything with a lower neckline.',
+  cov:[['Sleeve','Full length',4],['Neckline','Mock neck',4],['Hem','Below the hip',3],['Fit','Close base layer',4]],
+  fabric:'Modal blend with stretch, breathable, tag-free.',opacity:'Opaque, including Ivory. Lined at the chest.'},
+ {id:'ease-half-zip',name:'Ease Half-Zip',type:'halfzip',price:112,cat:'Layers',acts:['Walk & Run','Everyday'],colours:['Fawn','Onyx','Spruce'],tag:'',soldOut:['3X'],
+  blurb:'A warm mid-layer for cold walks and the commute to class. Zip it up and the collar covers the neck.',
+  cov:[['Sleeve','Full length, thumbholes',4],['Neckline','Funnel neck when zipped',4],['Hem','Covers the hip',3],['Fit','Relaxed',2]],
+  fabric:'Brushed fleece back, smooth face, zip garage at chin.',opacity:'Opaque mid-weight knit.'},
+ {id:'shelter-jacket',name:'Shelter Light Jacket',type:'jacket',price:138,cat:'Layers',acts:['Walk & Run','Everyday'],colours:['Onyx','Mist','Clay'],tag:'New',soldOut:[],
+  blurb:'Water-resistant, packable and long enough to cover. Made for Canadian shoulder seasons.',
+  cov:[['Sleeve','Full length, adjustable cuff',4],['Neckline','Stand collar with hood',4],['Hem','Mid-thigh',4],['Fit','Relaxed over layers',2]],
+  fabric:'Water-resistant ripstop, mesh lining, packs into its pocket.',opacity:'Fully opaque shell.'},
+ {id:'anchor-legging',name:'Anchor Legging 28"',type:'leggings',price:98,cat:'Bottoms',acts:['Yoga & Pilates','Gym','Walk & Run','Everyday'],colours:['Onyx','Spruce','Fawn','Clay'],tag:'Bestseller',soldOut:[],
+  blurb:'Squat-proof, high-rise and full length. The legging everything else in the collection is built around.',
+  cov:[['Rise','High rise',4],['Length','Full to ankle (28")',4],['Opacity','Squat-proof',4],['Fit','Supportive hold',3]],
+  fabric:'Dense interlock nylon, 4-way stretch, gusset for movement.',opacity:'Squat-proof in every colour, tested in a deep squat under bright light.'},
+ {id:'drift-wide-leg',name:'Drift Wide-Leg Pant',type:'widepant',price:108,cat:'Bottoms',acts:['Yoga & Pilates','Everyday'],colours:['Onyx','Fawn','Mist'],tag:'',soldOut:[],
+  blurb:'Flowy enough for the street, stretchy enough for the mat. Never clings.',
+  cov:[['Rise','High rise',4],['Length','Floor-grazing',4],['Opacity','Opaque',4],['Fit','Loose through the leg',1]],
+  fabric:'Fluid crepe knit with stretch, wrinkle-resistant.',opacity:'Opaque, no lining needed.'},
+ {id:'motion-midi-skirt',name:'Motion Midi Skirt',type:'midiskirt',price:96,cat:'Skirts',acts:['Walk & Run','Gym','Everyday'],colours:['Onyx','Spruce','Clay'],tag:'Bestseller',soldOut:['XXS'],
+  blurb:'A midi skirt with full-length leggings built in. Run, lift and climb stairs without a second thought.',
+  cov:[['Length','Mid-calf',4],['Built-in','Full-length legging',4],['Opacity','Opaque, lined',4],['Fit','A-line, moves with you',2]],
+  fabric:'Woven stretch shell over squat-proof legging liner.',opacity:'Opaque shell and liner.'},
+ {id:'studio-wrap-skirt',name:'Studio Wrap Skirt',type:'wrapskirt',price:88,cat:'Skirts',acts:['Yoga & Pilates'],colours:['Spruce','Fawn','Onyx'],tag:'New',soldOut:[],
+  blurb:'Wrap it over leggings for class. A hidden snap keeps the overlap closed through lunges and twists.',
+  cov:[['Length','Below the knee',3],['Overlap','Hidden snap closure',4],['Opacity','Opaque',4],['Fit','Adjustable tie',3]],
+  fabric:'Soft jersey with stretch, adjustable waist tie.',opacity:'Opaque single layer.'}
+];
+const PROV={AB:['Alberta',5],BC:['British Columbia',12],MB:['Manitoba',12],NB:['New Brunswick',15],NL:['Newfoundland and Labrador',15],NS:['Nova Scotia',14],NT:['Northwest Territories',5],NU:['Nunavut',5],ON:['Ontario',13],PE:['Prince Edward Island',15],QC:['Quebec',14.975],SK:['Saskatchewan',11],YT:['Yukon',5]};
+const FREE_SHIP=120;
+
+/* ---------- Garment drawings ---------- */
+function shade(hex,amt){const n=parseInt(hex.slice(1),16);let r=n>>16,g=n>>8&255,b=n&255;const f=v=>Math.max(0,Math.min(255,Math.round(v+amt*255)));return '#'+[f(r),f(g),f(b)].map(v=>v.toString(16).padStart(2,'0')).join('')}
+const TOP='M72 28 C86 40 114 40 128 28 L158 38 C166 60 178 110 186 150 L168 156 L146 84 L148 196 L52 196 L54 84 L32 156 L14 150 C22 110 34 60 42 38 Z';
+const TUNIC='M72 28 C86 40 114 40 128 28 L158 38 C166 60 178 110 186 150 L168 156 L146 84 L154 222 L46 222 L54 84 L32 156 L14 150 C22 110 34 60 42 38 Z';
+const JACKET='M70 30 C84 38 116 38 130 30 L160 40 C168 62 180 112 188 152 L170 158 L148 86 L152 214 L48 214 L52 86 L30 158 L12 152 C20 112 32 62 40 40 Z';
+function garment(type,colour,label){
+  const c=COLOURS[colour]||colour, s=shade(c,c==='#EAE4D8'?-.22:-.12), hi=shade(c,.06);
+  const st=`stroke="${s}" stroke-width="1.6" stroke-linejoin="round"`;
+  let p='';
+  switch(type){
+    case 'longsleeve': p=`<path d="${TOP}" fill="${c}" ${st}/><path d="M74 29 C88 42 112 42 126 29" fill="none" ${st}/>`;break;
+    case 'tunic': p=`<path d="${TUNIC}" fill="${c}" ${st}/><path d="M74 29 C88 42 112 42 126 29" fill="none" ${st}/><path d="M50 196 L54 222 M150 196 L146 222" ${st} fill="none"/>`;break;
+    case 'mockneck': p=`<path d="${TOP}" fill="${c}" ${st}/><path d="M82 14 L118 14 L122 31 C108 37 92 37 78 31 Z" fill="${hi}" ${st}/>`;break;
+    case 'halfzip': p=`<path d="${TOP}" fill="${c}" ${st}/><path d="M80 12 L120 12 L126 30 C110 38 90 38 74 30 Z" fill="${hi}" ${st}/><path d="M100 12 L100 96" ${st} fill="none"/><circle cx="100" cy="96" r="3.5" fill="${s}"/>`;break;
+    case 'jacket': p=`<path d="M74 32 C70 2 130 2 126 32" fill="${hi}" ${st}/><path d="${JACKET}" fill="${c}" ${st}/><path d="M100 34 L100 214" ${st} fill="none"/><path d="M62 160 L84 160 M116 160 L138 160" ${st} fill="none"/>`;break;
+    case 'leggings': p=`<path d="M58 22 L142 22 L150 226 L114 226 L100 86 L86 226 L50 226 Z" fill="${c}" ${st}/><path d="M58 22 L142 22 L141 44 L59 44 Z" fill="${hi}" ${st}/>`;break;
+    case 'widepant': p=`<path d="M60 22 L140 22 L172 226 L110 226 L100 92 L90 226 L28 226 Z" fill="${c}" ${st}/><path d="M60 22 L140 22 L139 42 L61 42 Z" fill="${hi}" ${st}/>`;break;
+    case 'midiskirt': p=`<path d="M84 210 L88 232 L98 232 L97 210 M116 210 L112 232 L102 232 L103 210" fill="#1D1D1D"/><path d="M64 38 L136 38 L168 214 C130 223 70 223 32 214 Z" fill="${c}" ${st}/><path d="M64 22 L136 22 L136 38 L64 38 Z" fill="${hi}" ${st}/><path d="M86 40 L74 217 M114 40 L126 217" stroke="${s}" stroke-width="1" fill="none" opacity=".7"/>`;break;
+    case 'wrapskirt': p=`<path d="M64 38 L136 38 L162 214 C130 221 70 221 38 214 Z" fill="${c}" ${st}/><path d="M64 24 L136 24 L136 38 L64 38 Z" fill="${hi}" ${st}/><path d="M124 38 C114 110 98 168 72 218" fill="none" ${st}/><path d="M132 30 L146 62 M132 30 L138 66" ${st} fill="none"/>`;break;
+  }
+  return `<svg viewBox="0 0 200 240" role="img" aria-label="${label||''}"><ellipse cx="100" cy="234" rx="66" ry="4" fill="rgba(0,0,0,.08)"/>${p}</svg>`;
+}
+
+/* ---------- State ---------- */
+const state={filters:{cat:new Set(),acts:new Set(),colours:new Set(),sizes:new Set(),tag:''},sort:'featured',query:'',bag:[],sel:{}};
+try{state.bag=JSON.parse(localStorage.getItem('solenne-bag')||'[]')}catch(e){state.bag=[]}
+function saveBag(){try{localStorage.setItem('solenne-bag',JSON.stringify(state.bag))}catch(e){}}
+const $=s=>document.querySelector(s);
+const money=n=>'$'+n.toFixed(2).replace(/\.00$/,'');
+const money2=n=>'$'+n.toFixed(2);
+const byId=id=>PRODUCTS.find(p=>p.id===id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* ---------- Pieces ---------- */
+function card(p){
+  return `<a class="card" href="#p-${p.id}">
+    <div class="card-img">${p.tag?`<span class="badge">${p.tag}</span>`:''}${garment(p.type,p.colours[0],p.name+' in '+p.colours[0])}</div>
+    <div class="card-name">${p.name}</div>
+    <div class="card-meta"><span class="swatches">${p.colours.map(c=>`<span class="dot" style="background:${COLOURS[c]}" title="${c}"></span>`).join('')}</span><span class="card-price">${money(p.price)}</span></div>
+  </a>`;
+}
+function meter(n){return `<span class="meter" aria-label="${n} of 4">${[1,2,3,4].map(i=>`<i class="${i<=n?'on':''}"></i>`).join('')}</span>`}
+function covCard(p){
+  return `<div class="covcard"><div class="covcard-head"><b>Coverage card</b><span class="kicker">${p.name}</span></div>
+  ${p.cov.map(r=>`<div class="covrow"><span>${r[0]}</span><span>${r[1]}</span>${meter(r[2])}</div>`).join('')}</div>`;
+}
+
+/* ---------- Views ---------- */
+function viewHome(){
+  const best=PRODUCTS.filter(p=>p.tag==='Bestseller').concat(PRODUCTS.filter(p=>p.tag==='New')).slice(0,4);
+  const acts=[['Yoga & Pilates','leggings','Spruce','Stretch fully covered'],['Gym','longsleeve','Onyx','Lift without adjusting'],['Walk & Run','midiskirt','Clay','Skirts that keep pace'],['Everyday','widepant','Fawn','From class to coffee']];
+  return `
+  <section class="wrap hero">
+    <div class="hero-copy">
+      <span class="kicker">The Fall 2026 collection</span>
+      <h1 class="h-xl">Modest in cut.<br><em>Bold in motion.</em></h1>
+      <p class="lede">Activewear with real coverage, designed for women in Canada who do yoga, lift, walk and run, without trading comfort or style for it.</p>
+      <div class="hero-ctas"><a class="btn" href="#shop" data-nav="all">Shop the collection</a><a class="btn ghost" href="#coverage-guide">Find your coverage</a></div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="g g1">${garment('tunic','Fawn')}</div>
+      <div class="g g2">${garment('leggings','Onyx')}</div>
+      <div class="g g3">${garment('midiskirt','Clay')}</div>
+      <div class="hero-tag"><b>Stride Tunic + Anchor Legging</b>Full sleeve, mid-thigh hem, squat-proof.</div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="promise">
+    <div><b>Full coverage, every piece</b><span>Long sleeves, longer hems, high rises.</span></div>
+    <div><b>Opaque, bend-tested</b><span>No see-through moments, in any colour.</span></div>
+    <div><b>Prices in CAD</b><span>No surprise conversion at checkout.</span></div>
+    <div><b>Free 30-day returns</b><span>Exchange sizes online in minutes.</span></div>
+  </div></div>
+
+  <section class="wrap section">
+    <div class="section-head"><h2 class="h-l">Shop by how you move</h2><a class="link" href="#shop" data-nav="all">Shop all</a></div>
+    <div class="acts">${acts.map(a=>`<a class="act" href="#shop" data-act="${a[0]}"><div class="g">${garment(a[1],a[2])}</div><h3>${a[0]}</h3><p>${a[3]}</p></a>`).join('')}</div>
+  </section>
+
+  <section class="wrap" style="padding-bottom:88px">
+    <div class="section-head"><h2 class="h-l">Most loved</h2><a class="link" href="#shop" data-nav="all">View all</a></div>
+    <div class="grid">${best.map(card).join('')}</div>
+  </section>
+
+  <section class="wrap promos">
+    <div class="promo light">
+      <span class="kicker">New</span>
+      <h2 class="h-l">Motion Midi Skirt</h2>
+      <p class="sub">The skirt that runs. Leggings built in.</p>
+      <div class="links"><a class="link" href="#p-motion-midi-skirt">Learn more</a><a class="link" href="#p-motion-midi-skirt">Buy from $96</a></div>
+      <div class="art">${garment('midiskirt','Spruce','Motion Midi Skirt in Spruce')}</div>
+    </div>
+    <div class="promo dark">
+      <span class="kicker" style="color:#C9C4BB">For Canadian seasons</span>
+      <h2 class="h-l">Shelter Light Jacket</h2>
+      <p class="sub">Water-resistant. Mid-thigh. Packs into its pocket.</p>
+      <div class="links"><a class="link" href="#p-shelter-jacket">Learn more</a><a class="link" href="#p-shelter-jacket">Buy from $138</a></div>
+      <div class="art">${garment('jacket','Mist','Shelter Light Jacket in Mist')}</div>
+    </div>
+  </section>
+
+  <section class="wrap section">
+    <div class="feature">
+      <div class="feature-copy">
+        <span class="kicker">The coverage card</span>
+        <h2 class="h-l">Know exactly what you're getting before you buy.</h2>
+        <p class="lede">Every product page shows how much it covers, rated the same way on every piece. No guessing from a photo, no ordering three sizes to find out.</p>
+        <ul>
+          <li>Sleeve, neckline, hem and rise, rated from 1 to 4</li>
+          <li>Opacity tested in a deep squat under bright light</li>
+          <li>Fit described in plain words: skims, relaxed or close</li>
+        </ul>
+        <a class="link" href="#coverage-guide">How we rate coverage</a>
+      </div>
+      ${covCard(byId('flow-long-sleeve'))}
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="story">
+      <div style="display:grid;gap:18px;align-content:start">
+        <span class="kicker" style="color:#B9CCC4">Why Solenne</span>
+        <h2 class="h-l">Being active should never mean choosing between your values and your workout.</h2>
+      </div>
+      <div style="display:grid;gap:18px;align-content:end">
+        <p>Moving builds confidence, health and community. But most activewear is cut short, tight and sheer, and modest options are often an afterthought.</p>
+        <p>Solenne is built around coverage from the first sketch, for women who dress modestly for faith, culture, comfort or simply because they prefer it.</p>
+        <div><a class="btn light" href="#shop" data-nav="all">Explore the collection</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap section">
+    <div class="section-head"><div style="display:grid;gap:8px"><h2 class="h-l">#WearSolenne</h2><p class="lede">Tag us on Instagram or TikTok to be featured. Shoppable customer photos arrive at launch.</p></div></div>
+    <div class="ugc" aria-hidden="true">
+      <div style="background:#DCE4E0">${garment('longsleeve','Spruce')}</div>
+      <div style="background:var(--sand)">${garment('wrapskirt','Fawn')}</div>
+      <div style="background:#E6DAD4">${garment('halfzip','Clay')}</div>
+      <div style="background:#E3E6E8">${garment('widepant','Mist')}</div>
+      <div style="background:var(--sand)">${garment('mockneck','Ivory')}</div>
+    </div>
+  </section>
+
+  <section class="wrap"><div class="news">
+    <div style="display:grid;gap:10px"><h2 class="h-m">First to know about new drops</h2><p style="color:var(--ash)">Limited releases, restocks and member-only early access. One or two emails a month.</p></div>
+    <form id="newsForm" novalidate>
+      <div class="field"><label for="newsEmail">Email address</label><input id="newsEmail" type="email" autocomplete="email" placeholder="you@example.com"></div>
+      <button class="btn" type="submit" style="align-self:end">Sign up</button>
+      <p class="note" id="newsNote" role="status" style="flex-basis:100%"></p>
+    </form>
+  </div></section>`;
+}
+
+function filtered(){
+  const f=state.filters,q=state.query.trim().toLowerCase();
+  let list=PRODUCTS.filter(p=>
+    (!f.cat.size||f.cat.has(p.cat))&&
+    (!f.acts.size||p.acts.some(a=>f.acts.has(a)))&&
+    (!f.colours.size||p.colours.some(c=>f.colours.has(c)))&&
+    (!f.sizes.size||[...f.sizes].some(s=>!p.soldOut.includes(s)))&&
+    (!f.tag||p.tag===f.tag)&&
+    (!q||(p.name+' '+p.cat+' '+p.acts.join(' ')+' '+p.type+' '+p.colours.join(' ')).toLowerCase().includes(q.replace(/s$/,'')))
+  );
+  if(state.sort==='low')list.sort((a,b)=>a.price-b.price);
+  if(state.sort==='high')list.sort((a,b)=>b.price-a.price);
+  return list;
+}
+function chipGroup(title,key,values,dots){
+  return `<div class="fgroup"><h3>${title}</h3><div class="chips">${values.map(v=>`<button class="chip" data-f="${key}" data-v="${esc(v)}" aria-pressed="${state.filters[key].has(v)}">${dots?`<span class="dot" style="background:${COLOURS[v]}"></span>`:''}${esc(v)}</button>`).join('')}</div></div>`;
+}
+function viewShop(){
+  const f=state.filters;
+  const title=state.query?`Results for “${esc(state.query)}”`:f.tag?f.tag+' arrivals':f.acts.size===1?[...f.acts][0]:f.cat.size===1?[...f.cat][0]:'All activewear';
+  return `<section class="wrap">
+    <div class="shop-head"><nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a> / Shop</nav><h1 class="h-l">${title}</h1></div>
+    <div class="shop">
+      <div>
+        <button class="btn ghost filters-toggle" id="filtersToggle" aria-expanded="false" aria-controls="filters" style="margin-bottom:16px">Filters</button>
+        <div class="filters" id="filters">
+          ${chipGroup('Category','cat',['Tops','Bottoms','Skirts','Layers'])}
+          ${chipGroup('Activity','acts',['Yoga & Pilates','Gym','Walk & Run','Everyday'])}
+          ${chipGroup('Size','sizes',SIZES)}
+          ${chipGroup('Colour','colours',Object.keys(COLOURS),true)}
+          <div class="fgroup"><button class="textbtn" id="clearF">Clear all filters</button></div>
+        </div>
+      </div>
+      <div>
+        <div class="toolbar"><span id="resultCount" style="color:var(--ash)" role="status"></span>
+          <label style="display:flex;gap:10px;align-items:center;font-size:14px">Sort
+            <select id="sort"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option></select></label>
+        </div>
+        <div class="grid three" id="results"></div>
+      </div>
+    </div>
+  </section>`;
+}
+function renderResults(){
+  const list=filtered();
+  $('#resultCount').textContent=list.length+(list.length===1?' product':' products');
+  $('#results').innerHTML=list.length?list.map(card).join(''):`<p class="empty">Nothing matches those filters yet. Try removing one, or <button class="textbtn" id="clearF2">clear all filters</button>.</p>`;
+}
+
+function viewProduct(p){
+  const sel=state.sel[p.id]||(state.sel[p.id]={colour:p.colours[0],size:''});
+  const others=PRODUCTS.filter(x=>x.id!==p.id&&x.acts.some(a=>p.acts.includes(a))).slice(0,4);
+  const alt=p.colours[1]||p.colours[0];
+  return `<section class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb" style="padding-top:28px"><a href="#home">Home</a> / <a href="#shop" data-cat="${p.cat}">${p.cat}</a> / ${p.name}</nav>
+    <div class="pdp">
+      <div class="gallery">
+        <div class="shot main" id="mainShot">${garment(p.type,sel.colour,p.name+' in '+sel.colour+', front view')}</div>
+        <div class="shot">${garment(p.type,alt,p.name+' in '+alt)}</div>
+        <div class="shot fabric" id="fabricShot" style="background:${COLOURS[sel.colour]}" role="img" aria-label="Fabric close-up in ${sel.colour}"><span>Fabric close-up</span></div>
+      </div>
+      <div class="buy">
+        <div class="buy-top">
+          ${p.tag?`<span class="kicker">${p.tag}</span>`:''}
+          <h1 class="h-l">${p.name}</h1>
+          <div class="price">${money(p.price)} CAD</div>
+          <p style="color:var(--ash);margin-top:6px">${p.blurb}</p>
+        </div>
+        <div>
+          <div class="opt-label"><span>Colour: <b id="colourName">${sel.colour}</b></span></div>
+          <div class="colour-btns">${p.colours.map(c=>`<button class="cbtn" data-colour="${c}" aria-label="${c}" aria-pressed="${c===sel.colour}"><span style="background:${COLOURS[c]}"></span></button>`).join('')}</div>
+        </div>
+        <div>
+          <div class="opt-label"><span>Size${sel.size?`: <b>${sel.size}</b>`:''}</span><button class="textbtn" id="openSize">Size guide</button></div>
+          <div class="size-btns">${SIZES.map(s=>{const out=p.soldOut.includes(s);return `<button class="sbtn" data-size="${s}" aria-pressed="${s===sel.size}" ${out?'disabled aria-label="'+s+', sold out"':''}>${s}</button>`}).join('')}</div>
+          <p class="err" id="sizeErr" role="alert"></p>
+        </div>
+        <button class="btn block" id="addBtn">Add to bag · ${money(p.price)}</button>
+        <div class="ship-note"><span>Free shipping on orders over $120. Ships from Canada in 2 to 5 business days.</span><span>Free returns and size exchanges within 30 days.</span></div>
+        ${covCard(p)}
+        <div>
+          <details open><summary>Fabric &amp; opacity</summary><div class="body"><p>${p.fabric}</p><p>${p.opacity}</p></div></details>
+          <details><summary>Fit &amp; sizing</summary><div class="body"><p>Sizes XXS to 3X. ${p.cov.find(r=>r[0]==='Fit')[1]}.</p><p>Not sure? Our <button class="textbtn" id="openSize2">size guide</button> lists bust, waist and hip in centimetres.</p></div></details>
+          <details><summary>Shipping &amp; returns</summary><div class="body"><p>All prices in Canadian dollars. Duties never apply because we ship within Canada.</p><p>Start a return or exchange online. Unworn items with tags, within 30 days.</p></div></details>
+          <details><summary>Reviews &amp; customer photos</summary><div class="body"><p>Reviews open at launch. Customers will be able to add photos and say how the coverage worked for them.</p></div></details>
+        </div>
+      </div>
+    </div>
+    <div class="section-head" style="margin-top:40px"><h2 class="h-m">Complete the look</h2></div>
+    <div class="grid">${others.map(card).join('')}</div>
+  </section>`;
+}
+
+function totals(prov){
+  const sub=state.bag.reduce((s,i)=>s+byId(i.id).price*i.qty,0);
+  return {sub,count:state.bag.reduce((s,i)=>s+i.qty,0)};
+}
+function viewCheckout(){
+  if(!state.bag.length)return `<section class="wrap done"><h1 class="h-l">Your bag is empty</h1><p class="lede">Add a few pieces, then come back to check out.</p><a class="btn" href="#shop" data-nav="all">Shop the collection</a></section>`;
+  return `<section class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb" style="padding-top:28px"><a href="#home">Home</a> / Checkout</nav>
+    <div class="checkout">
+      <form class="co-form" id="coForm" novalidate>
+        <p class="proto">This is a website prototype. No payment is taken and no order is shipped.</p>
+        <fieldset><legend>Contact</legend>
+          <div class="field"><label for="coEmail">Email</label><input id="coEmail" type="email" autocomplete="email" required></div>
+        </fieldset>
+        <fieldset><legend>Shipping address</legend>
+          <div class="two"><div class="field"><label for="coFirst">First name</label><input id="coFirst" autocomplete="given-name" required></div><div class="field"><label for="coLast">Last name</label><input id="coLast" autocomplete="family-name" required></div></div>
+          <div class="field"><label for="coAddr">Street address</label><input id="coAddr" autocomplete="street-address" required></div>
+          <div class="two"><div class="field"><label for="coCity">City</label><input id="coCity" autocomplete="address-level2" required></div>
+          <div class="field"><label for="coProv">Province or territory</label><select id="coProv" autocomplete="address-level1">${Object.entries(PROV).map(([k,v])=>`<option value="${k}" ${k==='ON'?'selected':''}>${v[0]}</option>`).join('')}</select></div></div>
+          <div class="field" style="max-width:240px"><label for="coPost">Postal code</label><input id="coPost" autocomplete="postal-code" placeholder="M5J 2N1" required></div>
+        </fieldset>
+        <fieldset><legend>Delivery</legend>
+          <label class="radio"><input type="radio" name="ship" value="std" checked><span class="row"><span>Standard · 2 to 5 business days</span><span id="stdPrice"></span></span></label>
+          <label class="radio"><input type="radio" name="ship" value="exp"><span class="row"><span>Express · 1 to 2 business days</span><span>$18</span></span></label>
+        </fieldset>
+        <fieldset><legend>Payment</legend>
+          <div class="field"><label for="coCard">Card number</label><input id="coCard" inputmode="numeric" autocomplete="cc-number" placeholder="Prototype: any number works"></div>
+          <div class="two"><div class="field"><label for="coExp">Expiry</label><input id="coExp" autocomplete="cc-exp" placeholder="MM / YY"></div><div class="field"><label for="coCvc">Security code</label><input id="coCvc" inputmode="numeric" autocomplete="cc-csc" placeholder="CVC"></div></div>
+        </fieldset>
+        <p class="err" id="coErr" role="alert"></p>
+        <button class="btn block" type="submit" id="placeBtn">Place order</button>
+      </form>
+      <aside class="summary" aria-label="Order summary" id="summary"></aside>
+    </div>
+  </section>`;
+}
+function renderSummary(){
+  const prov=$('#coProv').value, exp=document.querySelector('input[name=ship]:checked').value==='exp';
+  const {sub}=totals();
+  const ship=exp?18:(sub>=FREE_SHIP?0:9);
+  const tax=(sub+ship)*PROV[prov][1]/100;
+  $('#stdPrice').textContent=sub>=FREE_SHIP?'Free':'$9';
+  $('#summary').innerHTML=`<h2 class="h-m">Order summary</h2>
+    ${state.bag.map(i=>{const p=byId(i.id);return `<div class="line-item"><div class="thumb">${garment(p.type,i.colour,'')}</div><div><div>${p.name}</div><div class="meta">${i.colour} · ${i.size} · Qty ${i.qty}</div></div><div>${money2(p.price*i.qty)}</div></div>`}).join('')}
+    <div style="border-top:1px solid var(--line);padding-top:14px;display:grid;gap:8px">
+      <div class="row"><span>Subtotal</span><span>${money2(sub)}</span></div>
+      <div class="row"><span>Shipping</span><span>${ship?money2(ship):'Free'}</span></div>
+      <div class="row"><span>Estimated tax (${prov} ${PROV[prov][1]}%)</span><span>${money2(tax)}</span></div>
+      <div class="row total"><span>Total (CAD)</span><span>${money2(sub+ship+tax)}</span></div>
+    </div>`;
+}
+function viewGuide(){
+  return `<section class="wrap">
+    <div class="shop-head"><nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a> / Coverage &amp; size guide</nav><h1 class="h-l">Coverage &amp; size guide</h1><p class="lede">How we rate coverage, how to find your size, and how shipping and returns work in Canada.</p></div>
+    <div class="guide-grid">
+      <div><b>1 · Light</b><p>Some coverage. Usually a fit note, for example a relaxed leg.</p>${meter(1)}</div>
+      <div><b>2 to 3 · Moderate to full</b><p>Covers the area well for most movement, such as a hem that covers the hip.</p>${meter(3)}</div>
+      <div><b>4 · Maximum</b><p>Full sleeves, high necklines, mid-thigh or longer hems, squat-proof fabric.</p>${meter(4)}</div>
+    </div>
+    <div class="section-head" style="margin-top:56px"><h2 class="h-m">Size chart (cm)</h2></div>
+    <div class="tbl-wrap">${sizeTable()}</div>
+    <p style="color:var(--ash);margin-top:12px">Leggings come in a 28" inseam, which reaches the ankle on most heights between 157 and 175 cm.</p>
+    <div class="guide-grid" style="margin-top:56px">
+      <div><b>Shipping in Canada</b><p>Free standard shipping over $120, otherwise $9. Express is $18. Prices in CAD, no duties.</p></div>
+      <div><b>Returns &amp; exchanges</b><p>Free within 30 days for unworn items with tags. Start online and print the label at home or at a post office.</p></div>
+      <div><b>Accessibility</b><p>High-contrast text, descriptions on every image, large tap targets and full keyboard support. Tag-free and flat-seam pieces are marked on each product.</p></div>
+    </div>
+  </section>`;
+}
+function sizeTable(){return `<table><thead><tr><th>Size</th><th>Bust</th><th>Waist</th><th>Hip</th></tr></thead><tbody>${SIZE_CHART.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td></tr>`).join('')}</tbody></table>`}
+function viewDone(n){
+  return `<section class="wrap done"><span class="kicker">Order ${n}</span><h1 class="h-l">Thank you. Your order is in.</h1><p class="lede">In the live store you would get a confirmation email with tracking. This prototype stops here.</p><a class="btn" href="#home">Back to home</a></section>`;
+}
+
+/* ---------- Bag ---------- */
+function renderBag(){
+  const {sub,count}=totals();
+  $('#bagCount').textContent=count;$('#bagCount').hidden=!count;
+  $('#bagBtn').setAttribute('aria-label',`Bag, ${count} item${count===1?'':'s'}`);
+  if(!state.bag.length){
+    $('#bagBody').innerHTML=`<p style="color:var(--ash)">Your bag is empty.</p><a class="btn ghost" href="#shop" data-nav="all">Start shopping</a>`;
+    $('#bagFoot').innerHTML='';return;
+  }
+  const left=Math.max(0,FREE_SHIP-sub);
+  $('#bagBody').innerHTML=`<div class="freeship"><span>${left?`You're ${money2(left)} away from free shipping.`:'You have free shipping.'}</span><div class="bar"><i style="width:${Math.min(100,sub/FREE_SHIP*100)}%"></i></div></div>`+
+    state.bag.map((i,idx)=>{const p=byId(i.id);return `<div class="line-item"><a class="thumb" href="#p-${p.id}">${garment(p.type,i.colour,p.name)}</a><div><div>${p.name}</div><div class="meta">${i.colour} · Size ${i.size}</div>
+      <div class="qty"><button data-dec="${idx}" aria-label="Decrease quantity">−</button><span>${i.qty}</span><button data-inc="${idx}" aria-label="Increase quantity">+</button></div></div>
+      <div style="display:grid;justify-items:end;gap:8px"><span>${money2(p.price*i.qty)}</span><button class="textbtn" data-rm="${idx}">Remove</button></div></div>`}).join('');
+  $('#bagFoot').innerHTML=`<div class="row total"><span>Subtotal</span><span>${money2(sub)} CAD</span></div><span style="font-size:13px;color:var(--ash)">Shipping and tax calculated at checkout.</span><a class="btn block" href="#checkout" id="toCheckout">Checkout</a>`;
+}
+let lastFocus=null;
+function openBag(){lastFocus=document.activeElement;renderBag();$('#drawer').classList.add('on');$('#scrim').classList.add('on');$('#drawer').setAttribute('aria-hidden','false');$('#closeBag').focus()}
+function closeBag(){$('#drawer').classList.remove('on');$('#scrim').classList.remove('on');$('#drawer').setAttribute('aria-hidden','true');if(lastFocus)lastFocus.focus()}
+
+/* ---------- Router ---------- */
+function route(){
+  const h=location.hash.slice(1)||'home';
+  const main=$('#main');
+  closeBag(); $('#navLinks').classList.remove('open');
+  if(h==='shop'){main.innerHTML=viewShop();$('#sort').value=state.sort;renderResults();}
+  else if(h.startsWith('p-')&&byId(h.slice(2))){main.innerHTML=viewProduct(byId(h.slice(2)));}
+  else if(h==='checkout'){main.innerHTML=viewCheckout();if(state.bag.length)renderSummary();}
+  else if(h==='coverage-guide'){main.innerHTML=viewGuide();}
+  else if(h==='order-placed'){main.innerHTML=viewDone(state.lastOrder||'SOL-10421');}
+  else{main.innerHTML=viewHome();}
+  window.scrollTo(0,0);
+  document.title=h==='home'?'Solenne Activewear':(main.querySelector('h1')?.textContent+' · Solenne');
+}
+window.addEventListener('hashchange',route);
+
+/* ---------- Events ---------- */
+function resetFilters(){const f=state.filters;f.cat.clear();f.acts.clear();f.colours.clear();f.sizes.clear();f.tag='';state.query='';}
+document.addEventListener('click',e=>{
+  const a=e.target.closest('[data-nav],[data-act],[data-cat]');
+  if(a){resetFilters();
+    if(a.dataset.act)state.filters.acts.add(a.dataset.act);
+    if(a.dataset.cat)state.filters.cat.add(a.dataset.cat);
+    if(a.dataset.nav==='New')state.filters.tag='New';
+    if(location.hash==='#shop'){e.preventDefault();route();}
+    return;}
+  const chip=e.target.closest('.chip');
+  if(chip){const set=state.filters[chip.dataset.f],v=chip.dataset.v;set.has(v)?set.delete(v):set.add(v);chip.setAttribute('aria-pressed',set.has(v));state.query='';renderResults();return;}
+  if(e.target.closest('#clearF,#clearF2')){resetFilters();route();return;}
+  if(e.target.closest('#filtersToggle')){const f=$('#filters'),o=f.classList.toggle('open');e.target.closest('#filtersToggle').setAttribute('aria-expanded',o);return;}
+  const cb=e.target.closest('.cbtn');
+  if(cb){const id=location.hash.slice(3),p=byId(id),sel=state.sel[id];sel.colour=cb.dataset.colour;
+    document.querySelectorAll('.cbtn').forEach(b=>b.setAttribute('aria-pressed',b===cb));
+    $('#colourName').textContent=sel.colour;$('#mainShot').innerHTML=garment(p.type,sel.colour,p.name+' in '+sel.colour+', front view');
+    $('#fabricShot').style.background=COLOURS[sel.colour];$('#fabricShot').setAttribute('aria-label','Fabric close-up in '+sel.colour);return;}
+  const sb=e.target.closest('.sbtn');
+  if(sb){const id=location.hash.slice(3);state.sel[id].size=sb.dataset.size;document.querySelectorAll('.sbtn').forEach(b=>b.setAttribute('aria-pressed',b===sb));$('#sizeErr').textContent='';
+    sb.closest('div').previousElementSibling.querySelector('span').innerHTML=`Size: <b>${sb.dataset.size}</b>`;return;}
+  if(e.target.closest('#addBtn')){const id=location.hash.slice(3),sel=state.sel[id];
+    if(!sel.size){$('#sizeErr').textContent='Choose a size to add this to your bag.';return;}
+    const ex=state.bag.find(i=>i.id===id&&i.colour===sel.colour&&i.size===sel.size);ex?ex.qty++:state.bag.push({id,colour:sel.colour,size:sel.size,qty:1});saveBag();openBag();return;}
+  if(e.target.closest('#openSize,#openSize2')){$('#sizeTable').innerHTML=sizeTable();try{$('#sizeDlg').showModal()}catch(err){$('#sizeDlg').setAttribute('open','')}return;}
+  if(e.target.closest('#closeSize')){$('#sizeDlg').close();return;}
+  if(e.target.closest('#bagBtn')){openBag();return;}
+  if(e.target.closest('#closeBag')||e.target.id==='scrim'){closeBag();return;}
+  const inc=e.target.closest('[data-inc]'),dec=e.target.closest('[data-dec]'),rm=e.target.closest('[data-rm]');
+  if(inc){state.bag[inc.dataset.inc].qty++;saveBag();renderBag();return;}
+  if(dec){const i=state.bag[dec.dataset.dec];i.qty--;if(!i.qty)state.bag.splice(dec.dataset.dec,1);saveBag();renderBag();return;}
+  if(rm){state.bag.splice(rm.dataset.rm,1);saveBag();renderBag();return;}
+  if(e.target.closest('#toCheckout')&&location.hash==='#checkout'){e.preventDefault();route();return;}
+  if(e.target.closest('#searchBtn')){const sb=$('#searchbar'),o=sb.classList.toggle('open');$('#searchBtn').setAttribute('aria-expanded',o);if(o)$('#q').focus();return;}
+  if(e.target.closest('#menuBtn')){const n=$('#navLinks'),o=n.classList.toggle('open');$('#menuBtn').setAttribute('aria-expanded',o);return;}
+});
+document.addEventListener('change',e=>{
+  if(e.target.id==='sort'){state.sort=e.target.value;renderResults();}
+  if(e.target.id==='coProv'||e.target.name==='ship')renderSummary();
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('#drawer').classList.contains('on'))closeBag();});
+document.addEventListener('submit',e=>{
+  e.preventDefault();
+  if(e.target.id==='searchForm'){resetFilters();state.query=$('#q').value;$('#searchbar').classList.remove('open');$('#searchBtn').setAttribute('aria-expanded','false');location.hash==='#shop'?route():location.hash='shop';}
+  if(e.target.id==='newsForm'){const v=$('#newsEmail').value.trim();$('#newsNote').textContent=/^\S+@\S+\.\S+$/.test(v)?"You're on the list. (Prototype: no email is stored.)":'Enter a valid email address, like you@example.com.';}
+  if(e.target.id==='coForm'){
+    const missing=[...e.target.querySelectorAll('[required]')].filter(i=>!i.value.trim());
+    if(missing.length){$('#coErr').textContent='Fill in the highlighted fields to place your order.';missing.forEach(i=>i.setAttribute('aria-invalid','true'));missing[0].focus();return;}
+    state.lastOrder='SOL-'+(10000+Math.floor(Math.random()*89999));state.bag=[];saveBag();renderBag();location.hash='order-placed';
+  }
+});
+renderBag();route();
+</script>
+</body>
+</html>
