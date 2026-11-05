@@ -1,6 +1,6 @@
 # Solenne: Gen-AI use and prompts
 
-The ITM550 work-in-progress brief asks us to list the prompt used for each AI-generated content item (image, video, text), with a reference. This file is the running log. Copy it into the WIP report appendix.
+The ITM550 work-in-progress brief asks for the prompt used for each AI-generated content item (image, video, text), with a reference. This file is the running log. Copy it into the WIP report appendix.
 
 ## 1. Website (code, layout and copy)
 
@@ -8,7 +8,7 @@ The ITM550 work-in-progress brief asks us to list the prompt used for each AI-ge
 - **Used for:** brand name shortlist, the colour palette, the single-page website (HTML, CSS, JavaScript) and its on-page copy.
 - **Key prompts (in order):**
   1. "We need to do two things, rebrand. We need a new name, new color palette. [...] Right now we got to do a website mock-up."
-  2. Uploaded our proposal feedback PDF: "understand the concept first. current name is [bad]."
+  2. Uploaded my proposal feedback PDF: "understand the concept first. current name is [bad]."
   3. "Give me more. More premium. We're basing this off lululemon website basically. Aritzia. That aesthetic."
   4. "solenne it is. use all info i gave u when it comes to concept. [...] lets proceed with the website. simple lightweight. [...] base it on https://www.aritzia.com/en, https://shop.lululemon.com/en-ca/ and https://www.apple.com/"
   5. Uploaded the WIP brief: "check the rubric, lets tweak the page for it to be satisfactory [...] What else are we missing from the assignment, give me a to do list."
@@ -40,15 +40,18 @@ Scenes: (a) a bright pilates studio with wood floors; (b) two friends walking al
 
 **Log** (fill in as you generate)
 
-| Image | Tool and model | Date | Prompt used |
+| Images | Tool | Date | Prompt used |
 |---|---|---|---|
-| | | | |
+| 13 product photos (9 products, 4 with a second angle) | Google Gemini | Nov 4, 2026 | Base product prompt above, one item line per product |
+| 3 lifestyle photos (waterfront, pilates studio, gym) | Google Gemini | Nov 4, 2026 | Lifestyle prompt above, scenes (b), (a) and (c) |
 
-**Reference format (APA):** OpenAI. (2026). *ChatGPT* (GPT image model) [Generative AI model]. https://chatgpt.com (change it to whichever tool you use)
+Originals are kept in `assets/`. The site uses compressed, renamed copies in `images/`. Gemini added a small SOLENNE wordmark to some product shots even though the prompt asked for no logos; I kept those because they fit the brand.
 
-## 3. Adding the photos to the site
+**Reference (APA):** Google. (2026). *Gemini* [Generative AI model]. https://gemini.google.com
 
-1. Put the images in an `images/` folder in this repo.
+## 3. Adding more photos to the site
+
+1. Put the images in the `images/` folder in this repo.
 2. In `index.html`, find `const IMAGES={};` and list each file, for example:
    ```js
    const IMAGES={

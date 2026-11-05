@@ -59,7 +59,7 @@ p{margin:0}
 .menu-btn{display:none}
 .searchbar{border-top:1px solid var(--line);display:none}
 .searchbar.open{display:block}
-.searchbar form{display:flex;gap:12px;padding:14px 0}
+.searchbar form{display:flex;gap:12px;padding-block:14px}
 .searchbar input{flex:1;border:0;border-bottom:1px solid var(--ink);background:transparent;padding:10px 2px;font-size:18px}
 .searchbar input:focus{outline:none;border-bottom-width:2px}
 @media (max-width:880px){
@@ -86,11 +86,11 @@ p{margin:0}
 .h-l{font-family:var(--display);font-size:clamp(36px,4.6vw,58px);line-height:1.04}
 .h-m{font-family:var(--display);font-size:clamp(28px,3vw,38px);line-height:1.1}
 .lede{font-size:18px;color:var(--ash);max-width:46ch}
-.section{padding:88px 0}
+.section{padding-block:88px}
 .section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:32px;flex-wrap:wrap}
 
 /* Hero */
-.hero{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center;padding:56px 0 72px}
+.hero{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center;padding-block:56px 72px}
 .hero-copy{display:grid;gap:22px}
 .hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
 .hero-art{background:var(--spruce);border-radius:var(--radius);aspect-ratio:5/5.4;position:relative;overflow:hidden}
@@ -290,7 +290,7 @@ th{font-weight:600;background:var(--sand)}
 .proto{background:var(--spruce-soft);border-radius:var(--radius);padding:12px 14px;font-size:14px}
 .summary{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:grid;gap:14px;position:sticky;top:88px}
 @media (max-width:900px){.checkout{grid-template-columns:1fr}.summary{position:static}.two{grid-template-columns:1fr}}
-.done{padding:96px 0;display:grid;gap:18px;justify-items:start;max-width:640px}
+.done{padding-block:96px;display:grid;gap:18px;justify-items:start;max-width:640px}
 .guide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .guide-grid div{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:grid;gap:8px}
 .guide-grid b{font-weight:600}
@@ -299,11 +299,29 @@ th{font-weight:600;background:var(--sand)}
 .view{min-height:60vh}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .card-img:has(img),.shot:has(img),.thumb:has(img){padding:0;overflow:hidden}
+.hero-art.photo{aspect-ratio:5/4.4}
+.hero-art.photo img{position:absolute;inset:0}
+.act.photo{color:#fff}
+.act.photo img{position:absolute;inset:0;transition:transform .5s ease}
+.act.photo:hover img{transform:scale(1.03)}
+.act.photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.62),rgba(0,0,0,0) 55%)}
+.act.photo h3,.act.photo p{z-index:1;color:#fff}
+.act.photo p{color:#EDE9E3}
+.promo .art.photo{width:min(70%,340px);aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;margin-bottom:32px}
+.drop .arts.photo{display:block;width:34%;right:32px;bottom:32px;aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.ugc div:has(img){padding:0;overflow:hidden}
+.gallery .shot.main{grid-column:auto;aspect-ratio:4/5;padding:12%}
+.gallery .shot:has(img),.gallery .shot.main:has(img){padding:0}
+.gallery .shot.life{padding:0;overflow:hidden;position:relative}
+.gallery .shot.life span{position:absolute;left:14px;bottom:14px;background:var(--paper);font-size:12px;padding:4px 10px;border-radius:999px}
+@media (max-width:860px){.drop .arts.photo{position:static;width:60%;margin-top:16px}}
 .codeform{display:flex;gap:8px}
 .codeform input{flex:1;height:44px;border:1px solid #BDB6AA;border-radius:var(--radius);background:var(--paper);padding:0 12px;text-transform:uppercase}
 .codeform .btn{min-height:44px;padding:0 18px}
 .row.save{color:var(--spruce);font-weight:500}
-.duo{display:grid;grid-template-columns:1.4fr 1fr;gap:16px}
+.duo{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:16px}
+.drop>h2,.drop>p,.drop>.kicker{max-width:56%}
+@media (max-width:860px){.drop>h2,.drop>p,.drop>.kicker{max-width:none}}
 .drop{background:#9A5A47;color:#fff;border-radius:var(--radius);padding:44px 40px;display:grid;gap:12px;align-content:start;text-decoration:none;position:relative;overflow:hidden;min-height:400px}
 .drop p{color:#F3E4DE;max-width:34ch;font-size:17px}
 .drop .kicker{color:#F3E4DE}
@@ -463,8 +481,32 @@ const SET_PCT=10;
 /* Product photos: drop files into images/ and list them here, e.g.
    'flow-long-sleeve/Onyx':'images/flow-long-sleeve-onyx.jpg'.
    Any product without a photo falls back to its drawing. */
-const IMAGES={};
-function pic(p,colour,label){const src=IMAGES[p.id+'/'+colour]||IMAGES[p.id];return src?`<img src="${src}" alt="${esc(label||'')}" loading="lazy" style="width:100%;height:100%;object-fit:cover">`:garment(p.type,colour,label)}
+const IMAGES={
+  'flow-long-sleeve/Onyx':'images/flow-long-sleeve-onyx.jpg',
+  'stride-tunic/Spruce':'images/stride-tunic-spruce.jpg',
+  'layer-mock-neck/Ivory':'images/layer-mock-neck-ivory.jpg',
+  'ease-half-zip/Clay':'images/ease-half-zip-clay.jpg',
+  'shelter-jacket/Onyx':'images/shelter-jacket-onyx.jpg',
+  'anchor-legging/Onyx':'images/anchor-legging-onyx.jpg',
+  'drift-wide-leg/Onyx':'images/drift-wide-leg-onyx.jpg',
+  'motion-midi-skirt/Onyx':'images/motion-midi-skirt-onyx.jpg',
+  'studio-wrap-skirt/Spruce':'images/studio-wrap-skirt-spruce.jpg'
+};
+/* Second angle for the product gallery */
+const IMAGES2={
+  'flow-long-sleeve':'images/flow-long-sleeve-onyx-2.jpg',
+  'stride-tunic':'images/stride-tunic-spruce-2.jpg',
+  'layer-mock-neck':'images/layer-mock-neck-ivory-2.jpg',
+  'ease-half-zip':'images/ease-half-zip-clay-2.jpg'
+};
+/* Lifestyle photos */
+const LIFE={
+  'Walk & Run':['images/life-waterfront.jpg','Two women walking on the Toronto waterfront in autumn, one in a hijab with a clay skirt over leggings, one in a spruce long sleeve top and black leggings','45% 50%'],
+  'Yoga & Pilates':['images/life-studio.jpg','A pilates class of women in long sleeves, leggings and athletic skirts doing lunges in a bright studio','50% 50%'],
+  'Gym':['images/life-gym.jpg','A woman in a long sleeve top and leggings stretching on a mat in a gym','68% 50%']
+};
+function photo(src,alt,pos){return `<img src="${src}" alt="${esc(alt)}" style="width:100%;height:100%;object-fit:cover;object-position:${pos||'50% 50%'}">`}
+function pic(p,colour,label){const key=Object.keys(IMAGES).find(k=>k.startsWith(p.id+'/'));const src=IMAGES[p.id+'/'+colour]||(key&&IMAGES[key]);return src?`<img src="${src}" alt="${esc(label||'')}" loading="lazy" style="width:100%;height:100%;object-fit:cover">`:garment(p.type,colour,label)}
 
 /* ---------- Garment drawings ---------- */
 function shade(hex,amt){const n=parseInt(hex.slice(1),16);let r=n>>16,g=n>>8&255,b=n&255;const f=v=>Math.max(0,Math.min(255,Math.round(v+amt*255)));return '#'+[f(r),f(g),f(b)].map(v=>v.toString(16).padStart(2,'0')).join('')}
@@ -526,11 +568,9 @@ function viewHome(){
       <p class="lede">Activewear with real coverage, designed for women in Canada who do yoga, lift, walk and run, without trading comfort or style for it.</p>
       <div class="hero-ctas"><a class="btn" href="#shop" data-nav="all">Shop the collection</a><a class="btn ghost" href="#coverage-guide">Find your coverage</a></div>
     </div>
-    <div class="hero-art" aria-hidden="true">
-      <div class="g g1">${garment('tunic','Fawn')}</div>
-      <div class="g g2">${garment('leggings','Onyx')}</div>
-      <div class="g g3">${garment('midiskirt','Clay')}</div>
-      <div class="hero-tag"><b>Stride Tunic + Anchor Legging</b>Full sleeve, mid-thigh hem, squat-proof.</div>
+    <div class="hero-art photo">
+      ${photo(LIFE['Walk & Run'][0],LIFE['Walk & Run'][1],'42% 50%')}
+      <a class="hero-tag" href="#p-stride-tunic" style="text-decoration:none"><b>Stride Tunic + Anchor Legging</b>Full sleeve, longer hem, squat-proof. Shop the look ›</a>
     </div>
   </section>
 
@@ -543,7 +583,7 @@ function viewHome(){
 
   <section class="wrap section">
     <div class="section-head"><h2 class="h-l">Shop by how you move</h2><a class="link" href="#shop" data-nav="all">Shop all</a></div>
-    <div class="acts">${acts.map(a=>`<a class="act" href="#shop" data-act="${a[0]}"><div class="g">${garment(a[1],a[2])}</div><h3>${a[0]}</h3><p>${a[3]}</p></a>`).join('')}</div>
+    <div class="acts">${acts.map(a=>{const L=LIFE[a[0]]||['images/drift-wide-leg-onyx.jpg','Drift Wide-Leg Pant in black','50% 50%'];return `<a class="act photo" href="#shop" data-act="${a[0]}">${photo(L[0],L[1],L[2])}<h3>${a[0]}</h3><p>${a[3]}</p></a>`}).join('')}</div>
   </section>
 
   <section class="wrap" style="padding-bottom:88px">
@@ -557,14 +597,14 @@ function viewHome(){
       <h2 class="h-l">Motion Midi Skirt</h2>
       <p class="sub">The skirt that runs. Leggings built in.</p>
       <div class="links"><a class="link" href="#p-motion-midi-skirt">Learn more</a><a class="link" href="#p-motion-midi-skirt">Buy from $96</a></div>
-      <div class="art">${garment('midiskirt','Spruce','Motion Midi Skirt in Spruce')}</div>
+      <div class="art photo">${photo('images/motion-midi-skirt-onyx.jpg','Motion Midi Skirt in black with built-in leggings')}</div>
     </div>
     <div class="promo dark">
       <span class="kicker" style="color:#C9C4BB">For Canadian seasons</span>
       <h2 class="h-l">Shelter Light Jacket</h2>
       <p class="sub">Water-resistant. Mid-thigh. Packs into its pocket.</p>
       <div class="links"><a class="link" href="#p-shelter-jacket">Learn more</a><a class="link" href="#p-shelter-jacket">Buy from $138</a></div>
-      <div class="art">${garment('jacket','Mist','Shelter Light Jacket in Mist')}</div>
+      <div class="art photo">${photo('images/shelter-jacket-onyx.jpg','Shelter Light Jacket in black, hooded, mid-thigh length')}</div>
     </div>
   </section>
 
@@ -575,7 +615,7 @@ function viewHome(){
         <h2 class="h-l">The Clay Capsule</h2>
         <p>Three pieces in a warm clay red, made in a small run. When they're gone, they're gone.</p>
         <span class="go">Shop the drop</span>
-        <div class="arts" aria-hidden="true">${garment('tunic','Clay')}${garment('midiskirt','Clay')}${garment('halfzip','Clay')}</div>
+        <div class="arts photo">${photo('images/ease-half-zip-clay-2.jpg','Ease Half-Zip in clay red fleece')}</div>
       </a>
       <div class="set">
         <span class="kicker">Bundle and save</span>
@@ -620,12 +660,12 @@ function viewHome(){
 
   <section class="wrap section">
     <div class="section-head"><div style="display:grid;gap:8px"><h2 class="h-l">#WearSolenne</h2><p class="lede">Tag us on Instagram or TikTok to be featured. Shoppable customer photos arrive at launch.</p></div></div>
-    <div class="ugc" aria-hidden="true">
-      <div style="background:#DCE4E0">${garment('longsleeve','Spruce')}</div>
-      <div style="background:var(--sand)">${garment('wrapskirt','Fawn')}</div>
-      <div style="background:#E6DAD4">${garment('halfzip','Clay')}</div>
-      <div style="background:#E3E6E8">${garment('widepant','Mist')}</div>
-      <div style="background:var(--sand)">${garment('mockneck','Ivory')}</div>
+    <div class="ugc">
+      <div>${photo(LIFE['Walk & Run'][0],LIFE['Walk & Run'][1],'30% 50%')}</div>
+      <div>${photo(LIFE['Yoga & Pilates'][0],LIFE['Yoga & Pilates'][1],'80% 50%')}</div>
+      <div>${photo(LIFE['Gym'][0],LIFE['Gym'][1],'70% 50%')}</div>
+      <div>${photo('images/studio-wrap-skirt-spruce.jpg','Studio Wrap Skirt in spruce green')}</div>
+      <div>${photo('images/stride-tunic-spruce-2.jpg','Stride Tunic in spruce green')}</div>
     </div>
   </section>
 
@@ -697,7 +737,9 @@ function viewProduct(p){
     <div class="pdp">
       <div class="gallery">
         <div class="shot main" id="mainShot">${pic(p,sel.colour,p.name+' in '+sel.colour+', front view')}</div>
-        <div class="shot">${pic(p,alt,p.name+' in '+alt)}</div>
+        ${(()=>{const first=LIFE[p.acts[0]]||LIFE['Walk & Run'];const others=Object.values(LIFE).filter(l=>l!==first);
+          const life=l=>`<div class="shot life">${photo(l[0],l[1],l[2])}<span>In motion</span></div>`;
+          return IMAGES2[p.id]?`<div class="shot">${photo(IMAGES2[p.id],p.name+', second view')}</div>${life(first)}`:life(first)+life(others[0]);})()}
         <div class="shot fabric" id="fabricShot" style="background:${COLOURS[sel.colour]}" role="img" aria-label="Fabric close-up in ${sel.colour}"><span>Fabric close-up</span></div>
       </div>
       <div class="buy">

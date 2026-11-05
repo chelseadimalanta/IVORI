@@ -2,7 +2,7 @@
 
 Modest activewear for women in Canada. Modest in cut, bold in motion.
 
-ITM550 Advanced E-Business group project (formerly MIS.Co).
+ITM550 Advanced E-Business project by Chelsea Dimalanta (formerly MIS.Co).
 
 **Live site:** https://chelseadimalanta.github.io/solenne/
 
