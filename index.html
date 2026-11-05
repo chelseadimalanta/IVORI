@@ -4,6 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Solenne Activewear</title>
+<meta name="description" content="Solenne makes modest activewear for women in Canada: long sleeves, longer hems, squat-proof leggings and skirts with leggings built in. Prices in CAD, free 30-day returns.">
+<meta property="og:title" content="Solenne · Modest in cut. Bold in motion.">
+<meta property="og:description" content="Modest activewear for yoga, the gym, walking and running. Designed for Canada.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#2E4A42">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -292,11 +297,28 @@ th{font-weight:600;background:var(--sand)}
 .guide-grid p{color:var(--ash);font-size:15px}
 @media (max-width:860px){.guide-grid{grid-template-columns:1fr}}
 .view{min-height:60vh}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.card-img:has(img),.shot:has(img),.thumb:has(img){padding:0;overflow:hidden}
+.codeform{display:flex;gap:8px}
+.codeform input{flex:1;height:44px;border:1px solid #BDB6AA;border-radius:var(--radius);background:var(--paper);padding:0 12px;text-transform:uppercase}
+.codeform .btn{min-height:44px;padding:0 18px}
+.row.save{color:var(--spruce);font-weight:500}
+.duo{display:grid;grid-template-columns:1.4fr 1fr;gap:16px}
+.drop{background:#9A5A47;color:#fff;border-radius:var(--radius);padding:44px 40px;display:grid;gap:12px;align-content:start;text-decoration:none;position:relative;overflow:hidden;min-height:400px}
+.drop p{color:#F3E4DE;max-width:34ch;font-size:17px}
+.drop .kicker{color:#F3E4DE}
+.drop .go{font-weight:600;text-decoration:underline;text-underline-offset:5px;position:relative}
+.drop .arts{position:absolute;right:-2%;bottom:-4%;width:52%;display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;align-items:end;opacity:.95}
+.drop .arts svg path{stroke:#6E3B2C}
+.set{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:44px 40px;display:grid;gap:14px;align-content:start}
+.set ol{margin:6px 0 0;padding-left:20px;color:var(--ash);display:grid;gap:6px}
+.dropnote{background:#F3E4DE;color:#6E3B2C;border-radius:var(--radius);padding:10px 14px;font-size:14px;font-weight:500}
+@media (max-width:860px){.duo{grid-template-columns:1fr}.drop .arts{position:static;width:80%;margin-top:12px}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="announce">Free shipping across Canada on orders over $120 &nbsp;·&nbsp; Prices in CAD &nbsp;·&nbsp; Free 30-day returns</div>
+<div class="announce">Free shipping across Canada over $120 &nbsp;·&nbsp; Prices in CAD &nbsp;·&nbsp; New here? Use code <b>SOLENNE10</b> for 10% off</div>
 
 <header class="nav">
   <div class="wrap nav-in">
@@ -307,6 +329,7 @@ th{font-weight:600;background:var(--sand)}
     <nav class="nav-links" id="navLinks" aria-label="Main">
       <a href="#shop" data-nav="all">Shop all</a>
       <a href="#shop" data-nav="New">New</a>
+      <a href="#shop" data-nav="Limited">Limited Drop</a>
       <a href="#shop" data-act="Yoga & Pilates">Yoga &amp; Pilates</a>
       <a href="#shop" data-act="Gym">Gym</a>
       <a href="#shop" data-act="Walk & Run">Walk &amp; Run</a>
@@ -400,7 +423,7 @@ const PRODUCTS=[
   blurb:'Our everyday long sleeve. Soft, sweat-wicking and cut to stay in place through every stretch.',
   cov:[['Sleeve','Full length, thumbholes',4],['Neckline','High crew',4],['Hem','Covers the hip',3],['Fit','Skims the body',3]],
   fabric:'Brushed nylon and elastane, 4-way stretch, sweat-wicking.',opacity:'Opaque in every colour. Bend-tested under studio light.'},
- {id:'stride-tunic',name:'Stride Tunic',type:'tunic',price:84,cat:'Tops',acts:['Walk & Run','Gym'],colours:['Spruce','Onyx','Clay'],tag:'New',soldOut:['XXS'],
+ {id:'stride-tunic',name:'Stride Tunic',type:'tunic',price:84,cat:'Tops',acts:['Walk & Run','Gym'],colours:['Spruce','Onyx','Clay'],tag:'New',drop:true,soldOut:['XXS'],
   blurb:'A longer line for leggings days. Side vents give your stride room without lifting the hem.',
   cov:[['Sleeve','Full length',4],['Neckline','High crew',4],['Hem','Mid-thigh, side vents',4],['Fit','Relaxed through the hip',2]],
   fabric:'Lightweight recycled polyester, quick-dry, anti-cling finish.',opacity:'Opaque. Double layer across the back.'},
@@ -408,7 +431,7 @@ const PRODUCTS=[
   blurb:'A fitted base layer with a soft mock neck. Wear it alone or under anything with a lower neckline.',
   cov:[['Sleeve','Full length',4],['Neckline','Mock neck',4],['Hem','Below the hip',3],['Fit','Close base layer',4]],
   fabric:'Modal blend with stretch, breathable, tag-free.',opacity:'Opaque, including Ivory. Lined at the chest.'},
- {id:'ease-half-zip',name:'Ease Half-Zip',type:'halfzip',price:112,cat:'Layers',acts:['Walk & Run','Everyday'],colours:['Fawn','Onyx','Spruce'],tag:'',soldOut:['3X'],
+ {id:'ease-half-zip',name:'Ease Half-Zip',type:'halfzip',price:112,cat:'Layers',acts:['Walk & Run','Everyday'],colours:['Clay','Fawn','Onyx','Spruce'],tag:'',drop:true,soldOut:['3X'],
   blurb:'A warm mid-layer for cold walks and the commute to class. Zip it up and the collar covers the neck.',
   cov:[['Sleeve','Full length, thumbholes',4],['Neckline','Funnel neck when zipped',4],['Hem','Covers the hip',3],['Fit','Relaxed',2]],
   fabric:'Brushed fleece back, smooth face, zip garage at chin.',opacity:'Opaque mid-weight knit.'},
@@ -424,7 +447,7 @@ const PRODUCTS=[
   blurb:'Flowy enough for the street, stretchy enough for the mat. Never clings.',
   cov:[['Rise','High rise',4],['Length','Floor-grazing',4],['Opacity','Opaque',4],['Fit','Loose through the leg',1]],
   fabric:'Fluid crepe knit with stretch, wrinkle-resistant.',opacity:'Opaque, no lining needed.'},
- {id:'motion-midi-skirt',name:'Motion Midi Skirt',type:'midiskirt',price:96,cat:'Skirts',acts:['Walk & Run','Gym','Everyday'],colours:['Onyx','Spruce','Clay'],tag:'Bestseller',soldOut:['XXS'],
+ {id:'motion-midi-skirt',name:'Motion Midi Skirt',type:'midiskirt',price:96,cat:'Skirts',acts:['Walk & Run','Gym','Everyday'],colours:['Onyx','Spruce','Clay'],tag:'Bestseller',drop:true,soldOut:['XXS'],
   blurb:'A midi skirt with full-length leggings built in. Run, lift and climb stairs without a second thought.',
   cov:[['Length','Mid-calf',4],['Built-in','Full-length legging',4],['Opacity','Opaque, lined',4],['Fit','A-line, moves with you',2]],
   fabric:'Woven stretch shell over squat-proof legging liner.',opacity:'Opaque shell and liner.'},
@@ -435,6 +458,13 @@ const PRODUCTS=[
 ];
 const PROV={AB:['Alberta',5],BC:['British Columbia',12],MB:['Manitoba',12],NB:['New Brunswick',15],NL:['Newfoundland and Labrador',15],NS:['Nova Scotia',14],NT:['Northwest Territories',5],NU:['Nunavut',5],ON:['Ontario',13],PE:['Prince Edward Island',15],QC:['Quebec',14.975],SK:['Saskatchewan',11],YT:['Yukon',5]};
 const FREE_SHIP=120;
+const CODES={SOLENNE10:[10,'Welcome offer'],CREATOR15:[15,'Creator code']};
+const SET_PCT=10;
+/* Product photos: drop files into images/ and list them here, e.g.
+   'flow-long-sleeve/Onyx':'images/flow-long-sleeve-onyx.jpg'.
+   Any product without a photo falls back to its drawing. */
+const IMAGES={};
+function pic(p,colour,label){const src=IMAGES[p.id+'/'+colour]||IMAGES[p.id];return src?`<img src="${src}" alt="${esc(label||'')}" loading="lazy" style="width:100%;height:100%;object-fit:cover">`:garment(p.type,colour,label)}
 
 /* ---------- Garment drawings ---------- */
 function shade(hex,amt){const n=parseInt(hex.slice(1),16);let r=n>>16,g=n>>8&255,b=n&255;const f=v=>Math.max(0,Math.min(255,Math.round(v+amt*255)));return '#'+[f(r),f(g),f(b)].map(v=>v.toString(16).padStart(2,'0')).join('')}
@@ -461,8 +491,9 @@ function garment(type,colour,label){
 
 /* ---------- State ---------- */
 const state={filters:{cat:new Set(),acts:new Set(),colours:new Set(),sizes:new Set(),tag:''},sort:'featured',query:'',bag:[],sel:{}};
-try{state.bag=JSON.parse(localStorage.getItem('solenne-bag')||'[]')}catch(e){state.bag=[]}
-function saveBag(){try{localStorage.setItem('solenne-bag',JSON.stringify(state.bag))}catch(e){}}
+try{state.bag=JSON.parse(localStorage.getItem('solenne-bag')||'[]');state.code=localStorage.getItem('solenne-code')||''}catch(e){state.bag=[];state.code=''}
+if(!CODES[state.code])state.code='';
+function saveBag(){try{localStorage.setItem('solenne-bag',JSON.stringify(state.bag));localStorage.setItem('solenne-code',state.code)}catch(e){}}
 const $=s=>document.querySelector(s);
 const money=n=>'$'+n.toFixed(2).replace(/\.00$/,'');
 const money2=n=>'$'+n.toFixed(2);
@@ -472,7 +503,7 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',
 /* ---------- Pieces ---------- */
 function card(p){
   return `<a class="card" href="#p-${p.id}">
-    <div class="card-img">${p.tag?`<span class="badge">${p.tag}</span>`:''}${garment(p.type,p.colours[0],p.name+' in '+p.colours[0])}</div>
+    <div class="card-img">${(p.tag||p.drop)?`<span class="badge">${p.tag||'Limited drop'}</span>`:''}${pic(p,p.colours[0],p.name+' in '+p.colours[0])}</div>
     <div class="card-name">${p.name}</div>
     <div class="card-meta"><span class="swatches">${p.colours.map(c=>`<span class="dot" style="background:${COLOURS[c]}" title="${c}"></span>`).join('')}</span><span class="card-price">${money(p.price)}</span></div>
   </a>`;
@@ -537,6 +568,25 @@ function viewHome(){
     </div>
   </section>
 
+  <section class="wrap section" style="padding-bottom:0">
+    <div class="duo">
+      <a class="drop" href="#shop" data-nav="Limited">
+        <span class="kicker">Limited drop · until November 30</span>
+        <h2 class="h-l">The Clay Capsule</h2>
+        <p>Three pieces in a warm clay red, made in a small run. When they're gone, they're gone.</p>
+        <span class="go">Shop the drop</span>
+        <div class="arts" aria-hidden="true">${garment('tunic','Clay')}${garment('midiskirt','Clay')}${garment('halfzip','Clay')}</div>
+      </a>
+      <div class="set">
+        <span class="kicker">Bundle and save</span>
+        <h2 class="h-m">Build a set, save 10%</h2>
+        <p style="color:var(--ash)">The discount applies automatically in your bag.</p>
+        <ol><li>Pick any top</li><li>Add leggings, pants or a skirt</li><li>10% comes off the whole order</li></ol>
+        <a class="link" href="#shop" data-nav="all">Start your set</a>
+      </div>
+    </div>
+  </section>
+
   <section class="wrap section">
     <div class="feature">
       <div class="feature-copy">
@@ -596,7 +646,7 @@ function filtered(){
     (!f.acts.size||p.acts.some(a=>f.acts.has(a)))&&
     (!f.colours.size||p.colours.some(c=>f.colours.has(c)))&&
     (!f.sizes.size||[...f.sizes].some(s=>!p.soldOut.includes(s)))&&
-    (!f.tag||p.tag===f.tag)&&
+    (!f.tag||(f.tag==='Limited'?p.drop:p.tag===f.tag))&&
     (!q||(p.name+' '+p.cat+' '+p.acts.join(' ')+' '+p.type+' '+p.colours.join(' ')).toLowerCase().includes(q.replace(/s$/,'')))
   );
   if(state.sort==='low')list.sort((a,b)=>a.price-b.price);
@@ -608,7 +658,7 @@ function chipGroup(title,key,values,dots){
 }
 function viewShop(){
   const f=state.filters;
-  const title=state.query?`Results for “${esc(state.query)}”`:f.tag?f.tag+' arrivals':f.acts.size===1?[...f.acts][0]:f.cat.size===1?[...f.cat][0]:'All activewear';
+  const title=state.query?`Results for “${esc(state.query)}”`:f.tag==='Limited'?'The Clay Capsule · Limited drop':f.tag?f.tag+' arrivals':f.acts.size===1?[...f.acts][0]:f.cat.size===1?[...f.cat][0]:'All activewear';
   return `<section class="wrap">
     <div class="shop-head"><nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a> / Shop</nav><h1 class="h-l">${title}</h1></div>
     <div class="shop">
@@ -646,8 +696,8 @@ function viewProduct(p){
     <nav class="crumbs" aria-label="Breadcrumb" style="padding-top:28px"><a href="#home">Home</a> / <a href="#shop" data-cat="${p.cat}">${p.cat}</a> / ${p.name}</nav>
     <div class="pdp">
       <div class="gallery">
-        <div class="shot main" id="mainShot">${garment(p.type,sel.colour,p.name+' in '+sel.colour+', front view')}</div>
-        <div class="shot">${garment(p.type,alt,p.name+' in '+alt)}</div>
+        <div class="shot main" id="mainShot">${pic(p,sel.colour,p.name+' in '+sel.colour+', front view')}</div>
+        <div class="shot">${pic(p,alt,p.name+' in '+alt)}</div>
         <div class="shot fabric" id="fabricShot" style="background:${COLOURS[sel.colour]}" role="img" aria-label="Fabric close-up in ${sel.colour}"><span>Fabric close-up</span></div>
       </div>
       <div class="buy">
@@ -657,6 +707,7 @@ function viewProduct(p){
           <div class="price">${money(p.price)} CAD</div>
           <p style="color:var(--ash);margin-top:6px">${p.blurb}</p>
         </div>
+        ${p.drop?'<p class="dropnote">Part of the Clay Capsule, a limited drop available until November 30, 2026.</p>':''}
         <div>
           <div class="opt-label"><span>Colour: <b id="colourName">${sel.colour}</b></span></div>
           <div class="colour-btns">${p.colours.map(c=>`<button class="cbtn" data-colour="${c}" aria-label="${c}" aria-pressed="${c===sel.colour}"><span style="background:${COLOURS[c]}"></span></button>`).join('')}</div>
@@ -682,9 +733,17 @@ function viewProduct(p){
   </section>`;
 }
 
-function totals(prov){
+function totals(){
   const sub=state.bag.reduce((s,i)=>s+byId(i.id).price*i.qty,0);
-  return {sub,count:state.bag.reduce((s,i)=>s+i.qty,0)};
+  const count=state.bag.reduce((s,i)=>s+i.qty,0);
+  const cats=new Set(state.bag.map(i=>byId(i.id).cat));
+  const setOK=cats.has('Tops')&&(cats.has('Bottoms')||cats.has('Skirts'));
+  const codePct=state.code?CODES[state.code][0]:0;
+  let pct=0,why='';
+  if(setOK){pct=SET_PCT;why='Set discount (top + bottom)'}
+  if(codePct>pct){pct=codePct;why='Code '+state.code}
+  const disc=Math.round(sub*pct)/100;
+  return {sub,count,pct,why,disc,net:sub-disc,setOK,codePct};
 }
 function viewCheckout(){
   if(!state.bag.length)return `<section class="wrap done"><h1 class="h-l">Your bag is empty</h1><p class="lede">Add a few pieces, then come back to check out.</p><a class="btn" href="#shop" data-nav="all">Shop the collection</a></section>`;
@@ -720,17 +779,18 @@ function viewCheckout(){
 }
 function renderSummary(){
   const prov=$('#coProv').value, exp=document.querySelector('input[name=ship]:checked').value==='exp';
-  const {sub}=totals();
-  const ship=exp?18:(sub>=FREE_SHIP?0:9);
-  const tax=(sub+ship)*PROV[prov][1]/100;
-  $('#stdPrice').textContent=sub>=FREE_SHIP?'Free':'$9';
+  const {sub,disc,net,why,pct}=totals();
+  const ship=exp?18:(net>=FREE_SHIP?0:9);
+  const tax=(net+ship)*PROV[prov][1]/100;
+  $('#stdPrice').textContent=net>=FREE_SHIP?'Free':'$9';
   $('#summary').innerHTML=`<h2 class="h-m">Order summary</h2>
-    ${state.bag.map(i=>{const p=byId(i.id);return `<div class="line-item"><div class="thumb">${garment(p.type,i.colour,'')}</div><div><div>${p.name}</div><div class="meta">${i.colour} · ${i.size} · Qty ${i.qty}</div></div><div>${money2(p.price*i.qty)}</div></div>`}).join('')}
+    ${state.bag.map(i=>{const p=byId(i.id);return `<div class="line-item"><div class="thumb">${pic(p,i.colour,'')}</div><div><div>${p.name}</div><div class="meta">${i.colour} · ${i.size} · Qty ${i.qty}</div></div><div>${money2(p.price*i.qty)}</div></div>`}).join('')}
     <div style="border-top:1px solid var(--line);padding-top:14px;display:grid;gap:8px">
       <div class="row"><span>Subtotal</span><span>${money2(sub)}</span></div>
+      ${disc?`<div class="row save"><span>${why} (−${pct}%)</span><span>−${money2(disc)}</span></div>`:''}
       <div class="row"><span>Shipping</span><span>${ship?money2(ship):'Free'}</span></div>
       <div class="row"><span>Estimated tax (${prov} ${PROV[prov][1]}%)</span><span>${money2(tax)}</span></div>
-      <div class="row total"><span>Total (CAD)</span><span>${money2(sub+ship+tax)}</span></div>
+      <div class="row total"><span>Total (CAD)</span><span>${money2(net+ship+tax)}</span></div>
     </div>`;
 }
 function viewGuide(){
@@ -758,19 +818,24 @@ function viewDone(n){
 
 /* ---------- Bag ---------- */
 function renderBag(){
-  const {sub,count}=totals();
+  const {sub,count,disc,net,why,pct,setOK,codePct}=totals();
   $('#bagCount').textContent=count;$('#bagCount').hidden=!count;
   $('#bagBtn').setAttribute('aria-label',`Bag, ${count} item${count===1?'':'s'}`);
   if(!state.bag.length){
     $('#bagBody').innerHTML=`<p style="color:var(--ash)">Your bag is empty.</p><a class="btn ghost" href="#shop" data-nav="all">Start shopping</a>`;
     $('#bagFoot').innerHTML='';return;
   }
-  const left=Math.max(0,FREE_SHIP-sub);
-  $('#bagBody').innerHTML=`<div class="freeship"><span>${left?`You're ${money2(left)} away from free shipping.`:'You have free shipping.'}</span><div class="bar"><i style="width:${Math.min(100,sub/FREE_SHIP*100)}%"></i></div></div>`+
-    state.bag.map((i,idx)=>{const p=byId(i.id);return `<div class="line-item"><a class="thumb" href="#p-${p.id}">${garment(p.type,i.colour,p.name)}</a><div><div>${p.name}</div><div class="meta">${i.colour} · Size ${i.size}</div>
+  const left=Math.max(0,FREE_SHIP-net);
+  $('#bagBody').innerHTML=`<div class="freeship"><span>${left?`You're ${money2(left)} away from free shipping.`:'You have free shipping.'}</span><div class="bar"><i style="width:${Math.min(100,net/FREE_SHIP*100)}%"></i></div></div>`+(setOK?'':`<p style="font-size:14px;color:var(--ash)">Add a top and a bottom or skirt to save ${SET_PCT}% on your set.</p>`)+
+    state.bag.map((i,idx)=>{const p=byId(i.id);return `<div class="line-item"><a class="thumb" href="#p-${p.id}">${pic(p,i.colour,p.name)}</a><div><div>${p.name}</div><div class="meta">${i.colour} · Size ${i.size}</div>
       <div class="qty"><button data-dec="${idx}" aria-label="Decrease quantity">−</button><span>${i.qty}</span><button data-inc="${idx}" aria-label="Increase quantity">+</button></div></div>
       <div style="display:grid;justify-items:end;gap:8px"><span>${money2(p.price*i.qty)}</span><button class="textbtn" data-rm="${idx}">Remove</button></div></div>`}).join('');
-  $('#bagFoot').innerHTML=`<div class="row total"><span>Subtotal</span><span>${money2(sub)} CAD</span></div><span style="font-size:13px;color:var(--ash)">Shipping and tax calculated at checkout.</span><a class="btn block" href="#checkout" id="toCheckout">Checkout</a>`;
+  const codeNote=state.codeMsg||(state.code?(codePct<pct?`${state.code} saved. Your set discount is bigger, so it applies instead.`:`${state.code} applied: ${CODES[state.code][1]}, ${codePct}% off.`):'');
+  $('#bagFoot').innerHTML=`<form id="codeForm" class="codeform" novalidate><label for="codeIn" class="sr">Discount code</label><input id="codeIn" placeholder="Discount code" autocomplete="off" value="${state.code}"><button class="btn ghost" type="submit">Apply</button></form>
+    ${codeNote?`<p class="note" role="status" style="min-height:0">${esc(codeNote)} ${state.code?'<button class="textbtn" id="rmCode">Remove code</button>':''}</p>`:''}
+    <div class="row"><span>Subtotal</span><span>${money2(sub)}</span></div>
+    ${disc?`<div class="row save"><span>${why} (−${pct}%)</span><span>−${money2(disc)}</span></div>`:''}
+    <div class="row total"><span>Total before shipping</span><span>${money2(net)} CAD</span></div><span style="font-size:13px;color:var(--ash)">Shipping and tax calculated at checkout.</span><a class="btn block" href="#checkout" id="toCheckout">Checkout</a>`;
 }
 let lastFocus=null;
 function openBag(){lastFocus=document.activeElement;renderBag();$('#drawer').classList.add('on');$('#scrim').classList.add('on');$('#drawer').setAttribute('aria-hidden','false');$('#closeBag').focus()}
@@ -799,7 +864,7 @@ document.addEventListener('click',e=>{
   if(a){resetFilters();
     if(a.dataset.act)state.filters.acts.add(a.dataset.act);
     if(a.dataset.cat)state.filters.cat.add(a.dataset.cat);
-    if(a.dataset.nav==='New')state.filters.tag='New';
+    if(a.dataset.nav==='New'||a.dataset.nav==='Limited')state.filters.tag=a.dataset.nav;
     if(location.hash==='#shop'){e.preventDefault();route();}
     return;}
   const chip=e.target.closest('.chip');
@@ -809,7 +874,7 @@ document.addEventListener('click',e=>{
   const cb=e.target.closest('.cbtn');
   if(cb){const id=location.hash.slice(3),p=byId(id),sel=state.sel[id];sel.colour=cb.dataset.colour;
     document.querySelectorAll('.cbtn').forEach(b=>b.setAttribute('aria-pressed',b===cb));
-    $('#colourName').textContent=sel.colour;$('#mainShot').innerHTML=garment(p.type,sel.colour,p.name+' in '+sel.colour+', front view');
+    $('#colourName').textContent=sel.colour;$('#mainShot').innerHTML=pic(p,sel.colour,p.name+' in '+sel.colour+', front view');
     $('#fabricShot').style.background=COLOURS[sel.colour];$('#fabricShot').setAttribute('aria-label','Fabric close-up in '+sel.colour);return;}
   const sb=e.target.closest('.sbtn');
   if(sb){const id=location.hash.slice(3);state.sel[id].size=sb.dataset.size;document.querySelectorAll('.sbtn').forEach(b=>b.setAttribute('aria-pressed',b===sb));$('#sizeErr').textContent='';
@@ -825,6 +890,7 @@ document.addEventListener('click',e=>{
   if(inc){state.bag[inc.dataset.inc].qty++;saveBag();renderBag();return;}
   if(dec){const i=state.bag[dec.dataset.dec];i.qty--;if(!i.qty)state.bag.splice(dec.dataset.dec,1);saveBag();renderBag();return;}
   if(rm){state.bag.splice(rm.dataset.rm,1);saveBag();renderBag();return;}
+  if(e.target.closest('#rmCode')){state.code='';saveBag();renderBag();return;}
   if(e.target.closest('#toCheckout')&&location.hash==='#checkout'){e.preventDefault();route();return;}
   if(e.target.closest('#searchBtn')){const sb=$('#searchbar'),o=sb.classList.toggle('open');$('#searchBtn').setAttribute('aria-expanded',o);if(o)$('#q').focus();return;}
   if(e.target.closest('#menuBtn')){const n=$('#navLinks'),o=n.classList.toggle('open');$('#menuBtn').setAttribute('aria-expanded',o);return;}
@@ -837,11 +903,14 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('#drawer').classL
 document.addEventListener('submit',e=>{
   e.preventDefault();
   if(e.target.id==='searchForm'){resetFilters();state.query=$('#q').value;$('#searchbar').classList.remove('open');$('#searchBtn').setAttribute('aria-expanded','false');location.hash==='#shop'?route():location.hash='shop';}
+  if(e.target.id==='codeForm'){const v=$('#codeIn').value.trim().toUpperCase();
+    if(CODES[v]){state.code=v;state.codeMsg='';}else{state.codeMsg=v?`“${v}” isn't a valid code. Try SOLENNE10.`:'Enter a code first.';}
+    saveBag();renderBag();state.codeMsg='';$('#codeIn').focus();}
   if(e.target.id==='newsForm'){const v=$('#newsEmail').value.trim();$('#newsNote').textContent=/^\S+@\S+\.\S+$/.test(v)?"You're on the list. (Prototype: no email is stored.)":'Enter a valid email address, like you@example.com.';}
   if(e.target.id==='coForm'){
     const missing=[...e.target.querySelectorAll('[required]')].filter(i=>!i.value.trim());
     if(missing.length){$('#coErr').textContent='Fill in the highlighted fields to place your order.';missing.forEach(i=>i.setAttribute('aria-invalid','true'));missing[0].focus();return;}
-    state.lastOrder='SOL-'+(10000+Math.floor(Math.random()*89999));state.bag=[];saveBag();renderBag();location.hash='order-placed';
+    state.lastOrder='SOL-'+(10000+Math.floor(Math.random()*89999));state.bag=[];state.code='';saveBag();renderBag();location.hash='order-placed';
   }
 });
 renderBag();route();
