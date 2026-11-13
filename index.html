@@ -3,59 +3,63 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Solenne Activewear</title>
-<meta name="description" content="Solenne makes modest activewear for women in Canada: long sleeves, longer hems, squat-proof leggings and skirts with leggings built in. Prices in CAD, free 30-day returns.">
-<meta property="og:title" content="Solenne · Modest in cut. Bold in motion.">
-<meta property="og:description" content="Modest activewear for yoga, the gym, walking and running. Designed for Canada.">
+<title>IVORI Oral Care</title>
+<meta name="description" content="IVORI makes natural oral care in refillable metal packaging. Toothpaste, tablets, floss, mouthwash and tools, with refills that come to you. Prices in CAD.">
+<meta property="og:title" content="IVORI · The clean switch.">
+<meta property="og:description" content="Natural oral care in metal you keep, with refills that come to you. Designed for Canada.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#2E4A42">
+<meta name="theme-color" content="#1E2125">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500&display=swap" rel="stylesheet">
 <style>
-/* Layout idea: Apple-calm whitespace + Aritzia editorial type + Lululemon shop mechanics. Bone background, ink text, one deep spruce accent. */
+/* Layout idea: Apple white space, Aesop restraint, brushed metal surfaces. Silver and graphite with one glacier accent; burgundy only for the limited drop. */
 :root{
-  --bone:#F6F4F0;
+  --bg:#F6F7F8;
   --paper:#FFFFFF;
-  --sand:#ECE7DF;
-  --line:#DCD6CC;
-  --ink:#141414;
-  --ash:#5C574F;
-  --spruce:#2E4A42;
-  --spruce-soft:#DCE4E0;
-  --display:'Instrument Serif','Times New Roman',Georgia,serif;
-  --body:'Figtree',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --silver:#E6E8EB;
+  --line:#D9DCE0;
+  --ink:#1E2125;
+  --ash:#555C65;
+  --glacier:#A9C6D6;
+  --glacier-deep:#3D6779;
+  --glacier-soft:#E3EDF2;
+  --burgundy:#6E2233;
+  --metal:linear-gradient(135deg,#F4F5F6 0%,#DDE0E3 42%,#F0F1F2 68%,#CDD1D5 100%);
+  --metal-dark:linear-gradient(135deg,#2C2F33 0%,#16181B 50%,#2A2D31 75%,#0E0F11 100%);
+  --font:'Jost',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
   --wrap:1240px;
-  --radius:4px;
+  --radius:6px;
   color-scheme:light;
 }
 *{box-sizing:border-box}
 html,body{margin:0}
-body{background:var(--bone);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased}
 img,svg{max-width:100%;display:block}
 a{color:inherit}
 button,input,select{font:inherit;color:inherit}
-h1,h2,h3{font-weight:400;margin:0;text-wrap:balance}
+h1,h2,h3{font-weight:300;margin:0;text-wrap:balance;letter-spacing:-.005em}
 p{margin:0}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
-:focus-visible{outline:2px solid var(--spruce);outline-offset:3px}
-.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:var(--paper);padding:10px 14px;z-index:99}
+:focus-visible{outline:2px solid var(--glacier-deep);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:10px 14px;z-index:99}
 .skip:focus{left:8px}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 
-/* Announcement + nav */
-.announce{background:var(--ink);color:#F2EFEA;font-size:13px;text-align:center;padding:9px 16px;letter-spacing:.02em}
-.nav{position:sticky;top:0;z-index:40;background:rgba(246,244,240,.92);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid var(--line)}
-.nav-in{display:flex;align-items:center;gap:28px;height:64px}
-.logo{font-family:var(--body);font-weight:500;letter-spacing:.34em;font-size:18px;text-decoration:none;padding-left:.34em}
-.nav-links{display:flex;gap:22px;font-size:14px}
-.nav-links a{text-decoration:none;padding:8px 0;color:var(--ink)}
+/* Bar + nav */
+.announce{background:var(--ink);color:#EEF0F2;font-size:13px;text-align:center;padding:9px 16px;letter-spacing:.04em}
+.nav{position:sticky;top:0;z-index:40;background:rgba(246,247,248,.9);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;gap:30px;height:64px}
+.logo{font-weight:300;letter-spacing:.42em;font-size:20px;text-decoration:none;padding-left:.42em}
+.nav-links{display:flex;gap:24px;font-size:15px}
+.nav-links a{text-decoration:none;padding:8px 0}
 .nav-links a:hover{text-decoration:underline;text-underline-offset:6px}
 .nav-tools{margin-left:auto;display:flex;gap:4px;align-items:center}
 .icon-btn{background:none;border:0;width:44px;height:44px;display:grid;place-items:center;cursor:pointer;border-radius:50%;position:relative}
-.icon-btn:hover{background:var(--sand)}
+.icon-btn:hover{background:var(--silver)}
 .icon-btn svg{width:21px;height:21px}
-.count{position:absolute;top:6px;right:4px;background:var(--spruce);color:#fff;font-size:11px;min-width:18px;height:18px;border-radius:9px;display:grid;place-items:center;padding:0 4px;font-weight:600}
+.count{position:absolute;top:6px;right:4px;background:var(--glacier-deep);color:#fff;font-size:11px;min-width:18px;height:18px;border-radius:9px;display:grid;place-items:center;padding:0 4px;font-weight:500}
 .menu-btn{display:none}
 .searchbar{border-top:1px solid var(--line);display:none}
 .searchbar.open{display:block}
@@ -63,28 +67,26 @@ p{margin:0}
 .searchbar input{flex:1;border:0;border-bottom:1px solid var(--ink);background:transparent;padding:10px 2px;font-size:18px}
 .searchbar input:focus{outline:none;border-bottom-width:2px}
 @media (max-width:880px){
-  .nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:var(--bone);flex-direction:column;gap:0;padding:8px 24px 18px;border-bottom:1px solid var(--line)}
+  .nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:var(--bg);flex-direction:column;gap:0;padding:8px 24px 18px;border-bottom:1px solid var(--line)}
   .nav-links.open{display:flex}
   .nav-links a{padding:14px 0;font-size:17px;border-bottom:1px solid var(--line)}
   .menu-btn{display:grid}
 }
 
-/* Buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 26px;border-radius:999px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);text-decoration:none;font-weight:500;font-size:15px;cursor:pointer;transition:background .2s,color .2s}
-.btn:hover{background:#2b2b2b}
+/* Buttons + type */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 26px;border-radius:999px;border:1px solid var(--ink);background:var(--ink);color:#fff;text-decoration:none;font-weight:400;font-size:15px;letter-spacing:.03em;cursor:pointer;transition:background .2s,color .2s}
+.btn:hover{background:#33373C}
 .btn.ghost{background:transparent;color:var(--ink)}
-.btn.ghost:hover{background:var(--ink);color:var(--paper)}
-.btn.light{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+.btn.light{background:#fff;color:var(--ink);border-color:#fff}
 .btn.block{width:100%}
-.link{color:var(--spruce);text-decoration:none;font-weight:500}
+.link{color:var(--glacier-deep);text-decoration:none;font-weight:500}
 .link:hover{text-decoration:underline;text-underline-offset:4px}
 .link::after{content:" ›"}
-
-/* Type helpers */
-.kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ash);font-weight:500}
-.h-xl{font-family:var(--display);font-size:clamp(48px,7.2vw,96px);line-height:.98;letter-spacing:-.01em}
-.h-l{font-family:var(--display);font-size:clamp(36px,4.6vw,58px);line-height:1.04}
-.h-m{font-family:var(--display);font-size:clamp(28px,3vw,38px);line-height:1.1}
+.kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--ash);font-weight:400}
+.h-xl{font-size:clamp(52px,8vw,112px);line-height:.95;font-weight:200;letter-spacing:-.01em}
+.h-l{font-size:clamp(36px,4.4vw,56px);line-height:1.05;font-weight:200}
+.h-m{font-size:clamp(26px,2.8vw,34px);line-height:1.15;font-weight:300}
 .lede{font-size:18px;color:var(--ash);max-width:46ch}
 .section{padding-block:88px}
 .section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:32px;flex-wrap:wrap}
@@ -92,103 +94,120 @@ p{margin:0}
 /* Hero */
 .hero{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center;padding-block:56px 72px}
 .hero-copy{display:grid;gap:22px}
+.hero-mark{font-weight:100;letter-spacing:.42em;font-size:clamp(20px,2vw,26px)}
 .hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
-.hero-art{background:var(--spruce);border-radius:var(--radius);aspect-ratio:5/5.4;position:relative;overflow:hidden}
-.hero-art .g{position:absolute}
-.hero-art .g1{width:52%;left:6%;top:9%}
-.hero-art .g2{width:44%;right:5%;top:30%}
-.hero-art .g3{width:34%;left:30%;bottom:-2%}
-.hero-tag{position:absolute;left:20px;bottom:20px;background:rgba(255,255,255,.94);border-radius:var(--radius);padding:12px 14px;font-size:13px;max-width:230px;box-shadow:0 8px 24px rgba(0,0,0,.12)}
-.hero-tag b{display:block;font-weight:600}
+.hero-art{background:var(--metal);border-radius:var(--radius);aspect-ratio:5/4.4;position:relative;overflow:hidden;display:grid;grid-template-columns:repeat(3,1fr);align-items:end;padding:10% 8% 12%;gap:4%}
+.hero-art.photo{display:block;padding:0}
+.hero-art.photo img{position:absolute;inset:0}
+.hero-tag{position:absolute;left:20px;bottom:20px;background:rgba(255,255,255,.94);border-radius:var(--radius);padding:12px 14px;font-size:13px;max-width:240px;text-decoration:none}
+.hero-tag b{display:block;font-weight:500}
 @media (max-width:860px){.hero{grid-template-columns:1fr;padding-top:32px}}
 
 /* Promise strip */
 .promise{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .promise div{padding:22px 20px;display:grid;gap:4px;border-left:1px solid var(--line)}
 .promise div:first-child{border-left:0}
-.promise b{font-weight:600;font-size:15px}
+.promise b{font-weight:500;font-size:15px}
 .promise span{color:var(--ash);font-size:14px}
 @media (max-width:860px){.promise{grid-template-columns:1fr 1fr}.promise div:nth-child(3){border-left:0}.promise div:nth-child(n+3){border-top:1px solid var(--line)}}
 
-/* Activity tiles */
-.acts{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.act{background:var(--sand);border-radius:var(--radius);aspect-ratio:3/4;position:relative;overflow:hidden;text-decoration:none;display:flex;flex-direction:column;justify-content:flex-end;padding:20px;cursor:pointer;border:0;text-align:left}
-.act .g{position:absolute;inset:8% 14% 22%;}
-.act .g svg{width:100%;height:100%}
-.act h3{font-family:var(--display);font-size:28px;position:relative}
-.act p{font-size:14px;color:var(--ash);position:relative}
-.act:hover .g{transform:translateY(-4px)}
-.act .g{transition:transform .35s ease}
-@media (max-width:860px){.acts{grid-template-columns:1fr 1fr}}
+/* Category tiles */
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cat{background:var(--metal);border-radius:var(--radius);aspect-ratio:3/4;position:relative;overflow:hidden;text-decoration:none;display:flex;flex-direction:column;justify-content:flex-end;padding:20px}
+.cat .g{position:absolute;inset:10% 22% 26%;transition:transform .35s ease}
+.cat .g svg{width:100%;height:100%}
+.cat:hover .g{transform:translateY(-4px)}
+.cat.photo img{position:absolute;inset:0;transition:transform .5s ease}
+.cat.photo:hover img{transform:scale(1.03)}
+.cat.photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(246,247,248,.94),rgba(246,247,248,0) 38%)}
+.cat.photo h3,.cat.photo p{z-index:1}
+.cat h3{font-size:26px;font-weight:300;position:relative}
+.cat p{font-size:14px;color:var(--ash);position:relative}
+@media (max-width:860px){.cats{grid-template-columns:1fr 1fr}}
 
-/* Product cards */
+/* Cards */
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 18px}
 .grid.three{grid-template-columns:repeat(3,1fr)}
 @media (max-width:1000px){.grid,.grid.three{grid-template-columns:repeat(2,1fr)}}
-.card{display:grid;gap:10px;text-decoration:none;cursor:pointer}
-.card-img{background:var(--sand);border-radius:var(--radius);aspect-ratio:4/5;display:grid;place-items:center;padding:12%;position:relative}
+.card{display:grid;gap:8px;text-decoration:none}
+.card-img{background:var(--metal);border-radius:var(--radius);aspect-ratio:4/5;display:grid;place-items:center;padding:14%;position:relative;overflow:hidden}
 .card-img svg{width:100%;height:100%;transition:transform .35s ease}
-.card:hover .card-img svg{transform:scale(1.03)}
-.badge{position:absolute;top:12px;left:12px;background:var(--paper);font-size:12px;font-weight:600;padding:4px 9px;border-radius:999px}
+.card:hover .card-img svg,.card:hover .card-img img{transform:scale(1.03)}
+.card-img img{transition:transform .35s ease}
+.card-img:has(img),.shot:has(img),.thumb:has(img){padding:0}
+.badge{position:absolute;top:12px;left:12px;background:#fff;font-size:12px;font-weight:500;padding:4px 10px;border-radius:999px;z-index:1}
+.badge.drop{background:var(--burgundy);color:#fff}
 .card-name{font-weight:500}
 .card-meta{display:flex;justify-content:space-between;gap:10px;color:var(--ash);font-size:14px}
 .card-price{color:var(--ink);font-variant-numeric:tabular-nums}
-.swatches{display:flex;gap:6px}
-.dot{width:14px;height:14px;border-radius:50%;border:1px solid rgba(0,0,0,.18)}
 
-/* Apple-style promo tiles */
+/* Promos */
 .promos{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .promo{border-radius:var(--radius);padding:44px 32px 0;text-align:center;display:grid;gap:10px;overflow:hidden;align-content:start;min-height:560px}
-.promo.light{background:var(--paper)}
-.promo.dark{background:var(--ink);color:#F2EFEA}
-.promo.dark .sub{color:#C9C4BB}
-.promo.dark .link{color:#B9D3C9}
+.promo.light{background:#fff}
+.promo.dark{background:var(--metal-dark);color:#EEF0F2}
+.promo.dark .sub{color:#C3C8CE}
+.promo.dark .link{color:var(--glacier)}
+.promo.dark .kicker{color:#C3C8CE}
 .promo .sub{color:var(--ash);font-size:17px}
 .promo .links{display:flex;gap:22px;justify-content:center;margin:6px 0 18px}
-.promo .art{width:62%;margin:auto auto 0;justify-self:center}
+.promo .art{width:min(64%,320px);margin:auto auto 32px;aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;background:var(--metal);display:grid;place-items:center;padding:12%}
+.promo .art:has(img){padding:0}
 @media (max-width:860px){.promos{grid-template-columns:1fr}.promo{min-height:480px}}
 
-/* Coverage feature */
+/* Drop + refills */
+.duo{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:16px}
+.drop{background:linear-gradient(135deg,#7C2A3C,#5A1A28 60%,#6E2233);color:#fff;border-radius:var(--radius);padding:44px 40px;display:grid;gap:12px;align-content:start;text-decoration:none;position:relative;overflow:hidden;min-height:400px}
+.drop>h2,.drop>p,.drop>.kicker{max-width:56%}
+.drop p{color:#F1DDE1;font-size:17px}
+.drop .kicker{color:#F1DDE1}
+.drop .go{font-weight:500;text-decoration:underline;text-underline-offset:5px}
+.drop .art{position:absolute;right:32px;bottom:28px;width:30%;aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;display:grid;place-items:center}
+.drop .art svg{width:80%;height:80%}
+.steps{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:44px 40px;display:grid;gap:14px;align-content:start}
+.steps ol{margin:6px 0 0;padding-left:20px;color:var(--ash);display:grid;gap:8px}
+@media (max-width:860px){.duo{grid-template-columns:1fr}.drop>h2,.drop>p,.drop>.kicker{max-width:none}.drop .art{position:static;width:55%;margin-top:12px}}
+
+/* Inside card */
 .feature{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 .feature-copy{display:grid;gap:18px}
 .feature-copy ul{margin:0;padding:0;list-style:none;display:grid;gap:12px}
-.feature-copy li{display:flex;gap:12px;align-items:flex-start}
-.feature-copy li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--spruce);margin-top:9px;flex:none}
+.feature-copy li{display:flex;gap:12px}
+.feature-copy li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--glacier-deep);margin-top:9px;flex:none}
 @media (max-width:860px){.feature{grid-template-columns:1fr}}
-.covcard{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:grid;gap:4px}
-.covcard-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;gap:12px}
-.covcard-head b{font-weight:600}
-.covrow{display:grid;grid-template-columns:110px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-top:1px solid var(--line);font-size:15px}
-.covrow span:first-child{color:var(--ash)}
-.meter{display:flex;gap:3px}
-.meter i{width:16px;height:6px;border-radius:3px;background:var(--line)}
-.meter i.on{background:var(--spruce)}
+.inside{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:grid;gap:4px}
+.inside-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;gap:12px}
+.inside-head b{font-weight:500}
+.irow{display:grid;grid-template-columns:120px 1fr;gap:12px;padding:12px 0;border-top:1px solid var(--line);font-size:15px}
+.irow span:first-child{color:var(--ash)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:13px;padding:3px 10px;border-radius:999px;background:var(--glacier-soft);color:#24485A}
 
 /* Story */
-.story{background:var(--spruce);color:#F1EEE8;border-radius:var(--radius);padding:72px 56px;display:grid;grid-template-columns:1.2fr 1fr;gap:48px}
-.story p{color:#D5DDD9;font-size:18px;max-width:52ch}
-.story .h-l{color:#fff}
+.story{background:var(--metal-dark);color:#EEF0F2;border-radius:var(--radius);padding:72px 56px;display:grid;grid-template-columns:1.2fr 1fr;gap:48px}
+.story p{color:#C9CED4;font-size:18px;max-width:52ch}
+.story .kicker{color:var(--glacier)}
 @media (max-width:860px){.story{grid-template-columns:1fr;padding:48px 24px}}
 
 /* Community */
-.ugc{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
-.ugc div{aspect-ratio:1;border-radius:var(--radius);display:grid;place-items:center;padding:16%}
-@media (max-width:860px){.ugc{grid-template-columns:repeat(3,1fr)}.ugc div:nth-child(n+4){display:none}}
+.ugc{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.ugc div{aspect-ratio:1;border-radius:var(--radius);overflow:hidden;background:var(--metal);display:grid;place-items:center;padding:16%}
+.ugc div:has(img){padding:0}
+@media (max-width:860px){.ugc{grid-template-columns:1fr 1fr}}
 
-/* Newsletter */
+/* Newsletter + footer */
 .news{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;border-top:1px solid var(--line);padding-top:56px}
 .news form{display:flex;gap:10px;flex-wrap:wrap}
-.field{display:grid;gap:6px;flex:1;min-width:220px}
+.field{display:grid;gap:6px;flex:1;min-width:200px}
 .field label{font-size:13px;font-weight:500}
-.field input,.field select{height:48px;border:1px solid #BDB6AA;border-radius:var(--radius);background:var(--paper);padding:0 14px}
-.field input:focus,.field select:focus{outline:2px solid var(--spruce);outline-offset:0;border-color:var(--spruce)}
-.note{font-size:14px;color:var(--spruce);font-weight:500;min-height:22px}
+.field input,.field select{height:48px;border:1px solid #B9BEC5;border-radius:var(--radius);background:#fff;padding:0 14px}
+.field input:focus,.field select:focus{outline:2px solid var(--glacier-deep);outline-offset:0}
+.field input[aria-invalid="true"]{border-color:#9B2C1F}
+.note{font-size:14px;color:var(--glacier-deep);font-weight:500}
 @media (max-width:860px){.news{grid-template-columns:1fr}}
-
-/* Footer */
-footer{margin-top:96px;background:var(--sand);padding:56px 0 32px;font-size:14px}
+footer{margin-top:96px;background:var(--silver);padding:56px 0 32px;font-size:14px}
 .foot{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:32px}
-.foot h4{margin:0 0 12px;font-size:13px;font-weight:600}
+.foot h4{margin:0 0 12px;font-size:13px;font-weight:500}
 .foot ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 .foot a{text-decoration:none;color:var(--ash)}
 .foot a:hover{color:var(--ink);text-decoration:underline}
@@ -201,167 +220,120 @@ footer{margin-top:96px;background:var(--sand);padding:56px 0 32px;font-size:14px
 .crumbs a{text-decoration:none}
 .crumbs a:hover{text-decoration:underline}
 .shop{display:grid;grid-template-columns:240px 1fr;gap:40px;align-items:start}
-.filters{position:sticky;top:84px;display:grid;gap:4px}
+.filters{position:sticky;top:84px;display:grid}
 .fgroup{border-top:1px solid var(--line);padding:16px 0}
-.fgroup h3{font-family:var(--body);font-size:14px;font-weight:600;margin-bottom:10px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{min-height:40px;min-width:44px;padding:0 14px;border:1px solid #BDB6AA;border-radius:999px;background:var(--paper);cursor:pointer;font-size:14px;display:inline-flex;align-items:center;gap:8px}
-.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.fgroup h3{font-size:14px;font-weight:500;margin-bottom:10px}
+.chip{min-height:40px;padding:0 14px;border:1px solid #B9BEC5;border-radius:999px;background:#fff;cursor:pointer;font-size:14px}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
 .toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:20px;flex-wrap:wrap}
-.toolbar select{height:44px;border:1px solid #BDB6AA;border-radius:999px;padding:0 16px;background:var(--paper)}
-.empty{padding:60px 0;color:var(--ash)}
+.toolbar select{height:44px;border:1px solid #B9BEC5;border-radius:999px;padding:0 16px;background:#fff}
 .filters-toggle{display:none}
-@media (max-width:860px){
-  .shop{grid-template-columns:1fr}
-  .filters{position:static;display:none}
-  .filters.open{display:grid}
-  .filters-toggle{display:inline-flex}
-}
+@media (max-width:860px){.shop{grid-template-columns:1fr}.filters{position:static;display:none}.filters.open{display:grid}.filters-toggle{display:inline-flex}}
 
 /* Product page */
 .pdp{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;padding:24px 0 40px;align-items:start}
 .gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.gallery .shot{background:var(--sand);border-radius:var(--radius);aspect-ratio:4/5;display:grid;place-items:center;padding:12%}
-.gallery .shot.main{grid-column:1/-1;aspect-ratio:1/1;padding:9%}
-.gallery .shot.fabric{display:block;padding:0;overflow:hidden;position:relative}
-.gallery .shot.fabric span{position:absolute;left:14px;bottom:14px;background:var(--paper);font-size:12px;padding:4px 10px;border-radius:999px}
+.shot{background:var(--metal);border-radius:var(--radius);aspect-ratio:4/5;display:grid;place-items:center;padding:14%;overflow:hidden;position:relative}
+.shot.wide{grid-column:1/-1;aspect-ratio:16/9;padding:0}
+.shot span.lbl{position:absolute;left:14px;bottom:14px;background:#fff;font-size:12px;padding:4px 10px;border-radius:999px}
 .buy{position:sticky;top:88px;display:grid;gap:22px}
 .buy-top{display:grid;gap:6px}
 .price{font-size:20px;font-variant-numeric:tabular-nums}
-.opt-label{display:flex;justify-content:space-between;font-size:14px;margin-bottom:10px}
-.opt-label b{font-weight:600}
-.colour-btns{display:flex;gap:10px;flex-wrap:wrap}
-.cbtn{width:44px;height:44px;border-radius:50%;border:2px solid transparent;padding:3px;background:none;cursor:pointer}
-.cbtn span{display:block;width:100%;height:100%;border-radius:50%;border:1px solid rgba(0,0,0,.18)}
-.cbtn[aria-pressed="true"]{border-color:var(--ink)}
-.size-btns{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.sbtn{height:48px;border:1px solid #BDB6AA;background:var(--paper);border-radius:var(--radius);cursor:pointer;font-size:15px}
-.sbtn[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.sbtn:disabled{color:#A39C91;background:transparent;text-decoration:line-through;cursor:not-allowed}
-.textbtn{background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:3px;cursor:pointer;font-size:14px;min-height:24px}
+.opt-label{font-size:14px;margin-bottom:10px}
+.opt-label b{font-weight:500}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.obtn{min-height:48px;padding:0 16px;border:1px solid #B9BEC5;background:#fff;border-radius:var(--radius);cursor:pointer;font-size:15px;text-align:left}
+.obtn small{color:var(--ash);margin-left:6px}
+.obtn[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.ptype{display:grid;gap:8px}
+.radio{display:flex;gap:12px;align-items:center;border:1px solid #B9BEC5;border-radius:var(--radius);padding:14px 16px;background:#fff;cursor:pointer}
+.radio:has(input:checked){border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.radio input{width:18px;height:18px;accent-color:var(--glacier-deep)}
+.radio .row{flex:1}
+.radio select{height:36px;border:1px solid #B9BEC5;border-radius:var(--radius);background:#fff;padding:0 8px;margin-top:6px}
 .ship-note{font-size:14px;color:var(--ash);display:grid;gap:4px}
 details{border-top:1px solid var(--line)}
 details:last-of-type{border-bottom:1px solid var(--line)}
 summary{list-style:none;cursor:pointer;padding:18px 0;font-weight:500;display:flex;justify-content:space-between;align-items:center}
 summary::-webkit-details-marker{display:none}
-summary::after{content:"+";font-size:22px;font-weight:300}
+summary::after{content:"+";font-size:22px;font-weight:200}
 details[open] summary::after{content:"–"}
 details .body{padding:0 0 20px;color:var(--ash);font-size:15px;display:grid;gap:8px}
-.err{color:#9B2C1F;font-size:14px;font-weight:500;min-height:20px}
+.dropnote{background:#F3E3E6;color:#5A1A28;border-radius:var(--radius);padding:10px 14px;font-size:14px;font-weight:500}
 @media (max-width:900px){.pdp{grid-template-columns:1fr}.buy{position:static}}
 
-/* Drawer + dialog */
-.scrim{position:fixed;inset:0;background:rgba(20,20,20,.38);opacity:0;pointer-events:none;transition:opacity .25s;z-index:60}
+/* Drawer + checkout */
+.scrim{position:fixed;inset:0;background:rgba(20,22,25,.38);opacity:0;pointer-events:none;transition:opacity .25s;z-index:60}
 .scrim.on{opacity:1;pointer-events:auto}
-.drawer{position:fixed;top:0;right:0;height:100%;width:min(440px,100%);background:var(--bone);z-index:70;transform:translateX(100%);transition:transform .3s ease;display:flex;flex-direction:column}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(440px,100%);background:var(--bg);z-index:70;transform:translateX(100%);transition:transform .3s ease;display:flex;flex-direction:column}
 .drawer.on{transform:none}
 .drawer-head{display:flex;justify-content:space-between;align-items:center;padding:16px 20px 16px 24px;border-bottom:1px solid var(--line)}
-.drawer-head h2{font-family:var(--display);font-size:30px}
+.drawer-head h2{font-size:28px;font-weight:200}
 .drawer-body{flex:1;overflow:auto;padding:20px 24px;display:grid;gap:18px;align-content:start}
-.drawer-foot{border-top:1px solid var(--line);padding:20px 24px;display:grid;gap:14px}
+.drawer-foot{border-top:1px solid var(--line);padding:20px 24px;display:grid;gap:12px}
 .freeship{display:grid;gap:8px;font-size:14px}
 .bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden}
-.bar i{display:block;height:100%;background:var(--spruce)}
+.bar i{display:block;height:100%;background:var(--glacier-deep)}
 .line-item{display:grid;grid-template-columns:84px 1fr auto;gap:14px;align-items:start}
-.line-item .thumb{background:var(--sand);border-radius:var(--radius);aspect-ratio:4/5;padding:10%}
+.line-item .thumb{background:var(--metal);border-radius:var(--radius);aspect-ratio:4/5;padding:12%;overflow:hidden;display:grid;place-items:center}
 .line-item .meta{font-size:14px;color:var(--ash)}
-.qty{display:inline-flex;align-items:center;border:1px solid #BDB6AA;border-radius:999px;margin-top:8px}
+.sub-tag{display:inline-block;font-size:12px;background:var(--glacier-soft);color:#24485A;border-radius:999px;padding:2px 8px;margin-top:4px}
+.qty{display:inline-flex;align-items:center;border:1px solid #B9BEC5;border-radius:999px;margin-top:8px}
 .qty button{width:36px;height:36px;border:0;background:none;cursor:pointer;font-size:18px}
 .qty span{min-width:22px;text-align:center;font-variant-numeric:tabular-nums}
 .row{display:flex;justify-content:space-between;gap:12px;font-variant-numeric:tabular-nums}
-.row.total{font-weight:600;font-size:18px}
-dialog{border:0;border-radius:8px;padding:0;max-width:640px;width:calc(100% - 32px);background:var(--bone);color:var(--ink)}
-dialog::backdrop{background:rgba(20,20,20,.45)}
-.dlg{padding:28px;display:grid;gap:18px}
-.tbl-wrap{overflow-x:auto}
-table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
-th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
-th{font-weight:600;background:var(--sand)}
-
-/* Checkout */
+.row.total{font-weight:500;font-size:18px}
+.row.save{color:var(--glacier-deep);font-weight:500}
+.codeform{display:flex;gap:8px}
+.codeform input{flex:1;height:44px;border:1px solid #B9BEC5;border-radius:var(--radius);background:#fff;padding:0 12px;text-transform:uppercase}
+.codeform .btn{min-height:44px;padding:0 18px}
+.textbtn{background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:3px;cursor:pointer;font-size:14px}
+.err{color:#9B2C1F;font-size:14px;font-weight:500;min-height:20px}
 .checkout{display:grid;grid-template-columns:1.3fr 1fr;gap:56px;padding:32px 0 40px;align-items:start}
 .co-form{display:grid;gap:30px}
 .co-form fieldset{border:0;padding:0;margin:0;display:grid;gap:14px}
-.co-form legend{font-family:var(--display);font-size:28px;margin-bottom:6px;padding:0}
+.co-form legend{font-size:28px;font-weight:200;margin-bottom:6px;padding:0}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.radio{display:flex;gap:12px;align-items:center;border:1px solid #BDB6AA;border-radius:var(--radius);padding:14px 16px;background:var(--paper);cursor:pointer}
-.radio input{width:18px;height:18px;accent-color:var(--spruce)}
-.radio .row{flex:1}
-.proto{background:var(--spruce-soft);border-radius:var(--radius);padding:12px 14px;font-size:14px}
-.summary{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:grid;gap:14px;position:sticky;top:88px}
+.proto{background:var(--glacier-soft);border-radius:var(--radius);padding:12px 14px;font-size:14px}
+.summary{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:grid;gap:14px;position:sticky;top:88px}
 @media (max-width:900px){.checkout{grid-template-columns:1fr}.summary{position:static}.two{grid-template-columns:1fr}}
 .done{padding-block:96px;display:grid;gap:18px;justify-items:start;max-width:640px}
 .guide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.guide-grid div{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:grid;gap:8px}
-.guide-grid b{font-weight:600}
+.guide-grid div{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:grid;gap:8px;align-content:start}
+.guide-grid b{font-weight:500}
 .guide-grid p{color:var(--ash);font-size:15px}
 @media (max-width:860px){.guide-grid{grid-template-columns:1fr}}
 .view{min-height:60vh}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.card-img:has(img),.shot:has(img),.thumb:has(img){padding:0;overflow:hidden}
-.hero-art.photo{aspect-ratio:5/4.4}
-.hero-art.photo img{position:absolute;inset:0}
-.act.photo{color:#fff}
-.act.photo img{position:absolute;inset:0;transition:transform .5s ease}
-.act.photo:hover img{transform:scale(1.03)}
-.act.photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.62),rgba(0,0,0,0) 55%)}
-.act.photo h3,.act.photo p{z-index:1;color:#fff}
-.act.photo p{color:#EDE9E3}
-.promo .art.photo{width:min(70%,340px);aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;margin-bottom:32px}
-.drop .arts.photo{display:block;width:34%;right:32px;bottom:32px;aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.25)}
-.ugc div:has(img){padding:0;overflow:hidden}
-.gallery .shot.main{grid-column:auto;aspect-ratio:4/5;padding:12%}
-.gallery .shot:has(img),.gallery .shot.main:has(img){padding:0}
-.gallery .shot.life{padding:0;overflow:hidden;position:relative}
-.gallery .shot.life span{position:absolute;left:14px;bottom:14px;background:var(--paper);font-size:12px;padding:4px 10px;border-radius:999px}
-@media (max-width:860px){.drop .arts.photo{position:static;width:60%;margin-top:16px}}
-.codeform{display:flex;gap:8px}
-.codeform input{flex:1;height:44px;border:1px solid #BDB6AA;border-radius:var(--radius);background:var(--paper);padding:0 12px;text-transform:uppercase}
-.codeform .btn{min-height:44px;padding:0 18px}
-.row.save{color:var(--spruce);font-weight:500}
-.duo{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:16px}
-.drop>h2,.drop>p,.drop>.kicker{max-width:56%}
-@media (max-width:860px){.drop>h2,.drop>p,.drop>.kicker{max-width:none}}
-.drop{background:#9A5A47;color:#fff;border-radius:var(--radius);padding:44px 40px;display:grid;gap:12px;align-content:start;text-decoration:none;position:relative;overflow:hidden;min-height:400px}
-.drop p{color:#F3E4DE;max-width:34ch;font-size:17px}
-.drop .kicker{color:#F3E4DE}
-.drop .go{font-weight:600;text-decoration:underline;text-underline-offset:5px;position:relative}
-.drop .arts{position:absolute;right:-2%;bottom:-4%;width:52%;display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;align-items:end;opacity:.95}
-.drop .arts svg path{stroke:#6E3B2C}
-.set{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:44px 40px;display:grid;gap:14px;align-content:start}
-.set ol{margin:6px 0 0;padding-left:20px;color:var(--ash);display:grid;gap:6px}
-.dropnote{background:#F3E4DE;color:#6E3B2C;border-radius:var(--radius);padding:10px 14px;font-size:14px;font-weight:500}
-@media (max-width:860px){.duo{grid-template-columns:1fr}.drop .arts{position:static;width:80%;margin-top:12px}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="announce">Free shipping across Canada over $120 &nbsp;·&nbsp; Prices in CAD &nbsp;·&nbsp; New here? Use code <b>SOLENNE10</b> for 10% off</div>
+<div class="announce">Free shipping across Canada over $60 &nbsp;·&nbsp; Subscribe and save 15% &nbsp;·&nbsp; New here? Use <b>IVORI10</b> for 10% off</div>
 
 <header class="nav">
   <div class="wrap nav-in">
     <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
     </button>
-    <a href="#home" class="logo" aria-label="Solenne home">SOLENNE</a>
+    <a href="#home" class="logo" aria-label="IVORI home">IVORI</a>
     <nav class="nav-links" id="navLinks" aria-label="Main">
       <a href="#shop" data-nav="all">Shop all</a>
-      <a href="#shop" data-nav="New">New</a>
-      <a href="#shop" data-nav="Limited">Limited Drop</a>
-      <a href="#shop" data-act="Yoga & Pilates">Yoga &amp; Pilates</a>
-      <a href="#shop" data-act="Gym">Gym</a>
-      <a href="#shop" data-act="Walk & Run">Walk &amp; Run</a>
-      <a href="#coverage-guide">Coverage &amp; Size Guide</a>
+      <a href="#p-switch-kit">The Switch Kit</a>
+      <a href="#shop" data-cat="Toothpaste">Toothpaste</a>
+      <a href="#shop" data-cat="Mouthcare">Mouthcare</a>
+      <a href="#shop" data-cat="Tools">Tools</a>
+      <a href="#shop" data-cat="Accessories">Accessories</a>
+      <a href="#refills">How refills work</a>
     </nav>
     <div class="nav-tools">
       <button class="icon-btn" id="searchBtn" aria-label="Search" aria-expanded="false" aria-controls="searchbar">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
       </button>
       <button class="icon-btn" aria-label="Account (coming soon)" title="Account (coming soon)">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
       </button>
       <button class="icon-btn" id="bagBtn" aria-label="Bag, 0 items">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 8h14l-1 13H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 8h14l-1 13H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
         <span class="count" id="bagCount" hidden>0</span>
       </button>
     </div>
@@ -369,7 +341,7 @@ th{font-weight:600;background:var(--sand)}
   <div class="searchbar" id="searchbar">
     <form class="wrap" id="searchForm" role="search">
       <label for="q" class="kicker" style="align-self:center">Search</label>
-      <input id="q" type="search" placeholder="Leggings, skirts, long sleeves…" autocomplete="off">
+      <input id="q" type="search" placeholder="Toothpaste, floss, travel…" autocomplete="off">
       <button class="btn" type="submit">Search</button>
     </form>
   </div>
@@ -381,31 +353,30 @@ th{font-weight:600;background:var(--sand)}
   <div class="wrap">
     <div class="foot">
       <div style="display:grid;gap:12px;align-content:start">
-        <span class="logo" style="font-size:16px">SOLENNE</span>
-        <p style="color:var(--ash);max-width:34ch">Modest activewear for women who move. Modest in cut, bold in motion.</p>
+        <span class="logo" style="font-size:18px;font-weight:200">IVORI</span>
+        <p style="color:var(--ash);max-width:34ch">Natural oral care in metal you keep, with refills that come to you.</p>
       </div>
       <div><h4>Shop</h4><ul>
         <li><a href="#shop" data-nav="all">All products</a></li>
-        <li><a href="#shop" data-cat="Tops">Tops</a></li>
-        <li><a href="#shop" data-cat="Bottoms">Leggings &amp; pants</a></li>
-        <li><a href="#shop" data-cat="Skirts">Skirts</a></li>
-        <li><a href="#shop" data-cat="Layers">Layers</a></li>
+        <li><a href="#shop" data-cat="Toothpaste">Toothpaste</a></li>
+        <li><a href="#shop" data-cat="Mouthcare">Mouthcare</a></li>
+        <li><a href="#shop" data-cat="Tools">Tools</a></li>
+        <li><a href="#shop" data-cat="Accessories">Accessories</a></li>
       </ul></div>
       <div><h4>Help</h4><ul>
-        <li><a href="#coverage-guide">Coverage &amp; size guide</a></li>
-        <li><a href="#coverage-guide">Shipping in Canada</a></li>
-        <li><a href="#coverage-guide">Returns &amp; exchanges</a></li>
-        <li><a href="#coverage-guide">Accessibility</a></li>
+        <li><a href="#refills">How refills work</a></li>
+        <li><a href="#refills">Subscriptions</a></li>
+        <li><a href="#refills">Shipping and returns</a></li>
+        <li><a href="#refills">Recycling program</a></li>
       </ul></div>
       <div><h4>Follow</h4><ul>
         <li><a href="#home">Instagram</a></li>
         <li><a href="#home">TikTok</a></li>
         <li><a href="#home">Pinterest</a></li>
-        <li><a href="#home">Facebook</a></li>
       </ul></div>
     </div>
     <div class="foot-base">
-      <span>© 2026 Solenne · Canada (CAD)</span>
+      <span>© 2026 IVORI · Canada (CAD)</span>
       <span>Website prototype · ITM550 Advanced E-Business</span>
     </div>
   </div>
@@ -415,175 +386,177 @@ th{font-weight:600;background:var(--sand)}
 <aside class="drawer" id="drawer" aria-label="Your bag" aria-hidden="true">
   <div class="drawer-head">
     <h2>Your bag</h2>
-    <button class="icon-btn" id="closeBag" aria-label="Close bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <button class="icon-btn" id="closeBag" aria-label="Close bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
   </div>
   <div class="drawer-body" id="bagBody"></div>
   <div class="drawer-foot" id="bagFoot"></div>
 </aside>
 
-<dialog id="sizeDlg" aria-labelledby="sizeDlgTitle">
-  <div class="dlg">
-    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
-      <h2 class="h-m" id="sizeDlgTitle">Size guide</h2>
-      <button class="icon-btn" id="closeSize" aria-label="Close size guide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-    </div>
-    <p style="color:var(--ash)">Body measurements in centimetres. Between sizes? Size up for a relaxed drape, down for a closer fit.</p>
-    <div class="tbl-wrap" id="sizeTable"></div>
-  </div>
-</dialog>
-
 <script>
-const COLOURS={Onyx:'#1D1D1D',Spruce:'#2E4A42',Fawn:'#B59C83',Mist:'#AAB6BD',Clay:'#9A5A47',Ivory:'#EAE4D8'};
-const SIZES=['XXS','XS','S','M','L','XL','2X','3X'];
-const SIZE_CHART=[['XXS',78,60,86],['XS',82,64,90],['S',87,69,95],['M',92,74,100],['L',98,80,106],['XL',104,87,112],['2X',111,95,119],['3X',118,103,126]];
-const PRODUCTS=[
- {id:'flow-long-sleeve',name:'Flow Long Sleeve',type:'longsleeve',price:78,cat:'Tops',acts:['Yoga & Pilates','Gym'],colours:['Onyx','Spruce','Fawn','Mist'],tag:'Bestseller',soldOut:[],
-  blurb:'Our everyday long sleeve. Soft, sweat-wicking and cut to stay in place through every stretch.',
-  cov:[['Sleeve','Full length, thumbholes',4],['Neckline','High crew',4],['Hem','Covers the hip',3],['Fit','Skims the body',3]],
-  fabric:'Brushed nylon and elastane, 4-way stretch, sweat-wicking.',opacity:'Opaque in every colour. Bend-tested under studio light.'},
- {id:'stride-tunic',name:'Stride Tunic',type:'tunic',price:84,cat:'Tops',acts:['Walk & Run','Gym'],colours:['Spruce','Onyx','Clay'],tag:'New',drop:true,soldOut:['XXS'],
-  blurb:'A longer line for leggings days. Side vents give your stride room without lifting the hem.',
-  cov:[['Sleeve','Full length',4],['Neckline','High crew',4],['Hem','Mid-thigh, side vents',4],['Fit','Relaxed through the hip',2]],
-  fabric:'Lightweight recycled polyester, quick-dry, anti-cling finish.',opacity:'Opaque. Double layer across the back.'},
- {id:'layer-mock-neck',name:'Layer Mock Neck',type:'mockneck',price:72,cat:'Tops',acts:['Yoga & Pilates','Everyday'],colours:['Ivory','Onyx','Mist'],tag:'',soldOut:[],
-  blurb:'A fitted base layer with a soft mock neck. Wear it alone or under anything with a lower neckline.',
-  cov:[['Sleeve','Full length',4],['Neckline','Mock neck',4],['Hem','Below the hip',3],['Fit','Close base layer',4]],
-  fabric:'Modal blend with stretch, breathable, tag-free.',opacity:'Opaque, including Ivory. Lined at the chest.'},
- {id:'ease-half-zip',name:'Ease Half-Zip',type:'halfzip',price:112,cat:'Layers',acts:['Walk & Run','Everyday'],colours:['Clay','Fawn','Onyx','Spruce'],tag:'',drop:true,soldOut:['3X'],
-  blurb:'A warm mid-layer for cold walks and the commute to class. Zip it up and the collar covers the neck.',
-  cov:[['Sleeve','Full length, thumbholes',4],['Neckline','Funnel neck when zipped',4],['Hem','Covers the hip',3],['Fit','Relaxed',2]],
-  fabric:'Brushed fleece back, smooth face, zip garage at chin.',opacity:'Opaque mid-weight knit.'},
- {id:'shelter-jacket',name:'Shelter Light Jacket',type:'jacket',price:138,cat:'Layers',acts:['Walk & Run','Everyday'],colours:['Onyx','Mist','Clay'],tag:'New',soldOut:[],
-  blurb:'Water-resistant, packable and long enough to cover. Made for Canadian shoulder seasons.',
-  cov:[['Sleeve','Full length, adjustable cuff',4],['Neckline','Stand collar with hood',4],['Hem','Mid-thigh',4],['Fit','Relaxed over layers',2]],
-  fabric:'Water-resistant ripstop, mesh lining, packs into its pocket.',opacity:'Fully opaque shell.'},
- {id:'anchor-legging',name:'Anchor Legging 28"',type:'leggings',price:98,cat:'Bottoms',acts:['Yoga & Pilates','Gym','Walk & Run','Everyday'],colours:['Onyx','Spruce','Fawn','Clay'],tag:'Bestseller',soldOut:[],
-  blurb:'Squat-proof, high-rise and full length. The legging everything else in the collection is built around.',
-  cov:[['Rise','High rise',4],['Length','Full to ankle (28")',4],['Opacity','Squat-proof',4],['Fit','Supportive hold',3]],
-  fabric:'Dense interlock nylon, 4-way stretch, gusset for movement.',opacity:'Squat-proof in every colour, tested in a deep squat under bright light.'},
- {id:'drift-wide-leg',name:'Drift Wide-Leg Pant',type:'widepant',price:108,cat:'Bottoms',acts:['Yoga & Pilates','Everyday'],colours:['Onyx','Fawn','Mist'],tag:'',soldOut:[],
-  blurb:'Flowy enough for the street, stretchy enough for the mat. Never clings.',
-  cov:[['Rise','High rise',4],['Length','Floor-grazing',4],['Opacity','Opaque',4],['Fit','Loose through the leg',1]],
-  fabric:'Fluid crepe knit with stretch, wrinkle-resistant.',opacity:'Opaque, no lining needed.'},
- {id:'motion-midi-skirt',name:'Motion Midi Skirt',type:'midiskirt',price:96,cat:'Skirts',acts:['Walk & Run','Gym','Everyday'],colours:['Onyx','Spruce','Clay'],tag:'Bestseller',drop:true,soldOut:['XXS'],
-  blurb:'A midi skirt with full-length leggings built in. Run, lift and climb stairs without a second thought.',
-  cov:[['Length','Mid-calf',4],['Built-in','Full-length legging',4],['Opacity','Opaque, lined',4],['Fit','A-line, moves with you',2]],
-  fabric:'Woven stretch shell over squat-proof legging liner.',opacity:'Opaque shell and liner.'},
- {id:'studio-wrap-skirt',name:'Studio Wrap Skirt',type:'wrapskirt',price:88,cat:'Skirts',acts:['Yoga & Pilates'],colours:['Spruce','Fawn','Onyx'],tag:'New',soldOut:[],
-  blurb:'Wrap it over leggings for class. A hidden snap keeps the overlap closed through lunges and twists.',
-  cov:[['Length','Below the knee',3],['Overlap','Hidden snap closure',4],['Opacity','Opaque',4],['Fit','Adjustable tie',3]],
-  fabric:'Soft jersey with stretch, adjustable waist tie.',opacity:'Opaque single layer.'}
-];
+/* ---------- Data ---------- */
+const FREE_SHIP=60, SUB_PCT=15;
+const CODES={IVORI10:[10,'Welcome offer'],CREATOR15:[15,'Creator code']};
 const PROV={AB:['Alberta',5],BC:['British Columbia',12],MB:['Manitoba',12],NB:['New Brunswick',15],NL:['Newfoundland and Labrador',15],NS:['Nova Scotia',14],NT:['Northwest Territories',5],NU:['Nunavut',5],ON:['Ontario',13],PE:['Prince Edward Island',15],QC:['Quebec',14.975],SK:['Saskatchewan',11],YT:['Yukon',5]};
-const FREE_SHIP=120;
-const CODES={SOLENNE10:[10,'Welcome offer'],CREATOR15:[15,'Creator code']};
-const SET_PCT=10;
-/* Product photos: drop files into images/ and list them here, e.g.
-   'flow-long-sleeve/Onyx':'images/flow-long-sleeve-onyx.jpg'.
-   Any product without a photo falls back to its drawing. */
+/* Photos: add files to images/ and list them here, e.g. 'daily-toothpaste':'images/toothpaste.jpg'. Products without a photo show a drawing. */
 const IMAGES={
-  'flow-long-sleeve/Onyx':'images/flow-long-sleeve-onyx.jpg',
-  'stride-tunic/Spruce':'images/stride-tunic-spruce.jpg',
-  'layer-mock-neck/Ivory':'images/layer-mock-neck-ivory.jpg',
-  'ease-half-zip/Clay':'images/ease-half-zip-clay.jpg',
-  'shelter-jacket/Onyx':'images/shelter-jacket-onyx.jpg',
-  'anchor-legging/Onyx':'images/anchor-legging-onyx.jpg',
-  'drift-wide-leg/Onyx':'images/drift-wide-leg-onyx.jpg',
-  'motion-midi-skirt/Onyx':'images/motion-midi-skirt-onyx.jpg',
-  'studio-wrap-skirt/Spruce':'images/studio-wrap-skirt-spruce.jpg'
+  'daily-toothpaste':'images/toothpaste.jpg','toothpaste-tablets':'images/tablets.jpg','mouthwash':'images/mouthwash.jpg',
+  'silk-floss':'images/floss.jpg','tongue-scraper':'images/scraper.jpg','aluminum-toothbrush':'images/toothbrush.jpg',
+  'water-flosser':'images/waterflosser.jpg','brush-stand':'images/stand.jpg','wall-mount':'images/wallmount.jpg',
+  'travel-kit':'images/travelkit.jpg','switch-kit':'images/switchkit.jpg','black-cherry':'images/blackcherry.jpg'
 };
-/* Second angle for the product gallery */
-const IMAGES2={
-  'flow-long-sleeve':'images/flow-long-sleeve-onyx-2.jpg',
-  'stride-tunic':'images/stride-tunic-spruce-2.jpg',
-  'layer-mock-neck':'images/layer-mock-neck-ivory-2.jpg',
-  'ease-half-zip':'images/ease-half-zip-clay-2.jpg'
-};
-/* Lifestyle photos */
-const LIFE={
-  'Walk & Run':['images/life-waterfront.jpg','Two women walking on the Toronto waterfront in autumn, one in a hijab with a clay skirt over leggings, one in a spruce long sleeve top and black leggings','45% 50%'],
-  'Yoga & Pilates':['images/life-studio.jpg','A pilates class of women in long sleeves, leggings and athletic skirts doing lunges in a bright studio','50% 50%'],
-  'Gym':['images/life-gym.jpg','A woman in a long sleeve top and leggings stretching on a mat in a gym','68% 50%']
-};
-function photo(src,alt,pos){return `<img src="${src}" alt="${esc(alt)}" style="width:100%;height:100%;object-fit:cover;object-position:${pos||'50% 50%'}">`}
-function pic(p,colour,label){const key=Object.keys(IMAGES).find(k=>k.startsWith(p.id+'/'));const src=IMAGES[p.id+'/'+colour]||(key&&IMAGES[key]);return src?`<img src="${src}" alt="${esc(label||'')}" loading="lazy" style="width:100%;height:100%;object-fit:cover">`:garment(p.type,colour,label)}
+const LIFE={counter:'images/life-counter.jpg',travel:'images/life-travel.jpg',hands:'images/life-hands.jpg'};
+const LIFE_ALT={counter:'IVORI toothpaste, brush and stand on a marble bathroom counter',travel:'IVORI travel kit inside an open toiletry bag',hands:'Hands squeezing an IVORI aluminum toothpaste tube over a sink'};
+const FREQ=['Every month','Every 2 months','Every 3 months'];
 
-/* ---------- Garment drawings ---------- */
-function shade(hex,amt){const n=parseInt(hex.slice(1),16);let r=n>>16,g=n>>8&255,b=n&255;const f=v=>Math.max(0,Math.min(255,Math.round(v+amt*255)));return '#'+[f(r),f(g),f(b)].map(v=>v.toString(16).padStart(2,'0')).join('')}
-const TOP='M72 28 C86 40 114 40 128 28 L158 38 C166 60 178 110 186 150 L168 156 L146 84 L148 196 L52 196 L54 84 L32 156 L14 150 C22 110 34 60 42 38 Z';
-const TUNIC='M72 28 C86 40 114 40 128 28 L158 38 C166 60 178 110 186 150 L168 156 L146 84 L154 222 L46 222 L54 84 L32 156 L14 150 C22 110 34 60 42 38 Z';
-const JACKET='M70 30 C84 38 116 38 130 30 L160 40 C168 62 180 112 188 152 L170 158 L148 86 L152 214 L48 214 L52 86 L30 158 L12 152 C20 112 32 62 40 40 Z';
-function garment(type,colour,label){
-  const c=COLOURS[colour]||colour, s=shade(c,c==='#EAE4D8'?-.22:-.12), hi=shade(c,.06);
-  const st=`stroke="${s}" stroke-width="1.6" stroke-linejoin="round"`;
+const PRODUCTS=[
+ {id:'daily-toothpaste',name:'Daily Toothpaste',shape:'tube',price:14,cat:'Toothpaste',tags:['Subscription','Refillable'],tag:'Bestseller',sub:true,
+  options:[['Glacier Mint, 75 ml',14],['Spearmint, 75 ml',14],['Travel size, 25 ml',7]],
+  blurb:'A smooth, low-foam paste in a fully recyclable aluminum tube. Cool mint without the burn.',
+  inside:{Key:['Hydroxyapatite','Xylitol','Peppermint oil'],Free:['SLS','Parabens','Microplastics','Artificial dyes'],Pack:'Aluminum tube, endlessly recyclable',Lasts:'About 2 months, brushing twice a day'},
+  use:'Brush for two minutes, morning and night, with a pea-sized amount.'},
+ {id:'toothpaste-tablets',name:'Toothpaste Tablets',shape:'tin',price:16,cat:'Toothpaste',tags:['Subscription','Refillable','Travel'],tag:'',sub:true,
+  options:[['Steel tin with 60 tablets',16],['Refill pouch, 60 tablets',13]],
+  blurb:'Chew, brush, done. Waterless tablets in a steel tin you keep and refill.',
+  inside:{Key:['Hydroxyapatite','Xylitol','Spearmint'],Free:['SLS','Parabens','Water','Plastic'],Pack:'Steel tin, compostable refill pouch',Lasts:'One month, twice a day'},
+  use:'Chew one tablet, let it foam, then brush as normal.'},
+ {id:'mouthwash',name:'Mouthwash Concentrate',shape:'bottle',price:18,cat:'Mouthcare',tags:['Subscription','Refillable'],tag:'New',sub:true,
+  options:[['Aluminum bottle, 250 ml',18],['Refill, 250 ml',14]],
+  blurb:'A few drops in water for a fresh, alcohol-free rinse. One bottle makes about 100 rinses.',
+  inside:{Key:['Xylitol','Peppermint oil','Aloe'],Free:['Alcohol','SLS','Artificial dyes'],Pack:'Aluminum bottle, refill in recyclable aluminum',Lasts:'About 3 months'},
+  use:'Add 5 drops to a small glass of water, swish for 30 seconds, spit.'},
+ {id:'silk-floss',name:'Silk Floss',shape:'floss',price:12,cat:'Mouthcare',tags:['Subscription','Refillable','Travel'],tag:'',sub:true,
+  options:[['Steel case with 30 m',12],['Refill 2-pack, 60 m',8]],
+  blurb:'Plant-based, mint-coated floss in a refillable steel case that lives on your counter.',
+  inside:{Key:['Plant-based fibre','Candelilla wax','Mint'],Free:['PFAS','Petroleum wax','Plastic'],Pack:'Steel case, paper refill wrap',Lasts:'About 2 months'},
+  use:'Use about 40 cm, curve it around each tooth and slide gently below the gum line.'},
+ {id:'tongue-scraper',name:'Steel Tongue Scraper',shape:'scraper',price:16,cat:'Tools',tags:['Travel'],tag:'',sub:false,
+  options:[['Polished steel',16]],
+  blurb:'A simple step for fresher mornings. Surgical-grade stainless steel that lasts for years.',
+  inside:{Key:['Stainless steel'],Free:['Plastic','Coatings'],Pack:'Recycled paper sleeve',Lasts:'Years'},
+  use:'Gently pull from the back of the tongue to the tip 5 to 10 times, then rinse.'},
+ {id:'aluminum-toothbrush',name:'Aluminum Toothbrush',shape:'brush',price:28,cat:'Tools',tags:['Refillable'],tag:'Bestseller',sub:false,
+  options:[['Silver, with 2 heads',28],['Graphite, with 2 heads',28],['Replacement heads, 4-pack',14]],
+  blurb:'A weighted aluminum handle you keep for good. Only the soft head gets replaced.',
+  inside:{Key:['Aluminum handle','Soft plant-based bristles'],Free:['Plastic handle'],Pack:'Recycled paper box',Lasts:'Handle for years, heads every 3 months'},
+  use:'Click on a new head every 3 months, or sooner if the bristles spread.'},
+ {id:'water-flosser',name:'Cordless Water Flosser',shape:'flosser',price:89,cat:'Tools',tags:[],tag:'',sub:false,
+  options:[['Silver',89],['Graphite',89]],
+  blurb:'Three pressure modes, USB-C charging and a travel lock, in a slim aluminum body.',
+  inside:{Key:['Aluminum body','3 pressure modes','USB-C'],Free:['Disposable parts'],Pack:'Recycled paper box',Lasts:'About 30 days per charge'},
+  use:'Fill the tank, lean over the sink and trace along the gum line, one tooth at a time.'},
+ {id:'brush-stand',name:'Brush and Paste Stand',shape:'stand',price:34,cat:'Accessories',tags:[],tag:'',sub:false,
+  options:[['Silver',34],['Graphite',34]],
+  blurb:'Holds one brush, one tube and your floss. Weighted so it stays put.',
+  inside:{Key:['Solid aluminum'],Free:['Plastic'],Pack:'Recycled paper box',Lasts:'Years'},
+  use:'Rinse under warm water once a week.'},
+ {id:'wall-mount',name:'Wall Mount Holder',shape:'box',price:38,cat:'Accessories',tags:[],tag:'',sub:false,
+  options:[['Silver',38],['Graphite',38]],
+  blurb:'Clears the counter. Holds two brushes and a tube, with no-drill adhesive.',
+  inside:{Key:['Aluminum','No-drill adhesive'],Free:['Plastic'],Pack:'Recycled paper box',Lasts:'Years'},
+  use:'Clean the wall, press for 30 seconds, wait 12 hours before loading.'},
+ {id:'travel-kit',name:'Travel Kit',shape:'box',price:36,cat:'Accessories',tags:['Travel'],tag:'',sub:false,
+  options:[['Silver case',36]],
+  blurb:'Travel toothpaste, 20 tablets, floss and a folding brush in a metal case. Carry-on ready.',
+  inside:{Key:['25 ml toothpaste','20 tablets','Floss','Folding brush'],Free:['Plastic case'],Pack:'Aluminum case',Lasts:'About 2 weeks of travel'},
+  use:'Refill the case from your home products before each trip.'},
+ {id:'switch-kit',name:'The Switch Kit',shape:'box',price:79,cat:'Kits',tags:['Refillable'],tag:'Save $29',sub:false,
+  options:[['Silver',79],['Graphite',79]],
+  blurb:'Everything you need to switch: Daily Toothpaste, Silk Floss, Tongue Scraper, Aluminum Toothbrush and the Stand.',
+  inside:{Key:['Daily Toothpaste','Silk Floss','Tongue Scraper','Aluminum Toothbrush','Brush and Paste Stand'],Free:['Plastic'],Pack:'Recycled paper box',Lasts:'Refill what runs out, keep the rest'},
+  use:'Unbox, set up the stand, and start a refill subscription for the toothpaste and floss.'},
+ {id:'black-cherry',name:'Black Cherry Toothpaste',shape:'tube',price:16,cat:'Toothpaste',tags:['Subscription'],tag:'',sub:true,drop:true,finish:'burgundy',
+  options:[['Black Cherry Mint, 75 ml',16]],
+  blurb:'Dark cherry with a cool mint finish, in an anodized burgundy tube. Made in a small run.',
+  inside:{Key:['Hydroxyapatite','Xylitol','Natural cherry flavour'],Free:['SLS','Parabens','Artificial dyes'],Pack:'Anodized aluminum tube',Lasts:'About 2 months'},
+  use:'Brush for two minutes, morning and night.'}
+];
+
+/* ---------- Drawings ---------- */
+let gid=0;
+function art(shape,finish,label){
+  const id='m'+(++gid);
+  const fills={silver:['#FBFBFC','#D5D9DD','#F2F3F4','#BFC4C9'],graphite:['#4A4E54','#24272B','#3E4247','#16181B'],burgundy:['#9A3A4E','#5E1C2B','#86304A','#4A1421']}[finish||'silver'];
+  const ink=finish==='silver'||!finish?'#2A2E33':'#F1EDEB';
+  const st='stroke="rgba(0,0,0,.14)" stroke-width="1"';
+  const g=`url(#${id})`;
+  const word=(x,y,s=11)=>`<text x="${x}" y="${y}" text-anchor="middle" font-family="Jost,sans-serif" font-weight="200" font-size="${s}" letter-spacing="${s*.4}" fill="${ink}">IVORI</text>`;
   let p='';
-  switch(type){
-    case 'longsleeve': p=`<path d="${TOP}" fill="${c}" ${st}/><path d="M74 29 C88 42 112 42 126 29" fill="none" ${st}/>`;break;
-    case 'tunic': p=`<path d="${TUNIC}" fill="${c}" ${st}/><path d="M74 29 C88 42 112 42 126 29" fill="none" ${st}/><path d="M50 196 L54 222 M150 196 L146 222" ${st} fill="none"/>`;break;
-    case 'mockneck': p=`<path d="${TOP}" fill="${c}" ${st}/><path d="M82 14 L118 14 L122 31 C108 37 92 37 78 31 Z" fill="${hi}" ${st}/>`;break;
-    case 'halfzip': p=`<path d="${TOP}" fill="${c}" ${st}/><path d="M80 12 L120 12 L126 30 C110 38 90 38 74 30 Z" fill="${hi}" ${st}/><path d="M100 12 L100 96" ${st} fill="none"/><circle cx="100" cy="96" r="3.5" fill="${s}"/>`;break;
-    case 'jacket': p=`<path d="M74 32 C70 2 130 2 126 32" fill="${hi}" ${st}/><path d="${JACKET}" fill="${c}" ${st}/><path d="M100 34 L100 214" ${st} fill="none"/><path d="M62 160 L84 160 M116 160 L138 160" ${st} fill="none"/>`;break;
-    case 'leggings': p=`<path d="M58 22 L142 22 L150 226 L114 226 L100 86 L86 226 L50 226 Z" fill="${c}" ${st}/><path d="M58 22 L142 22 L141 44 L59 44 Z" fill="${hi}" ${st}/>`;break;
-    case 'widepant': p=`<path d="M60 22 L140 22 L172 226 L110 226 L100 92 L90 226 L28 226 Z" fill="${c}" ${st}/><path d="M60 22 L140 22 L139 42 L61 42 Z" fill="${hi}" ${st}/>`;break;
-    case 'midiskirt': p=`<path d="M84 210 L88 232 L98 232 L97 210 M116 210 L112 232 L102 232 L103 210" fill="#1D1D1D"/><path d="M64 38 L136 38 L168 214 C130 223 70 223 32 214 Z" fill="${c}" ${st}/><path d="M64 22 L136 22 L136 38 L64 38 Z" fill="${hi}" ${st}/><path d="M86 40 L74 217 M114 40 L126 217" stroke="${s}" stroke-width="1" fill="none" opacity=".7"/>`;break;
-    case 'wrapskirt': p=`<path d="M64 38 L136 38 L162 214 C130 221 70 221 38 214 Z" fill="${c}" ${st}/><path d="M64 24 L136 24 L136 38 L64 38 Z" fill="${hi}" ${st}/><path d="M124 38 C114 110 98 168 72 218" fill="none" ${st}/><path d="M132 30 L146 62 M132 30 L138 66" ${st} fill="none"/>`;break;
+  switch(shape){
+    case 'tube':p=`<rect x="56" y="26" width="88" height="14" rx="2" fill="${g}" ${st}/><path d="M58 40 L142 40 L126 198 L74 198 Z" fill="${g}" ${st}/><rect x="80" y="198" width="40" height="26" rx="4" fill="#24272B"/>${word(100,118,12)}`;break;
+    case 'tin':p=`<ellipse cx="100" cy="196" rx="70" ry="18" fill="${g}" ${st}/><rect x="30" y="140" width="140" height="56" fill="${g}" ${st}/><ellipse cx="100" cy="140" rx="70" ry="18" fill="${g}" ${st}/><ellipse cx="100" cy="132" rx="70" ry="18" fill="${g}" ${st}/>${word(100,176,12)}`;break;
+    case 'floss':p=`<ellipse cx="100" cy="190" rx="48" ry="12" fill="${g}" ${st}/><rect x="52" y="146" width="96" height="44" fill="${g}" ${st}/><ellipse cx="100" cy="146" rx="48" ry="12" fill="${g}" ${st}/><circle cx="100" cy="146" r="4" fill="#24272B"/>${word(100,174,10)}`;break;
+    case 'bottle':p=`<rect x="80" y="20" width="40" height="22" rx="4" fill="#24272B"/><rect x="88" y="42" width="24" height="18" fill="${g}" ${st}/><rect x="64" y="58" width="72" height="166" rx="16" fill="${g}" ${st}/>${word(100,150,12)}`;break;
+    case 'scraper':p=`<path d="M60 220 L60 70 C60 30 140 30 140 70 L140 220" fill="none" stroke="${g}" stroke-width="16" stroke-linecap="round"/><path d="M60 220 L60 70 C60 30 140 30 140 70 L140 220" fill="none" stroke="rgba(0,0,0,.12)" stroke-width="1"/>${word(100,140,11)}`;break;
+    case 'brush':p=`<rect x="90" y="18" width="20" height="46" rx="8" fill="#F4F5F6" ${st}/><g stroke="#C9CDD2" stroke-width="2">${[24,30,36,42,48,54].map(y=>`<line x1="84" y1="${y}" x2="90" y2="${y}"/>`).join('')}</g><rect x="92" y="64" width="16" height="164" rx="8" fill="${g}" ${st}/>`;break;
+    case 'flosser':p=`<rect x="96" y="14" width="8" height="40" rx="3" fill="#24272B"/><rect x="70" y="52" width="60" height="176" rx="28" fill="${g}" ${st}/><circle cx="100" cy="98" r="7" fill="none" stroke="${ink}" stroke-width="1.5"/>${word(100,160,10)}`;break;
+    case 'stand':p=`<ellipse cx="100" cy="214" rx="78" ry="14" fill="${g}" ${st}/><rect x="22" y="196" width="156" height="18" fill="${g}" ${st}/><ellipse cx="100" cy="196" rx="78" ry="14" fill="${g}" ${st}/><rect x="56" y="90" width="12" height="108" rx="6" fill="${g}" ${st}/><rect x="100" y="120" width="44" height="78" rx="8" fill="${g}" ${st}/>${word(122,164,9)}`;break;
+    default:p=`<rect x="30" y="70" width="140" height="140" rx="12" fill="${g}" ${st}/><line x1="30" y1="104" x2="170" y2="104" stroke="rgba(0,0,0,.14)"/>${word(100,164,14)}`;
   }
-  return `<svg viewBox="0 0 200 240" role="img" aria-label="${label||''}"><ellipse cx="100" cy="234" rx="66" ry="4" fill="rgba(0,0,0,.08)"/>${p}</svg>`;
+  return `<svg viewBox="0 0 200 240" role="img" aria-label="${label||''}"><defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${fills[0]}"/><stop offset=".45" stop-color="${fills[1]}"/><stop offset=".7" stop-color="${fills[2]}"/><stop offset="1" stop-color="${fills[3]}"/></linearGradient></defs><ellipse cx="100" cy="234" rx="70" ry="4" fill="rgba(0,0,0,.08)"/>${p}</svg>`;
 }
+const finishOf=(p,opt)=>p.finish||(/Graphite/.test(opt||'')?'graphite':'silver');
+function photo(src,alt,pos){return `<img src="${src}" alt="${esc(alt)}" style="width:100%;height:100%;object-fit:cover;object-position:${pos||'50% 50%'}">`}
+function pic(p,opt,label){return IMAGES[p.id]?photo(IMAGES[p.id],label||p.name):art(p.shape,finishOf(p,opt),label||p.name)}
 
 /* ---------- State ---------- */
-const state={filters:{cat:new Set(),acts:new Set(),colours:new Set(),sizes:new Set(),tag:''},sort:'featured',query:'',bag:[],sel:{}};
-try{state.bag=JSON.parse(localStorage.getItem('solenne-bag')||'[]');state.code=localStorage.getItem('solenne-code')||''}catch(e){state.bag=[];state.code=''}
+const state={filters:{cat:new Set(),tags:new Set()},sort:'featured',query:'',bag:[],sel:{},code:'',codeMsg:''};
+try{state.bag=JSON.parse(localStorage.getItem('ivori-bag')||'[]');state.code=localStorage.getItem('ivori-code')||''}catch(e){}
 if(!CODES[state.code])state.code='';
-function saveBag(){try{localStorage.setItem('solenne-bag',JSON.stringify(state.bag));localStorage.setItem('solenne-code',state.code)}catch(e){}}
+state.bag=state.bag.filter(i=>PRODUCTS.some(p=>p.id===i.id));
+function save(){try{localStorage.setItem('ivori-bag',JSON.stringify(state.bag));localStorage.setItem('ivori-code',state.code)}catch(e){}}
 const $=s=>document.querySelector(s);
-const money=n=>'$'+n.toFixed(2).replace(/\.00$/,'');
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const money=n=>'$'+(Math.round(n*100)/100).toFixed(2).replace(/\.00$/,'');
 const money2=n=>'$'+n.toFixed(2);
 const byId=id=>PRODUCTS.find(p=>p.id===id);
-const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fromPrice=p=>Math.min(...p.options.map(o=>o[1]));
+const unit=i=>{const p=byId(i.id),base=p.options[i.opt][1];return i.sub?Math.round(base*(100-SUB_PCT))/100:base};
 
 /* ---------- Pieces ---------- */
 function card(p){
+  const b=p.drop?'<span class="badge drop">Limited drop</span>':(p.tag?`<span class="badge">${p.tag}</span>`:'');
   return `<a class="card" href="#p-${p.id}">
-    <div class="card-img">${(p.tag||p.drop)?`<span class="badge">${p.tag||'Limited drop'}</span>`:''}${pic(p,p.colours[0],p.name+' in '+p.colours[0])}</div>
+    <div class="card-img">${b}${pic(p,p.options[0][0])}</div>
     <div class="card-name">${p.name}</div>
-    <div class="card-meta"><span class="swatches">${p.colours.map(c=>`<span class="dot" style="background:${COLOURS[c]}" title="${c}"></span>`).join('')}</span><span class="card-price">${money(p.price)}</span></div>
+    <div class="card-meta"><span>${p.sub?'Subscribe and save 15%':p.options.length>1?p.options.length+' options':p.cat}</span><span class="card-price">${p.options.length>1&&fromPrice(p)!==p.price?'From ':''}${money(fromPrice(p))}</span></div>
   </a>`;
 }
-function meter(n){return `<span class="meter" aria-label="${n} of 4">${[1,2,3,4].map(i=>`<i class="${i<=n?'on':''}"></i>`).join('')}</span>`}
-function covCard(p){
-  return `<div class="covcard"><div class="covcard-head"><b>Coverage card</b><span class="kicker">${p.name}</span></div>
-  ${p.cov.map(r=>`<div class="covrow"><span>${r[0]}</span><span>${r[1]}</span>${meter(r[2])}</div>`).join('')}</div>`;
+function insideCard(p){
+  const I=p.inside;
+  return `<div class="inside"><div class="inside-head"><b>What's inside</b><span class="kicker">${p.name}</span></div>
+    <div class="irow"><span>${p.cat==='Kits'?'Includes':p.sub?'Key ingredients':'Made of'}</span><span class="chips">${I.Key.map(k=>`<span class="tag">${k}</span>`).join('')}</span></div>
+    <div class="irow"><span>Free from</span><span>${I.Free.join(', ')}</span></div>
+    <div class="irow"><span>Packaging</span><span>${I.Pack}</span></div>
+    <div class="irow"><span>Lasts</span><span>${I.Lasts}</span></div></div>`;
 }
 
 /* ---------- Views ---------- */
 function viewHome(){
-  const best=PRODUCTS.filter(p=>p.tag==='Bestseller').concat(PRODUCTS.filter(p=>p.tag==='New')).slice(0,4);
-  const acts=[['Yoga & Pilates','leggings','Spruce','Stretch fully covered'],['Gym','longsleeve','Onyx','Lift without adjusting'],['Walk & Run','midiskirt','Clay','Skirts that keep pace'],['Everyday','widepant','Fawn','From class to coffee']];
+  const best=['switch-kit','daily-toothpaste','aluminum-toothbrush','silk-floss'].map(byId);
+  const cats=[['Toothpaste','daily-toothpaste','Paste and tablets'],['Mouthcare','mouthwash','Rinse, floss, scrape'],['Tools','aluminum-toothbrush','Built to keep'],['Accessories','brush-stand','For the counter and the road']];
+  const heroArt=LIFE.counter?`<div class="hero-art photo">${photo(LIFE.counter,LIFE_ALT.counter,'40% 50%')}<a class="hero-tag" href="#p-switch-kit"><b>The Switch Kit</b>Five pieces, one clean routine. Shop the kit ›</a></div>`
+    :`<div class="hero-art" aria-hidden="true">${art('bottle')}${art('tube')}${art('tin')}</div>`;
   return `
   <section class="wrap hero">
     <div class="hero-copy">
-      <span class="kicker">The Fall 2026 collection</span>
-      <h1 class="h-xl">Modest in cut.<br><em>Bold in motion.</em></h1>
-      <p class="lede">Activewear with real coverage, designed for women in Canada who do yoga, lift, walk and run, without trading comfort or style for it.</p>
-      <div class="hero-ctas"><a class="btn" href="#shop" data-nav="all">Shop the collection</a><a class="btn ghost" href="#coverage-guide">Find your coverage</a></div>
+      <span class="hero-mark">IVORI</span>
+      <h1 class="h-xl">The clean switch.</h1>
+      <p class="lede">Natural oral care in metal you keep, with refills that come to you. Designed for Canada, priced in CAD.</p>
+      <div class="hero-ctas"><a class="btn" href="#p-switch-kit">Shop the Switch Kit</a><a class="btn ghost" href="#refills">How refills work</a></div>
     </div>
-    <div class="hero-art photo">
-      ${photo(LIFE['Walk & Run'][0],LIFE['Walk & Run'][1],'42% 50%')}
-      <a class="hero-tag" href="#p-stride-tunic" style="text-decoration:none"><b>Stride Tunic + Anchor Legging</b>Full sleeve, longer hem, squat-proof. Shop the look ›</a>
-    </div>
+    ${heroArt}
   </section>
 
   <div class="wrap"><div class="promise">
-    <div><b>Full coverage, every piece</b><span>Long sleeves, longer hems, high rises.</span></div>
-    <div><b>Opaque, bend-tested</b><span>No see-through moments, in any colour.</span></div>
-    <div><b>Prices in CAD</b><span>No surprise conversion at checkout.</span></div>
-    <div><b>Free 30-day returns</b><span>Exchange sizes online in minutes.</span></div>
+    <div><b>Metal you keep</b><span>Aluminum and steel, no plastic tubes.</span></div>
+    <div><b>Clean ingredients</b><span>No SLS, parabens or microplastics.</span></div>
+    <div><b>Refills on your schedule</b><span>Subscribe and save 15%, skip anytime.</span></div>
+    <div><b>Prices in CAD</b><span>Free shipping over $60.</span></div>
   </div></div>
 
   <section class="wrap section">
-    <div class="section-head"><h2 class="h-l">Shop by how you move</h2><a class="link" href="#shop" data-nav="all">Shop all</a></div>
-    <div class="acts">${acts.map(a=>{const L=LIFE[a[0]]||['images/drift-wide-leg-onyx.jpg','Drift Wide-Leg Pant in black','50% 50%'];return `<a class="act photo" href="#shop" data-act="${a[0]}">${photo(L[0],L[1],L[2])}<h3>${a[0]}</h3><p>${a[3]}</p></a>`}).join('')}</div>
+    <div class="section-head"><h2 class="h-l">Shop the routine</h2><a class="link" href="#shop" data-nav="all">Shop all</a></div>
+    <div class="cats">${cats.map(c=>`<a class="cat photo" href="#shop" data-cat="${c[0]}">${pic(byId(c[1]))}<h3>${c[0]}</h3><p>${c[2]}</p></a>`).join('')}</div>
   </section>
 
   <section class="wrap" style="padding-bottom:88px">
@@ -593,36 +566,35 @@ function viewHome(){
 
   <section class="wrap promos">
     <div class="promo light">
-      <span class="kicker">New</span>
-      <h2 class="h-l">Motion Midi Skirt</h2>
-      <p class="sub">The skirt that runs. Leggings built in.</p>
-      <div class="links"><a class="link" href="#p-motion-midi-skirt">Learn more</a><a class="link" href="#p-motion-midi-skirt">Buy from $96</a></div>
-      <div class="art photo">${photo('images/motion-midi-skirt-onyx.jpg','Motion Midi Skirt in black with built-in leggings')}</div>
+      <span class="kicker">Start here</span>
+      <h2 class="h-l">The Switch Kit</h2>
+      <p class="sub">Five pieces. One clean routine. Save $29.</p>
+      <div class="links"><a class="link" href="#p-switch-kit">Learn more</a><a class="link" href="#p-switch-kit">Buy for $79</a></div>
+      <div class="art">${pic(byId('switch-kit'))}</div>
     </div>
     <div class="promo dark">
-      <span class="kicker" style="color:#C9C4BB">For Canadian seasons</span>
-      <h2 class="h-l">Shelter Light Jacket</h2>
-      <p class="sub">Water-resistant. Mid-thigh. Packs into its pocket.</p>
-      <div class="links"><a class="link" href="#p-shelter-jacket">Learn more</a><a class="link" href="#p-shelter-jacket">Buy from $138</a></div>
-      <div class="art photo">${photo('images/shelter-jacket-onyx.jpg','Shelter Light Jacket in black, hooded, mid-thigh length')}</div>
+      <span class="kicker">New</span>
+      <h2 class="h-l">Cordless Water Flosser</h2>
+      <p class="sub">Three modes. USB-C. Slim aluminum body.</p>
+      <div class="links"><a class="link" href="#p-water-flosser">Learn more</a><a class="link" href="#p-water-flosser">Buy for $89</a></div>
+      <div class="art">${pic(byId('water-flosser'),'Graphite')}</div>
     </div>
   </section>
 
   <section class="wrap section" style="padding-bottom:0">
     <div class="duo">
       <a class="drop" href="#shop" data-nav="Limited">
-        <span class="kicker">Limited drop · until November 30</span>
-        <h2 class="h-l">The Clay Capsule</h2>
-        <p>Three pieces in a warm clay red, made in a small run. When they're gone, they're gone.</p>
+        <span class="kicker">Limited drop · until December 31</span>
+        <h2 class="h-l">Black Cherry</h2>
+        <p>Dark cherry and cool mint in an anodized burgundy tube. Made in a small run.</p>
         <span class="go">Shop the drop</span>
-        <div class="arts photo">${photo('images/ease-half-zip-clay-2.jpg','Ease Half-Zip in clay red fleece')}</div>
+        <div class="art">${pic(byId('black-cherry'))}</div>
       </a>
-      <div class="set">
-        <span class="kicker">Bundle and save</span>
-        <h2 class="h-m">Build a set, save 10%</h2>
-        <p style="color:var(--ash)">The discount applies automatically in your bag.</p>
-        <ol><li>Pick any top</li><li>Add leggings, pants or a skirt</li><li>10% comes off the whole order</li></ol>
-        <a class="link" href="#shop" data-nav="all">Start your set</a>
+      <div class="steps">
+        <span class="kicker">How refills work</span>
+        <h2 class="h-m">Buy the metal once. Refill the rest.</h2>
+        <ol><li>Start with a tube, tin, bottle or case</li><li>Subscribe to refills every 1, 2 or 3 months and save 15%</li><li>Send empties back free with every third refill</li></ol>
+        <a class="link" href="#refills">Read more</a>
       </div>
     </div>
   </section>
@@ -630,47 +602,42 @@ function viewHome(){
   <section class="wrap section">
     <div class="feature">
       <div class="feature-copy">
-        <span class="kicker">The coverage card</span>
-        <h2 class="h-l">Know exactly what you're getting before you buy.</h2>
-        <p class="lede">Every product page shows how much it covers, rated the same way on every piece. No guessing from a photo, no ordering three sizes to find out.</p>
-        <ul>
-          <li>Sleeve, neckline, hem and rise, rated from 1 to 4</li>
-          <li>Opacity tested in a deep squat under bright light</li>
-          <li>Fit described in plain words: skims, relaxed or close</li>
-        </ul>
-        <a class="link" href="#coverage-guide">How we rate coverage</a>
+        <span class="kicker">What's inside</span>
+        <h2 class="h-l">Every ingredient, in plain words.</h2>
+        <p class="lede">Each product lists what's in it, what's not, what it's packed in and how long it lasts. No guessing from a label.</p>
+        <ul><li>Key ingredients, named and explained</li><li>A clear free-from list on every product</li><li>Packaging and refill details up front</li></ul>
+        <a class="link" href="#p-daily-toothpaste">See an example</a>
       </div>
-      ${covCard(byId('flow-long-sleeve'))}
+      ${insideCard(byId('daily-toothpaste'))}
     </div>
   </section>
 
   <section class="wrap">
     <div class="story">
       <div style="display:grid;gap:18px;align-content:start">
-        <span class="kicker" style="color:#B9CCC4">Why Solenne</span>
-        <h2 class="h-l">Being active should never mean choosing between your values and your workout.</h2>
+        <span class="kicker">Why IVORI</span>
+        <h2 class="h-l">The most used products in your home shouldn't be the most wasteful.</h2>
       </div>
       <div style="display:grid;gap:18px;align-content:end">
-        <p>Moving builds confidence, health and community. But most activewear is cut short, tight and sheer, and modest options are often an afterthought.</p>
-        <p>Solenne is built around coverage from the first sketch, for women who dress modestly for faith, culture, comfort or simply because they prefer it.</p>
+        <p>Most of us brush twice a day with products made of plastic, packed in plastic and thrown away every few weeks.</p>
+        <p>IVORI swaps them for metal pieces you keep and clean formulas that refill on your schedule, so the switch is easy to stick with.</p>
         <div><a class="btn light" href="#shop" data-nav="all">Explore the collection</a></div>
       </div>
     </div>
   </section>
 
   <section class="wrap section">
-    <div class="section-head"><div style="display:grid;gap:8px"><h2 class="h-l">#WearSolenne</h2><p class="lede">Tag us on Instagram or TikTok to be featured. Shoppable customer photos arrive at launch.</p></div></div>
+    <div class="section-head"><div style="display:grid;gap:8px"><h2 class="h-l">#IVORIroutine</h2><p class="lede">Show us your counter on Instagram or TikTok. Shoppable customer photos arrive at launch.</p></div></div>
     <div class="ugc">
-      <div>${photo(LIFE['Walk & Run'][0],LIFE['Walk & Run'][1],'30% 50%')}</div>
-      <div>${photo(LIFE['Yoga & Pilates'][0],LIFE['Yoga & Pilates'][1],'80% 50%')}</div>
-      <div>${photo(LIFE['Gym'][0],LIFE['Gym'][1],'70% 50%')}</div>
-      <div>${photo('images/studio-wrap-skirt-spruce.jpg','Studio Wrap Skirt in spruce green')}</div>
-      <div>${photo('images/stride-tunic-spruce-2.jpg','Stride Tunic in spruce green')}</div>
+      <div>${LIFE.counter?photo(LIFE.counter,'IVORI products on a bathroom counter'):art('stand')}</div>
+      <div>${LIFE.travel?photo(LIFE.travel,'IVORI travel kit in an open bag'):art('box')}</div>
+      <div>${LIFE.hands?photo(LIFE.hands,'Hands squeezing an IVORI aluminum toothpaste tube'):art('tube')}</div>
+      <div>${pic(byId('toothpaste-tablets'))}</div>
     </div>
   </section>
 
   <section class="wrap"><div class="news">
-    <div style="display:grid;gap:10px"><h2 class="h-m">First to know about new drops</h2><p style="color:var(--ash)">Limited releases, restocks and member-only early access. One or two emails a month.</p></div>
+    <div style="display:grid;gap:10px"><h2 class="h-m">First to know about new drops</h2><p style="color:var(--ash)">Limited flavours, restocks and early access. One or two emails a month.</p></div>
     <form id="newsForm" novalidate>
       <div class="field"><label for="newsEmail">Email address</label><input id="newsEmail" type="email" autocomplete="email" placeholder="you@example.com"></div>
       <button class="btn" type="submit" style="align-self:end">Sign up</button>
@@ -680,35 +647,29 @@ function viewHome(){
 }
 
 function filtered(){
-  const f=state.filters,q=state.query.trim().toLowerCase();
+  const f=state.filters,q=state.query.trim().toLowerCase().replace(/s$/,'');
   let list=PRODUCTS.filter(p=>
     (!f.cat.size||f.cat.has(p.cat))&&
-    (!f.acts.size||p.acts.some(a=>f.acts.has(a)))&&
-    (!f.colours.size||p.colours.some(c=>f.colours.has(c)))&&
-    (!f.sizes.size||[...f.sizes].some(s=>!p.soldOut.includes(s)))&&
-    (!f.tag||(f.tag==='Limited'?p.drop:p.tag===f.tag))&&
-    (!q||(p.name+' '+p.cat+' '+p.acts.join(' ')+' '+p.type+' '+p.colours.join(' ')).toLowerCase().includes(q.replace(/s$/,'')))
-  );
-  if(state.sort==='low')list.sort((a,b)=>a.price-b.price);
-  if(state.sort==='high')list.sort((a,b)=>b.price-a.price);
+    (!f.tags.size||[...f.tags].every(t=>t==='Limited'?p.drop:p.tags.includes(t)))&&
+    (!q||(p.name+' '+p.cat+' '+p.tags.join(' ')+' '+p.options.map(o=>o[0]).join(' ')+' '+p.blurb).toLowerCase().includes(q)));
+  if(state.sort==='low')list.sort((a,b)=>fromPrice(a)-fromPrice(b));
+  if(state.sort==='high')list.sort((a,b)=>fromPrice(b)-fromPrice(a));
   return list;
 }
-function chipGroup(title,key,values,dots){
-  return `<div class="fgroup"><h3>${title}</h3><div class="chips">${values.map(v=>`<button class="chip" data-f="${key}" data-v="${esc(v)}" aria-pressed="${state.filters[key].has(v)}">${dots?`<span class="dot" style="background:${COLOURS[v]}"></span>`:''}${esc(v)}</button>`).join('')}</div></div>`;
+function chipGroup(title,key,values){
+  return `<div class="fgroup"><h3>${title}</h3><div class="chips" style="gap:8px">${values.map(v=>`<button class="chip" data-f="${key}" data-v="${esc(v)}" aria-pressed="${state.filters[key].has(v)}">${esc(v)}</button>`).join('')}</div></div>`;
 }
 function viewShop(){
   const f=state.filters;
-  const title=state.query?`Results for “${esc(state.query)}”`:f.tag==='Limited'?'The Clay Capsule · Limited drop':f.tag?f.tag+' arrivals':f.acts.size===1?[...f.acts][0]:f.cat.size===1?[...f.cat][0]:'All activewear';
+  const title=state.query?`Results for “${esc(state.query)}”`:f.tags.has('Limited')?'Black Cherry · Limited drop':f.cat.size===1?[...f.cat][0]:'All products';
   return `<section class="wrap">
     <div class="shop-head"><nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a> / Shop</nav><h1 class="h-l">${title}</h1></div>
     <div class="shop">
       <div>
         <button class="btn ghost filters-toggle" id="filtersToggle" aria-expanded="false" aria-controls="filters" style="margin-bottom:16px">Filters</button>
         <div class="filters" id="filters">
-          ${chipGroup('Category','cat',['Tops','Bottoms','Skirts','Layers'])}
-          ${chipGroup('Activity','acts',['Yoga & Pilates','Gym','Walk & Run','Everyday'])}
-          ${chipGroup('Size','sizes',SIZES)}
-          ${chipGroup('Colour','colours',Object.keys(COLOURS),true)}
+          ${chipGroup('Category','cat',['Toothpaste','Mouthcare','Tools','Accessories','Kits'])}
+          ${chipGroup('Shop by','tags',['Subscription','Refillable','Travel','Limited'])}
           <div class="fgroup"><button class="textbtn" id="clearF">Clear all filters</button></div>
         </div>
       </div>
@@ -725,78 +686,69 @@ function viewShop(){
 function renderResults(){
   const list=filtered();
   $('#resultCount').textContent=list.length+(list.length===1?' product':' products');
-  $('#results').innerHTML=list.length?list.map(card).join(''):`<p class="empty">Nothing matches those filters yet. Try removing one, or <button class="textbtn" id="clearF2">clear all filters</button>.</p>`;
+  $('#results').innerHTML=list.length?list.map(card).join(''):`<p style="padding:60px 0;color:var(--ash)">Nothing matches yet. Try removing a filter, or <button class="textbtn" id="clearF2">clear all filters</button>.</p>`;
 }
 
 function viewProduct(p){
-  const sel=state.sel[p.id]||(state.sel[p.id]={colour:p.colours[0],size:''});
-  const others=PRODUCTS.filter(x=>x.id!==p.id&&x.acts.some(a=>p.acts.includes(a))).slice(0,4);
-  const alt=p.colours[1]||p.colours[0];
+  const sel=state.sel[p.id]||(state.sel[p.id]={opt:0,sub:p.sub,freq:1});
+  const o=p.options[sel.opt], base=o[1], subPrice=Math.round(base*(100-SUB_PCT))/100;
+  const related=PRODUCTS.filter(x=>x.id!==p.id&&(x.cat===p.cat||x.id==='switch-kit')).slice(0,4);
+  const lk=p.tags.includes('Travel')||p.id==='travel-kit'?'travel':p.cat==='Toothpaste'?'hands':'counter';
   return `<section class="wrap">
     <nav class="crumbs" aria-label="Breadcrumb" style="padding-top:28px"><a href="#home">Home</a> / <a href="#shop" data-cat="${p.cat}">${p.cat}</a> / ${p.name}</nav>
     <div class="pdp">
       <div class="gallery">
-        <div class="shot main" id="mainShot">${pic(p,sel.colour,p.name+' in '+sel.colour+', front view')}</div>
-        ${(()=>{const first=LIFE[p.acts[0]]||LIFE['Walk & Run'];const others=Object.values(LIFE).filter(l=>l!==first);
-          const life=l=>`<div class="shot life">${photo(l[0],l[1],l[2])}<span>In motion</span></div>`;
-          return IMAGES2[p.id]?`<div class="shot">${photo(IMAGES2[p.id],p.name+', second view')}</div>${life(first)}`:life(first)+life(others[0]);})()}
-        <div class="shot fabric" id="fabricShot" style="background:${COLOURS[sel.colour]}" role="img" aria-label="Fabric close-up in ${sel.colour}"><span>Fabric close-up</span></div>
+        <div class="shot" id="mainShot">${pic(p,o[0],p.name+', '+o[0])}</div>
+        <div class="shot">${photo(LIFE[lk],LIFE_ALT[lk])}<span class="lbl">In use</span></div>
+        <div class="shot wide" style="background:var(--metal-dark);display:grid;place-items:center;color:#EEF0F2;text-align:center;padding:24px"><div style="display:grid;gap:6px"><span style="font-weight:100;letter-spacing:.42em;font-size:28px">IVORI</span><span style="color:#C3C8CE;font-size:14px">${p.inside.Pack}</span></div></div>
       </div>
       <div class="buy">
         <div class="buy-top">
           ${p.tag?`<span class="kicker">${p.tag}</span>`:''}
           <h1 class="h-l">${p.name}</h1>
-          <div class="price">${money(p.price)} CAD</div>
+          <div class="price" id="priceLine">${money(sel.sub&&p.sub?subPrice:base)} CAD${sel.sub&&p.sub?` <s style="color:var(--ash);font-size:16px">${money(base)}</s>`:''}</div>
           <p style="color:var(--ash);margin-top:6px">${p.blurb}</p>
         </div>
-        ${p.drop?'<p class="dropnote">Part of the Clay Capsule, a limited drop available until November 30, 2026.</p>':''}
+        ${p.drop?'<p class="dropnote">Limited drop, available until December 31, 2026 or until sold out.</p>':''}
+        ${p.options.length>1?`<div><div class="opt-label">Option: <b>${esc(o[0])}</b></div>
+          <div class="opts">${p.options.map((x,i)=>`<button class="obtn" data-opt="${i}" aria-pressed="${i===sel.opt}">${esc(x[0])}<small>${money(x[1])}</small></button>`).join('')}</div></div>`:''}
+        ${p.sub?`<div class="ptype" role="radiogroup" aria-label="Purchase type">
+          <label class="radio"><input type="radio" name="ptype" value="sub" ${sel.sub?'checked':''}><span class="row"><span>Subscribe and save 15%<br><select id="freq" aria-label="Delivery frequency">${FREQ.map((f,i)=>`<option value="${i}" ${i===sel.freq?'selected':''}>${f}</option>`).join('')}</select></span><span>${money(subPrice)}</span></span></label>
+          <label class="radio"><input type="radio" name="ptype" value="once" ${sel.sub?'':'checked'}><span class="row"><span>One-time purchase</span><span>${money(base)}</span></span></label>
+        </div>`:''}
+        <button class="btn block" id="addBtn">Add to bag</button>
+        <div class="ship-note"><span>Free shipping over $60. Ships across Canada in 2 to 5 business days.</span><span>${p.sub?'Skip, pause or cancel your subscription anytime.':'Free returns within 30 days on unused items.'}</span></div>
+        ${insideCard(p)}
         <div>
-          <div class="opt-label"><span>Colour: <b id="colourName">${sel.colour}</b></span></div>
-          <div class="colour-btns">${p.colours.map(c=>`<button class="cbtn" data-colour="${c}" aria-label="${c}" aria-pressed="${c===sel.colour}"><span style="background:${COLOURS[c]}"></span></button>`).join('')}</div>
-        </div>
-        <div>
-          <div class="opt-label"><span>Size${sel.size?`: <b>${sel.size}</b>`:''}</span><button class="textbtn" id="openSize">Size guide</button></div>
-          <div class="size-btns">${SIZES.map(s=>{const out=p.soldOut.includes(s);return `<button class="sbtn" data-size="${s}" aria-pressed="${s===sel.size}" ${out?'disabled aria-label="'+s+', sold out"':''}>${s}</button>`}).join('')}</div>
-          <p class="err" id="sizeErr" role="alert"></p>
-        </div>
-        <button class="btn block" id="addBtn">Add to bag · ${money(p.price)}</button>
-        <div class="ship-note"><span>Free shipping on orders over $120. Ships from Canada in 2 to 5 business days.</span><span>Free returns and size exchanges within 30 days.</span></div>
-        ${covCard(p)}
-        <div>
-          <details open><summary>Fabric &amp; opacity</summary><div class="body"><p>${p.fabric}</p><p>${p.opacity}</p></div></details>
-          <details><summary>Fit &amp; sizing</summary><div class="body"><p>Sizes XXS to 3X. ${p.cov.find(r=>r[0]==='Fit')[1]}.</p><p>Not sure? Our <button class="textbtn" id="openSize2">size guide</button> lists bust, waist and hip in centimetres.</p></div></details>
-          <details><summary>Shipping &amp; returns</summary><div class="body"><p>All prices in Canadian dollars. Duties never apply because we ship within Canada.</p><p>Start a return or exchange online. Unworn items with tags, within 30 days.</p></div></details>
-          <details><summary>Reviews &amp; customer photos</summary><div class="body"><p>Reviews open at launch. Customers will be able to add photos and say how the coverage worked for them.</p></div></details>
+          <details open><summary>How to use</summary><div class="body"><p>${p.use}</p></div></details>
+          <details><summary>Refills and recycling</summary><div class="body"><p>${p.sub?'Refills ship in recyclable or compostable packaging. Subscribers get a free return label for empties with every third refill.':'Built to last for years. When it is time, send it back and we will recycle the metal.'}</p></div></details>
+          <details><summary>Shipping and returns</summary><div class="body"><p>All prices in Canadian dollars, with no duties because we ship within Canada.</p><p>Unopened items can be returned free within 30 days.</p></div></details>
+          <details><summary>Reviews</summary><div class="body"><p>Reviews open at launch.</p></div></details>
         </div>
       </div>
     </div>
-    <div class="section-head" style="margin-top:40px"><h2 class="h-m">Complete the look</h2></div>
-    <div class="grid">${others.map(card).join('')}</div>
+    <div class="section-head" style="margin-top:40px"><h2 class="h-m">Complete your routine</h2></div>
+    <div class="grid">${related.map(card).join('')}</div>
   </section>`;
 }
 
 function totals(){
-  const sub=state.bag.reduce((s,i)=>s+byId(i.id).price*i.qty,0);
-  const count=state.bag.reduce((s,i)=>s+i.qty,0);
-  const cats=new Set(state.bag.map(i=>byId(i.id).cat));
-  const setOK=cats.has('Tops')&&(cats.has('Bottoms')||cats.has('Skirts'));
+  let sub=0,subSave=0,onceSub=0,count=0;
+  state.bag.forEach(i=>{const p=byId(i.id),base=p.options[i.opt][1];count+=i.qty;sub+=base*i.qty;if(i.sub)subSave+=(base-unit(i))*i.qty;else onceSub+=base*i.qty});
+  subSave=Math.round(subSave*100)/100;
   const codePct=state.code?CODES[state.code][0]:0;
-  let pct=0,why='';
-  if(setOK){pct=SET_PCT;why='Set discount (top + bottom)'}
-  if(codePct>pct){pct=codePct;why='Code '+state.code}
-  const disc=Math.round(sub*pct)/100;
-  return {sub,count,pct,why,disc,net:sub-disc,setOK,codePct};
+  const codeSave=Math.round(onceSub*codePct)/100;
+  const net=sub-subSave-codeSave;
+  return {sub,subSave,codeSave,codePct,onceSub,net,count};
 }
 function viewCheckout(){
-  if(!state.bag.length)return `<section class="wrap done"><h1 class="h-l">Your bag is empty</h1><p class="lede">Add a few pieces, then come back to check out.</p><a class="btn" href="#shop" data-nav="all">Shop the collection</a></section>`;
+  if(!state.bag.length)return `<section class="wrap done"><h1 class="h-l">Your bag is empty</h1><p class="lede">Add a few pieces, then come back to check out.</p><a class="btn" href="#p-switch-kit">Shop the Switch Kit</a></section>`;
   return `<section class="wrap">
     <nav class="crumbs" aria-label="Breadcrumb" style="padding-top:28px"><a href="#home">Home</a> / Checkout</nav>
     <div class="checkout">
       <form class="co-form" id="coForm" novalidate>
         <p class="proto">This is a website prototype. No payment is taken and no order is shipped.</p>
-        <fieldset><legend>Contact</legend>
-          <div class="field"><label for="coEmail">Email</label><input id="coEmail" type="email" autocomplete="email" required></div>
-        </fieldset>
+        <fieldset><legend>Contact</legend><div class="field"><label for="coEmail">Email</label><input id="coEmail" type="email" autocomplete="email" required></div></fieldset>
         <fieldset><legend>Shipping address</legend>
           <div class="two"><div class="field"><label for="coFirst">First name</label><input id="coFirst" autocomplete="given-name" required></div><div class="field"><label for="coLast">Last name</label><input id="coLast" autocomplete="family-name" required></div></div>
           <div class="field"><label for="coAddr">Street address</label><input id="coAddr" autocomplete="street-address" required></div>
@@ -806,154 +758,136 @@ function viewCheckout(){
         </fieldset>
         <fieldset><legend>Delivery</legend>
           <label class="radio"><input type="radio" name="ship" value="std" checked><span class="row"><span>Standard · 2 to 5 business days</span><span id="stdPrice"></span></span></label>
-          <label class="radio"><input type="radio" name="ship" value="exp"><span class="row"><span>Express · 1 to 2 business days</span><span>$18</span></span></label>
+          <label class="radio"><input type="radio" name="ship" value="exp"><span class="row"><span>Express · 1 to 2 business days</span><span>$16</span></span></label>
         </fieldset>
         <fieldset><legend>Payment</legend>
           <div class="field"><label for="coCard">Card number</label><input id="coCard" inputmode="numeric" autocomplete="cc-number" placeholder="Prototype: any number works"></div>
           <div class="two"><div class="field"><label for="coExp">Expiry</label><input id="coExp" autocomplete="cc-exp" placeholder="MM / YY"></div><div class="field"><label for="coCvc">Security code</label><input id="coCvc" inputmode="numeric" autocomplete="cc-csc" placeholder="CVC"></div></div>
         </fieldset>
         <p class="err" id="coErr" role="alert"></p>
-        <button class="btn block" type="submit" id="placeBtn">Place order</button>
+        <button class="btn block" type="submit">Place order</button>
       </form>
       <aside class="summary" aria-label="Order summary" id="summary"></aside>
     </div>
   </section>`;
 }
+function lineMeta(i){const p=byId(i.id);return esc(p.options[i.opt][0])+(i.sub?`<br><span class="sub-tag">Subscription · ${FREQ[i.freq].toLowerCase()}</span>`:'')}
 function renderSummary(){
-  const prov=$('#coProv').value, exp=document.querySelector('input[name=ship]:checked').value==='exp';
-  const {sub,disc,net,why,pct}=totals();
-  const ship=exp?18:(net>=FREE_SHIP?0:9);
-  const tax=(net+ship)*PROV[prov][1]/100;
-  $('#stdPrice').textContent=net>=FREE_SHIP?'Free':'$9';
+  const prov=$('#coProv').value,exp=document.querySelector('input[name=ship]:checked').value==='exp';
+  const t=totals(),ship=exp?16:(t.net>=FREE_SHIP?0:8),tax=(t.net+ship)*PROV[prov][1]/100;
+  $('#stdPrice').textContent=t.net>=FREE_SHIP?'Free':'$8';
   $('#summary').innerHTML=`<h2 class="h-m">Order summary</h2>
-    ${state.bag.map(i=>{const p=byId(i.id);return `<div class="line-item"><div class="thumb">${pic(p,i.colour,'')}</div><div><div>${p.name}</div><div class="meta">${i.colour} · ${i.size} · Qty ${i.qty}</div></div><div>${money2(p.price*i.qty)}</div></div>`}).join('')}
+    ${state.bag.map(i=>{const p=byId(i.id);return `<div class="line-item"><div class="thumb">${pic(p,p.options[i.opt][0])}</div><div><div>${p.name}</div><div class="meta">${lineMeta(i)} · Qty ${i.qty}</div></div><div>${money2(unit(i)*i.qty)}</div></div>`}).join('')}
     <div style="border-top:1px solid var(--line);padding-top:14px;display:grid;gap:8px">
-      <div class="row"><span>Subtotal</span><span>${money2(sub)}</span></div>
-      ${disc?`<div class="row save"><span>${why} (−${pct}%)</span><span>−${money2(disc)}</span></div>`:''}
+      <div class="row"><span>Subtotal</span><span>${money2(t.sub)}</span></div>
+      ${t.subSave?`<div class="row save"><span>Subscription savings (−15%)</span><span>−${money2(t.subSave)}</span></div>`:''}
+      ${t.codeSave?`<div class="row save"><span>Code ${state.code} (−${t.codePct}%)</span><span>−${money2(t.codeSave)}</span></div>`:''}
       <div class="row"><span>Shipping</span><span>${ship?money2(ship):'Free'}</span></div>
       <div class="row"><span>Estimated tax (${prov} ${PROV[prov][1]}%)</span><span>${money2(tax)}</span></div>
-      <div class="row total"><span>Total (CAD)</span><span>${money2(net+ship+tax)}</span></div>
+      <div class="row total"><span>Total (CAD)</span><span>${money2(t.net+ship+tax)}</span></div>
     </div>`;
 }
-function viewGuide(){
+function viewRefills(){
   return `<section class="wrap">
-    <div class="shop-head"><nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a> / Coverage &amp; size guide</nav><h1 class="h-l">Coverage &amp; size guide</h1><p class="lede">How we rate coverage, how to find your size, and how shipping and returns work in Canada.</p></div>
+    <div class="shop-head"><nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a> / How refills work</nav><h1 class="h-l">How refills work</h1><p class="lede">Buy the metal once, then refill only what runs out. Here is how subscriptions, shipping and recycling work.</p></div>
     <div class="guide-grid">
-      <div><b>1 · Light</b><p>Some coverage. Usually a fit note, for example a relaxed leg.</p>${meter(1)}</div>
-      <div><b>2 to 3 · Moderate to full</b><p>Covers the area well for most movement, such as a hem that covers the hip.</p>${meter(3)}</div>
-      <div><b>4 · Maximum</b><p>Full sleeves, high necklines, mid-thigh or longer hems, squat-proof fabric.</p>${meter(4)}</div>
+      <div><b>1 · Start with the metal</b><p>Pick a tube, tin, bottle or floss case, or get everything at once with the Switch Kit.</p></div>
+      <div><b>2 · Subscribe to refills</b><p>Choose every 1, 2 or 3 months and save 15% on every delivery. Skip, pause or cancel anytime.</p></div>
+      <div><b>3 · Send empties back</b><p>Every third refill comes with a free return label. We recycle the aluminum and steel.</p></div>
     </div>
-    <div class="section-head" style="margin-top:56px"><h2 class="h-m">Size chart (cm)</h2></div>
-    <div class="tbl-wrap">${sizeTable()}</div>
-    <p style="color:var(--ash);margin-top:12px">Leggings come in a 28" inseam, which reaches the ankle on most heights between 157 and 175 cm.</p>
-    <div class="guide-grid" style="margin-top:56px">
-      <div><b>Shipping in Canada</b><p>Free standard shipping over $120, otherwise $9. Express is $18. Prices in CAD, no duties.</p></div>
-      <div><b>Returns &amp; exchanges</b><p>Free within 30 days for unworn items with tags. Start online and print the label at home or at a post office.</p></div>
-      <div><b>Accessibility</b><p>High-contrast text, descriptions on every image, large tap targets and full keyboard support. Tag-free and flat-seam pieces are marked on each product.</p></div>
+    <div class="guide-grid" style="margin-top:16px">
+      <div><b>Discounts</b><p>Subscriptions are 15% off. Codes like IVORI10 apply to one-time items, so the two never stack on the same product.</p></div>
+      <div><b>Shipping in Canada</b><p>Free standard shipping over $60, otherwise $8. Express is $16. Prices in CAD, no duties.</p></div>
+      <div><b>Returns</b><p>Unopened items can be returned free within 30 days. Opened oral care products can't be resold, so they can't be returned.</p></div>
     </div>
   </section>`;
 }
-function sizeTable(){return `<table><thead><tr><th>Size</th><th>Bust</th><th>Waist</th><th>Hip</th></tr></thead><tbody>${SIZE_CHART.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td></tr>`).join('')}</tbody></table>`}
-function viewDone(n){
-  return `<section class="wrap done"><span class="kicker">Order ${n}</span><h1 class="h-l">Thank you. Your order is in.</h1><p class="lede">In the live store you would get a confirmation email with tracking. This prototype stops here.</p><a class="btn" href="#home">Back to home</a></section>`;
-}
+function viewDone(n){return `<section class="wrap done"><span class="kicker">Order ${n}</span><h1 class="h-l">Thank you. Your switch is on its way.</h1><p class="lede">In the live store you would get a confirmation email with tracking and your subscription schedule. This prototype stops here.</p><a class="btn" href="#home">Back to home</a></section>`}
 
 /* ---------- Bag ---------- */
 function renderBag(){
-  const {sub,count,disc,net,why,pct,setOK,codePct}=totals();
-  $('#bagCount').textContent=count;$('#bagCount').hidden=!count;
-  $('#bagBtn').setAttribute('aria-label',`Bag, ${count} item${count===1?'':'s'}`);
-  if(!state.bag.length){
-    $('#bagBody').innerHTML=`<p style="color:var(--ash)">Your bag is empty.</p><a class="btn ghost" href="#shop" data-nav="all">Start shopping</a>`;
-    $('#bagFoot').innerHTML='';return;
-  }
-  const left=Math.max(0,FREE_SHIP-net);
-  $('#bagBody').innerHTML=`<div class="freeship"><span>${left?`You're ${money2(left)} away from free shipping.`:'You have free shipping.'}</span><div class="bar"><i style="width:${Math.min(100,net/FREE_SHIP*100)}%"></i></div></div>`+(setOK?'':`<p style="font-size:14px;color:var(--ash)">Add a top and a bottom or skirt to save ${SET_PCT}% on your set.</p>`)+
-    state.bag.map((i,idx)=>{const p=byId(i.id);return `<div class="line-item"><a class="thumb" href="#p-${p.id}">${pic(p,i.colour,p.name)}</a><div><div>${p.name}</div><div class="meta">${i.colour} · Size ${i.size}</div>
+  const t=totals();
+  $('#bagCount').textContent=t.count;$('#bagCount').hidden=!t.count;
+  $('#bagBtn').setAttribute('aria-label',`Bag, ${t.count} item${t.count===1?'':'s'}`);
+  if(!state.bag.length){$('#bagBody').innerHTML=`<p style="color:var(--ash)">Your bag is empty.</p><a class="btn ghost" href="#p-switch-kit">Start with the Switch Kit</a>`;$('#bagFoot').innerHTML='';return;}
+  const left=Math.max(0,FREE_SHIP-t.net);
+  $('#bagBody').innerHTML=`<div class="freeship"><span>${left?`You're ${money2(left)} away from free shipping.`:'You have free shipping.'}</span><div class="bar"><i style="width:${Math.min(100,t.net/FREE_SHIP*100)}%"></i></div></div>`+
+    state.bag.map((i,idx)=>{const p=byId(i.id);return `<div class="line-item"><a class="thumb" href="#p-${p.id}">${pic(p,p.options[i.opt][0])}</a><div><div>${p.name}</div><div class="meta">${lineMeta(i)}</div>
       <div class="qty"><button data-dec="${idx}" aria-label="Decrease quantity">−</button><span>${i.qty}</span><button data-inc="${idx}" aria-label="Increase quantity">+</button></div></div>
-      <div style="display:grid;justify-items:end;gap:8px"><span>${money2(p.price*i.qty)}</span><button class="textbtn" data-rm="${idx}">Remove</button></div></div>`}).join('');
-  const codeNote=state.codeMsg||(state.code?(codePct<pct?`${state.code} saved. Your set discount is bigger, so it applies instead.`:`${state.code} applied: ${CODES[state.code][1]}, ${codePct}% off.`):'');
+      <div style="display:grid;justify-items:end;gap:8px"><span>${money2(unit(i)*i.qty)}</span><button class="textbtn" data-rm="${idx}">Remove</button></div></div>`}).join('');
+  const note=state.codeMsg||(state.code?(t.onceSub?`${state.code} applied: ${t.codePct}% off one-time items.`:`${state.code} saved. It applies to one-time items; subscriptions already save 15%.`):'');
   $('#bagFoot').innerHTML=`<form id="codeForm" class="codeform" novalidate><label for="codeIn" class="sr">Discount code</label><input id="codeIn" placeholder="Discount code" autocomplete="off" value="${state.code}"><button class="btn ghost" type="submit">Apply</button></form>
-    ${codeNote?`<p class="note" role="status" style="min-height:0">${esc(codeNote)} ${state.code?'<button class="textbtn" id="rmCode">Remove code</button>':''}</p>`:''}
-    <div class="row"><span>Subtotal</span><span>${money2(sub)}</span></div>
-    ${disc?`<div class="row save"><span>${why} (−${pct}%)</span><span>−${money2(disc)}</span></div>`:''}
-    <div class="row total"><span>Total before shipping</span><span>${money2(net)} CAD</span></div><span style="font-size:13px;color:var(--ash)">Shipping and tax calculated at checkout.</span><a class="btn block" href="#checkout" id="toCheckout">Checkout</a>`;
+    ${note?`<p class="note" role="status">${esc(note)} ${state.code?'<button class="textbtn" id="rmCode">Remove code</button>':''}</p>`:''}
+    <div class="row"><span>Subtotal</span><span>${money2(t.sub)}</span></div>
+    ${t.subSave?`<div class="row save"><span>Subscription savings</span><span>−${money2(t.subSave)}</span></div>`:''}
+    ${t.codeSave?`<div class="row save"><span>Code ${state.code}</span><span>−${money2(t.codeSave)}</span></div>`:''}
+    <div class="row total"><span>Total before shipping</span><span>${money2(t.net)} CAD</span></div>
+    <a class="btn block" href="#checkout" id="toCheckout">Checkout</a>`;
 }
 let lastFocus=null;
 function openBag(){lastFocus=document.activeElement;renderBag();$('#drawer').classList.add('on');$('#scrim').classList.add('on');$('#drawer').setAttribute('aria-hidden','false');$('#closeBag').focus()}
-function closeBag(){$('#drawer').classList.remove('on');$('#scrim').classList.remove('on');$('#drawer').setAttribute('aria-hidden','true');if(lastFocus)lastFocus.focus()}
+function closeBag(){if(!$('#drawer').classList.contains('on'))return;$('#drawer').classList.remove('on');$('#scrim').classList.remove('on');$('#drawer').setAttribute('aria-hidden','true');if(lastFocus)lastFocus.focus()}
 
 /* ---------- Router ---------- */
 function route(){
-  const h=location.hash.slice(1)||'home';
-  const main=$('#main');
-  closeBag(); $('#navLinks').classList.remove('open');
+  const h=location.hash.slice(1)||'home',main=$('#main');
+  closeBag();$('#navLinks').classList.remove('open');
   if(h==='shop'){main.innerHTML=viewShop();$('#sort').value=state.sort;renderResults();}
-  else if(h.startsWith('p-')&&byId(h.slice(2))){main.innerHTML=viewProduct(byId(h.slice(2)));}
+  else if(h.startsWith('p-')&&byId(h.slice(2)))main.innerHTML=viewProduct(byId(h.slice(2)));
   else if(h==='checkout'){main.innerHTML=viewCheckout();if(state.bag.length)renderSummary();}
-  else if(h==='coverage-guide'){main.innerHTML=viewGuide();}
-  else if(h==='order-placed'){main.innerHTML=viewDone(state.lastOrder||'SOL-10421');}
-  else{main.innerHTML=viewHome();}
+  else if(h==='refills')main.innerHTML=viewRefills();
+  else if(h==='order-placed')main.innerHTML=viewDone(state.lastOrder||'IVR-10421');
+  else main.innerHTML=viewHome();
   window.scrollTo(0,0);
-  document.title=h==='home'?'Solenne Activewear':(main.querySelector('h1')?.textContent+' · Solenne');
+  document.title=h==='home'?'IVORI Oral Care':((main.querySelector('h1')||{}).textContent||'IVORI')+' · IVORI';
 }
 window.addEventListener('hashchange',route);
 
 /* ---------- Events ---------- */
-function resetFilters(){const f=state.filters;f.cat.clear();f.acts.clear();f.colours.clear();f.sizes.clear();f.tag='';state.query='';}
+function resetFilters(){state.filters.cat.clear();state.filters.tags.clear();state.query=''}
+function curId(){return location.hash.slice(3)}
 document.addEventListener('click',e=>{
-  const a=e.target.closest('[data-nav],[data-act],[data-cat]');
-  if(a){resetFilters();
-    if(a.dataset.act)state.filters.acts.add(a.dataset.act);
-    if(a.dataset.cat)state.filters.cat.add(a.dataset.cat);
-    if(a.dataset.nav==='New'||a.dataset.nav==='Limited')state.filters.tag=a.dataset.nav;
-    if(location.hash==='#shop'){e.preventDefault();route();}
-    return;}
+  const a=e.target.closest('[data-nav],[data-cat]');
+  if(a){resetFilters();if(a.dataset.cat)state.filters.cat.add(a.dataset.cat);if(a.dataset.nav==='Limited')state.filters.tags.add('Limited');if(location.hash==='#shop'){e.preventDefault();route();}return;}
   const chip=e.target.closest('.chip');
   if(chip){const set=state.filters[chip.dataset.f],v=chip.dataset.v;set.has(v)?set.delete(v):set.add(v);chip.setAttribute('aria-pressed',set.has(v));state.query='';renderResults();return;}
   if(e.target.closest('#clearF,#clearF2')){resetFilters();route();return;}
-  if(e.target.closest('#filtersToggle')){const f=$('#filters'),o=f.classList.toggle('open');e.target.closest('#filtersToggle').setAttribute('aria-expanded',o);return;}
-  const cb=e.target.closest('.cbtn');
-  if(cb){const id=location.hash.slice(3),p=byId(id),sel=state.sel[id];sel.colour=cb.dataset.colour;
-    document.querySelectorAll('.cbtn').forEach(b=>b.setAttribute('aria-pressed',b===cb));
-    $('#colourName').textContent=sel.colour;$('#mainShot').innerHTML=pic(p,sel.colour,p.name+' in '+sel.colour+', front view');
-    $('#fabricShot').style.background=COLOURS[sel.colour];$('#fabricShot').setAttribute('aria-label','Fabric close-up in '+sel.colour);return;}
-  const sb=e.target.closest('.sbtn');
-  if(sb){const id=location.hash.slice(3);state.sel[id].size=sb.dataset.size;document.querySelectorAll('.sbtn').forEach(b=>b.setAttribute('aria-pressed',b===sb));$('#sizeErr').textContent='';
-    sb.closest('div').previousElementSibling.querySelector('span').innerHTML=`Size: <b>${sb.dataset.size}</b>`;return;}
-  if(e.target.closest('#addBtn')){const id=location.hash.slice(3),sel=state.sel[id];
-    if(!sel.size){$('#sizeErr').textContent='Choose a size to add this to your bag.';return;}
-    const ex=state.bag.find(i=>i.id===id&&i.colour===sel.colour&&i.size===sel.size);ex?ex.qty++:state.bag.push({id,colour:sel.colour,size:sel.size,qty:1});saveBag();openBag();return;}
-  if(e.target.closest('#openSize,#openSize2')){$('#sizeTable').innerHTML=sizeTable();try{$('#sizeDlg').showModal()}catch(err){$('#sizeDlg').setAttribute('open','')}return;}
-  if(e.target.closest('#closeSize')){$('#sizeDlg').close();return;}
+  if(e.target.closest('#filtersToggle')){const o=$('#filters').classList.toggle('open');e.target.closest('#filtersToggle').setAttribute('aria-expanded',o);return;}
+  const ob=e.target.closest('.obtn');
+  if(ob){const id=curId();state.sel[id].opt=+ob.dataset.opt;const y=window.scrollY;$('#main').innerHTML=viewProduct(byId(id));window.scrollTo(0,y);return;}
+  if(e.target.closest('#addBtn')){const id=curId(),p=byId(id),s=state.sel[id],sub=p.sub&&s.sub;
+    const ex=state.bag.find(i=>i.id===id&&i.opt===s.opt&&i.sub===sub&&(!sub||i.freq===s.freq));
+    ex?ex.qty++:state.bag.push({id,opt:s.opt,sub,freq:sub?s.freq:null,qty:1});save();openBag();return;}
   if(e.target.closest('#bagBtn')){openBag();return;}
   if(e.target.closest('#closeBag')||e.target.id==='scrim'){closeBag();return;}
   const inc=e.target.closest('[data-inc]'),dec=e.target.closest('[data-dec]'),rm=e.target.closest('[data-rm]');
-  if(inc){state.bag[inc.dataset.inc].qty++;saveBag();renderBag();return;}
-  if(dec){const i=state.bag[dec.dataset.dec];i.qty--;if(!i.qty)state.bag.splice(dec.dataset.dec,1);saveBag();renderBag();return;}
-  if(rm){state.bag.splice(rm.dataset.rm,1);saveBag();renderBag();return;}
-  if(e.target.closest('#rmCode')){state.code='';saveBag();renderBag();return;}
+  if(inc){state.bag[inc.dataset.inc].qty++;save();renderBag();return;}
+  if(dec){const i=state.bag[dec.dataset.dec];i.qty--;if(!i.qty)state.bag.splice(dec.dataset.dec,1);save();renderBag();return;}
+  if(rm){state.bag.splice(rm.dataset.rm,1);save();renderBag();return;}
+  if(e.target.closest('#rmCode')){state.code='';save();renderBag();return;}
   if(e.target.closest('#toCheckout')&&location.hash==='#checkout'){e.preventDefault();route();return;}
-  if(e.target.closest('#searchBtn')){const sb=$('#searchbar'),o=sb.classList.toggle('open');$('#searchBtn').setAttribute('aria-expanded',o);if(o)$('#q').focus();return;}
-  if(e.target.closest('#menuBtn')){const n=$('#navLinks'),o=n.classList.toggle('open');$('#menuBtn').setAttribute('aria-expanded',o);return;}
+  if(e.target.closest('#searchBtn')){const o=$('#searchbar').classList.toggle('open');$('#searchBtn').setAttribute('aria-expanded',o);if(o)$('#q').focus();return;}
+  if(e.target.closest('#menuBtn')){const o=$('#navLinks').classList.toggle('open');$('#menuBtn').setAttribute('aria-expanded',o);return;}
 });
 document.addEventListener('change',e=>{
   if(e.target.id==='sort'){state.sort=e.target.value;renderResults();}
+  if(e.target.name==='ptype'||e.target.id==='freq'){const id=curId(),s=state.sel[id];
+    if(e.target.name==='ptype')s.sub=e.target.value==='sub';if(e.target.id==='freq'){s.freq=+e.target.value;s.sub=true;}
+    const y=window.scrollY;$('#main').innerHTML=viewProduct(byId(id));window.scrollTo(0,y);}
   if(e.target.id==='coProv'||e.target.name==='ship')renderSummary();
 });
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('#drawer').classList.contains('on'))closeBag();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeBag()});
 document.addEventListener('submit',e=>{
   e.preventDefault();
   if(e.target.id==='searchForm'){resetFilters();state.query=$('#q').value;$('#searchbar').classList.remove('open');$('#searchBtn').setAttribute('aria-expanded','false');location.hash==='#shop'?route():location.hash='shop';}
   if(e.target.id==='codeForm'){const v=$('#codeIn').value.trim().toUpperCase();
-    if(CODES[v]){state.code=v;state.codeMsg='';}else{state.codeMsg=v?`“${v}” isn't a valid code. Try SOLENNE10.`:'Enter a code first.';}
-    saveBag();renderBag();state.codeMsg='';$('#codeIn').focus();}
+    if(CODES[v]){state.code=v;state.codeMsg='';}else state.codeMsg=v?`“${v}” isn't a valid code. Try IVORI10.`:'Enter a code first.';
+    save();renderBag();state.codeMsg='';$('#codeIn').focus();}
   if(e.target.id==='newsForm'){const v=$('#newsEmail').value.trim();$('#newsNote').textContent=/^\S+@\S+\.\S+$/.test(v)?"You're on the list. (Prototype: no email is stored.)":'Enter a valid email address, like you@example.com.';}
-  if(e.target.id==='coForm'){
-    const missing=[...e.target.querySelectorAll('[required]')].filter(i=>!i.value.trim());
+  if(e.target.id==='coForm'){const missing=[...e.target.querySelectorAll('[required]')].filter(i=>!i.value.trim());
+    e.target.querySelectorAll('[required]').forEach(i=>i.removeAttribute('aria-invalid'));
     if(missing.length){$('#coErr').textContent='Fill in the highlighted fields to place your order.';missing.forEach(i=>i.setAttribute('aria-invalid','true'));missing[0].focus();return;}
-    state.lastOrder='SOL-'+(10000+Math.floor(Math.random()*89999));state.bag=[];state.code='';saveBag();renderBag();location.hash='order-placed';
-  }
+    state.lastOrder='IVR-'+(10000+Math.floor(Math.random()*89999));state.bag=[];state.code='';save();renderBag();location.hash='order-placed';}
 });
 renderBag();route();
 </script>
