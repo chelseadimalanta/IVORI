@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en-CA">
 <head>
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-24WFR386DZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-24WFR386DZ', {send_page_view:false});
+</script>
+<!-- End Google Analytics -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>IVORI Oral Care</title>
@@ -840,6 +849,7 @@ function route(){
   else main.innerHTML=viewHome();
   window.scrollTo(0,0);
   document.title=h==='home'?'IVORI Oral Care':((main.querySelector('h1')||{}).textContent||'IVORI')+' · IVORI';
+  if(window.gtag)gtag('event','page_view',{page_location:location.href,page_path:location.pathname+location.hash,page_title:document.title});
 }
 window.addEventListener('hashchange',route);
 
